@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>智慧供热系统</title>
+	<link rel="shortcut icon"  href="../img/logo_fav.png"/>
+	<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+	    <link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css">
+	<link rel="stylesheet" href="../css/singlestation_alarm.css" />
+	<!--日期插件-->
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-datepicker/css/datepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+	<!--<link rel="stylesheet" type="text/css" href="../css/alarm_manage.css" />-->
+</head>
+<body>
+	<input type="text" id="stationId" hidden="hidden" value=${stationId} />
+	<input type="text" id="stationName" hidden="hidden" value=${name} />
+	<input type="text" id="companyCode" hidden="hidden" value=${companyCode} />
+	<div id="demo">
+		<div class="controlStrategy">
+		<!--策略顶部-->
+			<div class="accountTop boxTop">
+				<span>单站告警 /</span>
+				<span class="location">
+					当前位置：<i id="backStation"></i>：<i class="localColor">告警详情</i>
+				</span>
+			</div>
+			<hr>
+			<!--策略内容-->
+			<div class="strategyMain">
+				<div class="left">
+					<div id="heatEachart"></div>
+				</div>
+				<div class="right">
+					<div class="timer">
+				   		<input type="text" name="reservation" id="reservationtime" />
+				    </div>
+				    <div class="oboxList" >
+						<table class="table table-hover" id="alarmTable">
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--弹窗内容-->	
+			<div class="confirmInfo" hidden="hidden">
+				<p>处理内容</p>
+				<textarea class="infoDetails"></textarea>	
+				<div class="submitButton">
+					<button id="submitInfo">处 理</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+	<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/js/bootstrap.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table-zh-CN.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/layer/layer.min.js" ></script>
+	<script type="text/javascript" src="../plugins/vue/dist/vue.min.js"></script>
+	<script type="text/javascript" src="../js/public_resources.js" ></script>
+	<script src="../plugins/echarts/echarts.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/moment.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/singlestation_alarm.js"  ></script>
+	    
+</body>
+</html>

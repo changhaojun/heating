@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/layer/skin/layer.css"/>
+		<link rel="stylesheet" href="../css/daterangepicker-bs3.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/heat_factory.css"/>
+		<link href="https://cdn.bootcss.com/element-ui/1.4.6/theme-default/index.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="wrapperFactory">
+			<div class="accountTop">				
+				<span>热源厂 &nbsp;/&nbsp;</span>
+				<span>当前位置：</span>
+				<span :class="{'current_page': !stationPopUpShow,'subPage':stationPopUpShow}" @click="back">热源厂 </span>
+				<span v-show="stationPopUpShow">></span>
+				<span  :class="{'current_page': stationPopUpShow}" v-show="stationPopUpShow" v-text = "currentPage">热源厂信息</span>
+			</div>
+			<hr>
+			<div clsss="companyContainer">
+				<div class="companyBox" v-cloak  v-show="!stationPopUpShow">
+						<ul class="companyList"  >
+							<li class="company"  v-for="(comapny,index) in companyData" :class='{active:index==currentClick}' @click="selectCompany(comapny.company_id,index)">
+								{{comapny.company_name}}
+								 <el-tooltip class="item" effect="dark" content="添加热源厂" placement="top">
+								     <span class='fa fa-plus addBtn' @click="addFactory(comapny)"></span>
+								    </el-tooltip>
+								
+							</li>
+							
+						</ul>
+						<span class="fa fa-angle-double-left left" @click="leftBtn"></span>
+						<span class="fa fa-angle-double-right right" @click="rightBtn"></span>
+				</div>
+				<div class="companyTableBox" v-cloak  v-show="!stationPopUpShow">
+					<table class="table table-hover" >
+						<thead>
+							<tr>
+								<th>热源厂名称</th>
+								<th>热源供热面积</th>
+								<th>燃料类型 </th>
+								<th>热媒类型</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for="factory in heatFactoryData">
+								<td v-text="factory.heat_name"></td>
+								<td v-text="factory.heat_area"></td>
+								<td >{{fuel(factory.fuel_type)}}</td>
+								<td >{{medium(factory.medium_type)}}</td>
+								<td>	
+									 <el-tooltip class="item" effect="dark" content="编辑" placement="top">
+								      <span class="fa fa-sign-in"  @click="editStation(factory)" ></span>
+								    </el-tooltip>
+									
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="dataInfo" id="demo" v-cloak v-show="stationPopUpShow">
+					<div class="boxContent">
+						<div class="equipment">
+							<i class="fa fa-book"></i>&nbsp;设备信息
+						</div>
+						<div class="dataCircle">
+							<label for="heat_name">热源厂名称</label>
+							<input type="text" class="textInput" id="heat_name"
+								v-model="stationData.heat_name" 
+								placeholder="请输入热源厂名称" warning="请输入热源厂名称"/>
+						</div>
+						<div class="dataCircle">
+							<label for="heat_area">热源供热面积</label>
+							<input type="number" class="textInput" id="heat_area"
+								v-model="stationData.heat_area" 
+								placeholder="请输入热源供热面积" warning="请输入热源供热面积"/>
+							<div class="areaUnit">万平方米</div>
+						</div>
+						<div class="dataCircle">
+							<label for="fuel_type">燃料类型</label>						
+							<select placeholder="请选择燃料类型"  warning="请选择燃料类型"  v-model="stationData.fuel_type" id="fuel_type">
+								<option value="">请选择燃料类型</option>
+								<option value="1" >燃煤 </option>
+								<option value="2">燃气</option>
+								<option value="3">燃油</option>
+								<option value="4">电</option>
+								<option value="5">其他</option>
+							</select>
+						</div>
+						<div class="dataCircle">
+							<label for="medium_type">热媒类型</label>
+							<input type="hidden" v-model="stationData.medium_type" warning="请选择热媒类型"/>
+							<select placeholder="请选择热媒类型" warning="请选择热媒类型" v-model="stationData.medium_type" id="medium_type">
+								<option value="" >请选择热媒类型 </option>
+								<option value="1" >蒸汽 </option>
+								<option value="2">高温水</option>
+								<option value="3">低温水</option>
+							</select>
+						</div>
+						<div class="dataCircle">
+							<label for="heat_mode">供热模式</label>							
+							<select  placeholder="请选择供热模式"  warning="请选择供热模式" v-model="stationData.heat_mode" id="heat_mode">
+								<option value="">请选择供热模式 </option>
+								<option value="1">直供式 </option>
+								<option value="2">间供式</option>							
+							</select>
+						</div>												
+						<div class="dataCircle">
+							<label for="heat_loc">地理坐标</label>
+							<input type="text" class="textInput" id="heat_loc"
+								v-model="stationData.heat_loc"  @click="showMap" readonly="readonly"
+								placeholder="请选择地理坐标"  warning="请选择地理坐标"/>
+							<i class="fa fa-map-marker" @click="showMap"></i>
+						</div>
+						<div class="dataCircle">
+							<label for="create_date">投运时间</label>
+							<input type="text" class="textInput" id="create_date" time-limit="limit"
+								v-model="stationData.create_date" readonly="readonly"
+								placeholder="请选择投运时间" warning="请选择投运时间"/>
+						</div>												
+						<div class="dataCircle">
+							<label for="data_source">数据源</label>	
+							<input type="hidden" v-model="stationData.data_source" warning="请选择数据源"/>
+							<select placeholder="请选择数据源"  warning="请选择数据源" v-model="stationData.data_source" id="data_source">
+								<option value="">请选择数据源 </option>
+								<option value="1">人工 </option>
+								<option value="2">自动</option>							
+							</select>
+						</div>																		
+						<div class="dataCircle">
+							<label for="heat_load">供暖负荷</label>
+							<input type="number" class="textInput" id="heat_load"
+								v-model="stationData.heat_load" 
+								placeholder="请输入供暖负荷" warning="请输入供暖负荷"/>
+						</div>												
+						<div class="dataCircle">
+							<label for="hourse_area">住宅区供热面积</label>
+							<input type="number" class="textInput" id="hourse_area"
+								v-model="stationData.hourse_area" 
+								placeholder="请输入住宅区供热面积" warning="请输入住宅区供热面积"/>
+							<div class="areaUnit">万平方米</div>
+						</div>
+						<div class="dataCircle">
+							<label for="input_time">录入时间</label>
+							<input type="text" class="textInput" id="input_time"
+								v-model="stationData.input_time" readonly="readonly"
+								/>
+						</div>						
+						<div class="dataCircle">
+							<label for="market_area">商业供热面积</label>
+							<input type="number" class="textInput" id="market_area"
+								v-model="stationData.market_area" 
+								placeholder="请输商业供热面积" warning="请输商业供热面积"/>
+							<div class="areaUnit">万平方米</div>
+						</div>
+						<div class="dataCircle">
+							<label for="medium_param">热媒设计参数</label>
+							<input type="number" class="textInput" id="medium_param"
+								v-model="stationData.medium_param" 
+								placeholder="请输热媒设计参数" warning="请输热媒设计参数"/>
+						</div>						
+						<div class="dataCircle">
+							<label for="office_area">办公建筑供热面积</label>
+							<input type="number" class="textInput" id="office_area"
+								v-model="stationData.office_area" 
+								placeholder="请输入办公建筑供热面积" warning="请输入办公建筑供热面积" />
+							<div class="areaUnit">万平方米</div>	
+						</div>
+						<div class="dataCircle">
+							<label for="heat_code">热源厂编码</label>
+							<input type="number" class="textInput" id="heat_code"
+								v-model="stationData.heat_code" 
+								placeholder="请输入热源厂编码" warning="请输入热源厂编码"/>
+						</div>
+						<div class="dataCircle">
+							<label for="other_area">其他建筑供热面积</label>
+							<input type="number" class="textInput" id="other_area"
+								v-model="stationData.other_area" 
+								placeholder="请输入其他建筑供热面积"  warning="请输入其他建筑供热面积"/>
+							<div class="areaUnit">万平方米</div>	
+						</div>
+						<div class="dataCircle">
+							<label for="belong_to">产权单位</label>
+							<input type="text" class="textInput" id="belong_to"
+								v-model="stationData.belong_to" 							 
+								placeholder="请输入产权单位" warning="请输入产权单位" />
+						</div>
+						<div class="dataCircle">
+							<label for="station_name">联系人</label>
+							<input type="text" class="textInput" id="station_name"
+								v-model="stationData.contact_person" 
+								placeholder="请输入联系人" warning="请输入联系人"/>
+						</div>
+						<div class="dataCircle">
+							<label for="contact_phone">联系电话</label>
+							<input type="number" class="textInput" id="contact_phone"
+								v-model="stationData.contact_phone" 
+								placeholder="请输入联系电话" warning="请输入联系电话"/>
+						</div>
+						<div class="dataCircle">
+							<label for="heat_addr">地址</label>
+							<input type="text" class="textInput" 
+								v-model="stationData.heat_addr" id="heat_addr"
+								placeholder="请输入地址" warning="请输入地址" />
+						</div>
+						<div class="dataCircle info">
+							<label for="otherInfo">备注</label>
+							<textarea id="otherInfo" v-model="stationData.remark" placeholder="请输入备注信息"></textarea>
+						</div>
+					</div>				
+					<div class="saveSettings">
+						<button id="main-submit" @click="saveConfig">保存配置</button>
+					</div>
+			</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tsNG4E4zQrrMYVH69GGXaAkQ0fSDjpsy" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+		<script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+		<script src="https://cdn.bootcss.com/element-ui/1.4.6/index.js"></script>
+		<script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
+		<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"></script>		
+		<script type="text/javascript" src="../plugins/layer/layer.min.js"></script>
+		<script type="text/javascript" src="../js/moment.js"></script>
+		<script type="text/javascript" src="../js/daterangepicker.js"></script>
+		<script src="https://cdn.bootcss.com/moment.js/2.19.0/locale/af.js"></script>
+		<script src="../js/public_resources.js"></script>
+		<script src="../js/heat_factory.js"></script>
+	</body>
+</html>
+

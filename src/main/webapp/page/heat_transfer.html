@@ -1,0 +1,168 @@
+  <!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>智慧供热系统</title>
+		<link rel="shortcut icon" href="../img/logo_fav.png" />
+		<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/heat_transfer.css" />
+	</head>
+
+	<body>
+		<input type="text" id="stationId" hidden="hidden" value=${stationId} />
+		<div class="accountBox">
+			<div class="accountTop">
+				<span>换热站配置 /</span>
+				<span class="location">
+					当前位置： 换热站参数 ><i class="local locationCol">${stationName}</i>
+				</span>
+			</div>
+			<hr>
+			<!--主要内容部分-->
+				<div class="dataInfo" id="demo">
+					<div class="boxContent clearfix">
+						<div class="equipment">
+							<i class="fa fa-cogs"></i>&nbsp;换热站参数
+						</div>
+						<div class="dataCircle">
+							<label for="network_path">一网管径</label>
+							<input type="text" id="network_path" 
+								class="network_path" 
+								v-model.number="stationData.network_path" 
+								datasrc="stationData.network_path" 
+								v-bind:empty="!stationData.network_path&&stationData.network_path!==0 ? true : false" 
+								warning="请输入一网管径" placeholder="请输入一网管径"/>
+						</div>
+						<div class="dataCircle">
+							<label for="two_network_path">二网管径</label>
+							<input id="two_network_path" type="text" 
+								class="two_network_path" 
+								v-model.number="stationData.two_network_path" 
+								datasrc="stationData.two_network_path" 
+								v-bind:empty="!stationData.two_network_path&&stationData.two_network_path!==0 ? true : false" 
+								warning="请输入二网管径" placeholder="请输入二网管径"/>
+						</div>
+						<div class="dataCircle">
+							<label for="plan_heating_index">计划热指标</label>
+							<input id="plan_heating_index" type="text" 
+								class="plan_heating_index" 
+								v-model.number="stationData.plan_heating_index" 
+								datasrc="stationData.plan_heating_index" 
+								v-bind:empty="!stationData.plan_heating_index&&stationData.plan_heating_index!==0 ? true : false" 
+								warning="请输入计划热指标" placeholder="请输入计划热指标"/>
+						</div>
+						<div class="dataCircle">
+							<label for="theory_heat_load">理论热负荷</label>
+							<input id="theory_heat_load" type="text" class="theory_heat_load" 
+								v-model.number="stationData.theory_heat_load" 
+								datasrc="stationData.theory_heat_load" 
+								v-bind:empty="!stationData.theory_heat_load&&stationData.theory_heat_load!==0 ? true : false" 
+								warning="请输入理论热负荷" placeholder="请输入理论热负荷"/>
+						</div>
+						
+					</div>
+					<div class="boxContent clearfix">
+						<div class="equipment">
+							板换参数
+						</div>
+						<div class="dataCircle transfer">
+							<label>板换类型</label>
+							<select  class="plate_type" v-model="stationData.plate_type">
+								<option value="0">请选择换板类型</option>
+								<option value="1">可拆卸办事换热器</option>
+								<option value="2">焊接板式换热器</option>
+								<option value="3">螺旋板式换热器</option>
+								<option value="4">板卷式换热器</option>
+							</select>
+						</div>
+						<div class="dataCircle transfer">
+							<label for="plate_area">换热面积</label>
+							<input id.number="plate_area" type="text" num-limit="limit" class="plate_area" 
+								v-model="stationData.plate_area" datasrc="stationData.plate_area"
+								v-bind:empty="!stationData.plate_area&&!stationData.plate_area!==0 ? true : false" 
+								warning="请输入换热站面积" placeholder="请输入换热站面积"/>
+						</div>
+						<div class="dataCircle transfer">
+							<label for="plate_heat">换热量</label>
+							<input id="plate_heat" type="text" num-limit="limit" class="plate_heat" 
+								v-model.number="stationData.plate_heat" 
+								datasrc="stationData.plate_heat" 
+								v-bind:empty="!stationData.plate_heat&&!stationData.plate_heat!==0 ? true : false" 
+								warning="请输入换热量" placeholder="请输入换热量"/>
+						</div>
+					</div>
+					<div class="boxContent clearfix">
+						<div class="equipment">
+							循环泵参数
+						</div>
+						<div class="dataCircle transfer">
+							<label for="recycle_pump_flow">循环泵流量</label>
+							<input id.number="recycle_pump_flow" type="text" warning="请输入循环泵流量" placeholder="请输入循环泵流量" 
+								num-limit="limit" class="recycle_pump_flow" 
+								v-bind:empty="!stationData.recycle_pump_flow&&!stationData.recycle_pump_flow!==0 ? true : false" 
+								v-model="stationData.recycle_pump_flow"/>
+						</div>
+						<div class="dataCircle transfer">
+							<label for="recycle_pump_power">循环泵功率</label>
+							<input id="recycle_pump_power" type="text" num-limit="limit" class="recycle_pump_power" 
+								v-model.number="stationData.recycle_pump_power" datasrc="stationData.recycle_pump_power" 
+								v-bind:empty="!stationData.recycle_pump_power&&!stationData.recycle_pump_power!==0 ? true : false" 
+								warning="请输入循环泵攻率" placeholder="请输入循环泵攻率" num-limit="limit"/>
+						</div>
+						<div class="dataCircle transfer">
+							<label for="recycle_pump_headup">循环泵扬程</label>
+							<input id="recycle_pump_headup" type="text" num-limit="limit" 
+								class="recycle_pump_headup" 
+								v-model.number="stationData.recycle_pump_headup" 
+								datasrc="stationData.recycle_pump_headup" 
+								v-bind:empty="!stationData.recycle_pump_headup&&!stationData.recycle_pump_headup!==0 ? true : false" 
+								warning="请输入循环泵扬程" placeholder="请输入循环泵扬程"/>
+						</div>
+					</div>
+					<div class="boxContent clearfix">
+						<div class="equipment">
+							补水泵参数
+						</div>
+						<div class="dataCircle transfer">
+							<label for="supply_pump_flow">补水泵流量</label>
+							<input id="supply_pump_flow" type="text" warning="请输入补水泵流量" 
+								v-bind:empty="!stationData.supply_pump_flow &&!stationData.supply_pump_flow !==0 ? true : false" 
+								placeholder="请输入补水泵流量" class="supply_pump_flow" num-limit="limit" v-model.number="stationData.supply_pump_flow"/>
+						</div>
+						<div class="dataCircle transfer">
+							<label for="supply_pump_power">补水泵攻率</label>
+							<input id="supply_pump_power" type="text" num-limit="limit" 
+								class="supply_pump_power" v-model.number="stationData.supply_pump_power" 
+								atasrc="stationData.supply_pump_power" 
+								v-bind:empty="!stationData.supply_pump_power&&!stationData.supply_pump_power!==0 ? true : false" 
+								warning="请输入补水泵攻率" placeholder="请输入补水泵攻率"/>
+						</div>
+						<div class="dataCircle transfer">
+							<label for="supply_pump_headup">补水泵扬程</label>
+							<input id="supply_pump_headup" type="text" num-limit="limit" 
+								class="supply_pump_headup" v-model.number="stationData.supply_pump_headup" 
+								datasrc="stationData.supply_pump_headup" 
+								v-bind:empty="!stationData.supply_pump_headup&&!stationData.supply_pump_headup!==0 ? true : false" 
+								warning="请输入补水泵扬程" placeholder="请输入补水泵扬程"/>
+						</div>
+					</div>
+					<div class="saveSettings">
+						<button id="main-submit">保存配置</button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/jquery.tablesort.js"></script>
+		<script type="text/javascript" src="../plugins/layer/layer.min.js"></script>
+		<script type="text/javascript" src="../plugins/vue/dist/vue.min.js"></script>
+		<script type="text/javascript" src="../js/public_resources.js"></script>
+		<script type="text/javascript" src="../js/heat_transfer.js" ></script>
+	</body>
+
+</html>

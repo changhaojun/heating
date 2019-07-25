@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>智慧供热系统</title>
+	<link rel="shortcut icon"  href="../img/logo_fav.png"/>
+	<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="../plugins/layer/skin/layer.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+	<link rel="stylesheet" href="../css/control_strategy.css" />
+	<link href="https://cdn.bootcss.com/element-ui/1.4.6/theme-default/index.css" rel="stylesheet">
+</head>
+<body>
+	<input type="text" id="stationId" hidden="hidden" value=${stationId} />
+	<input type="text" id="stationName" hidden="hidden" value=${name} />
+	<div id="demo">
+		<div class="controlStrategy">
+		<!--策略顶部-->
+			<div class="accountTop boxTop">
+				<span>全面监控 /</span>
+				<span class="location">
+					当前位置：<i id="backStation">{{ name }}</i>：<i class="localColor">控制策略</i>
+				</span>
+			</div>
+			<hr>
+			<!--策略内容-->
+			<!--一网泵阀控制-->
+			<div class="strategyBox">
+				<ul class="strategyNavBox">
+					<li>一网泵阀控制</li>		
+				</ul>
+				<div class="strategySubNavBox">
+					<li v-if = "setpumpValveNavArr.indexOf(1)!=-1" v-cloak @click="valveControlType(1)">
+						<div class="strategyCheckbox">
+							<div class="strategySelectedCheckbox" v-cloak v-show="valveSelectedType == 1"></div>
+						</div>
+						<div class="strategySubNavText">气候补偿</div>
+					</li>
+					<li v-if = "setpumpValveNavArr.indexOf(2)!=-1" v-cloak @click="valveControlType(2)">
+						<div class="strategyCheckbox">
+							<div class="strategySelectedCheckbox" v-cloak v-show="valveSelectedType == 2"></div>
+						</div>
+						<div class="strategySubNavText">手动控阀</div>
+					</li>
+					<li v-if = "setpumpValveNavArr.indexOf(3)!=-1" v-cloak @click="valveControlType(3)">
+						<div class="strategyCheckbox">
+							<div class="strategySelectedCheckbox" v-cloak v-show="valveSelectedType == 3"></div>
+						</div>
+						<div class="strategySubNavText">恒定供温</div>
+					</li>
+					<li v-if = "setpumpValveNavArr.indexOf(4)!=-1" v-cloak @click="valveControlType(4)">
+						<div class="strategyCheckbox">
+							<div class="strategySelectedCheckbox" v-cloak v-show="valveSelectedType == 4"></div>
+						</div>
+						<div class="strategySubNavText">恒定流量</div>
+					</li>
+					<li v-if = "setpumpValveNavArr.indexOf(5)!=-1" v-cloak @click="valveControlType(5)">
+						<div class="strategyCheckbox">
+							<div class="strategySelectedCheckbox" v-cloak v-show="valveSelectedType == 5"></div>
+						</div>
+						<div class="strategySubNavText">恒定热量</div>
+					</li>
+					<li v-if = "setpumpValveNavArr.indexOf(6)!=-1" v-cloak @click="valveControlType(6)">
+						<div class="strategyCheckbox">
+							<div class="strategySelectedCheckbox" v-cloak v-show="valveSelectedType == 6"></div>
+						</div>
+						<div class="strategySubNavText">手动调泵</div>
+					</li>
+				</div>
+				<!--手动调泵导航栏-->
+				<ul class="strategySubNavBox"  v-cloak v-show="valveSelectedType == 6 && !numberSelectionShow">
+					<li v-for="(opaion,index) in pumpNumberSelection.tag_option" @click="pumpNumberType(index)">
+						<div class="strategyCheckbox">
+							<div class="strategySelectedCheckbox" v-cloak  v-show="pumpNumberSelectedType == index"></div>
+						</div>
+						<div class="strategySubNavText" v-text="opaion.name"></div>
+					</li>
+				</ul>
+				<!--图表块-->
+				<div class="chartBox" v-cloak v-show="valveSelectedType == 1 || valveSelectedType == 3">
+				<!--:class="{'chartBoxLeftHide': valveSelectedType != 1}"-->
+					<div class="chartBoxLeft" v-show="valveSelectedType == 1 ">
+						<div class="chartBoxTitle">气候补偿曲线</div>
+						<div class="chartBoxContent">
+							<div class="chatContent">
+								<div id="climate" style="width: 980px;height:300px;"></div>
+							</div>
+							<div class="tableBox">
+								<div class="tableTitleBox">
+									<div class="outdoor">室外温度</div>
+									<div>供水温度</div>
+								</div>
+								<div class="tableContent">
+									<table class="table outdoorTable" >										
+										<tbody>
+											<tr v-for="(temperature,index) in xAxisData">
+												<td v-text="temperature">												
+												</td>																					
+											</tr>									
+										</tbody>
+									</table>
+									<table class="table">										
+										<tbody>
+											<tr v-for="(temperature,index) in yAxisData">											
+												<td >
+													<label >
+														<input  type="number" max="100" min="0" oninput="if(value.length>2)value=value.slice(0,2)"  v-model="temperature" @keyup.13="updataLine(index,temperature)" @blur="updataLine(index,temperature)"/>
+														<span><i class="el-icon-edit"></i></span>
+													</label>
+													
+												</td>											
+											</tr>									
+										</tbody>
+									</table>
+								</div>
+							</div>														
+						</div>
+						
+						<div class="topRight"></div>
+					</div>
+					<div class="chartBoxRight" v-cloak  v-show="valveSelectedType == 3 || valveSelectedType == 1">
+						
+						<div class="chartBoxTitle">时间修正设定</div>
+						<div class="tableBox">
+								<div class="tableTitleBox">
+									<div class="outdoor">时间段</div>
+									<div>补偿温度</div>
+								</div>
+								<div class="tableContent">
+									<table class="table outdoorTable" >										
+										<tbody>
+											<tr v-for="(timeSlot,index) in timeSlotData">
+												<td :id="index" :class="{'errorVal': errorInputNum == index}">
+													
+													<label >
+														<input type="number" max=24 min=0 oninput="if(value.length>2)value=value.slice(0,2)"  v-model="timeSlot.data_value" @keyup.13="updataTime(index,timeSlot)" @blur="updataTime(index,timeSlot)"/>
+														<span><i class="el-icon-edit"></i></span>
+													</label>
+												</td>
+											</tr>									
+										</tbody>
+									</table>									
+									<table class="table">										
+										<tbody>
+											<tr v-for="(temperature,index) in correctTemperatureData">											
+												<td >
+													<label >
+														<input  type="number" max="100" min="0" oninput="if(value.length>2)value=value.slice(0,2)"  v-model="temperature.data_value" @keyup.13="updataTemperature(index,temperature)" @blur="updataTemperature(index,temperature)"/>
+														<span><i class="el-icon-edit"></i></span>
+													</label>													
+												</td>											
+											</tr>									
+										</tbody>
+									</table>
+								</div>
+							</div>
+						
+						<div class="topRight"></div>
+						
+					</div>
+				</div>
+				<!--拖拽块-->
+				<div class="dragBox"  v-cloak v-show="valveSelectedType != 1">
+					<!--阀门开度设定-->
+					<div class="dragItemBox" v-cloak v-show="valveSelectedType == 2 && openDegreeData.data_tag!= -1">
+						<div class="dragItemTitle" v-text="openDegreeData.data_name">阀门开度设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="openDegreeData.data_value" @change="firstPumpChanged" :format-tooltip="formatTooltip"></el-slider>
+						</div>
+						<div v-text="openDegreeData.data_value"></div>
+						<div>%</div>
+					</div>
+					<!--恒定温度设定-->
+					<div class="dragItemBox" v-cloak v-show="valveSelectedType == 3 && setTemperatureData.data_tag!= -1">
+						<div class="dragItemTitle" v-text="setTemperatureData.data_name">恒定温度设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="setTemperatureData.data_value" @change="firstPumpChanged" :format-tooltip="temperatureTooltip"></el-slider>
+						</div>
+						<div v-text="setTemperatureData.data_value"></div>
+						<div>℃</div>
+					</div>
+					<!--恒定流量设定-->
+					<div class="dragItemBox" v-cloak v-show="valveSelectedType == 4  && setFlowData.data_tag!= -1">
+						<div class="dragItemTitle" v-text="setFlowData.data_name">恒定流量设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="setFlowData.data_value" @change="firstPumpChanged" max="10" :format-tooltip="flowTooltip"></el-slider>
+						</div>
+						<div v-text="setFlowData.data_value"></div>
+						<div>T/H</div>
+					</div>
+					<!--恒定热量设定-->
+					<div class="dragItemBox" v-cloak v-show="valveSelectedType == 5  && setHeatData.data_tag!= -1">
+						<div class="dragItemTitle" v-text="setHeatData.data_name">恒定热量设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="setHeatData.data_value" max="1000" @change="firstPumpChanged" :format-tooltip="heatTooltip"></el-slider>
+						</div>
+						<div v-text="setHeatData.data_value"></div>
+						<div>GJ</div>
+					</div>
+					<!--一网阀频率设定-->
+					<div class="dragItemBox"  v-cloak v-show="valveSelectedType == 6 && !numberSelectionShow">
+						<div class="dragItemTitle">一网泵频率设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="firstFrequecyData.data_value" max="55" @change="firstPumpChanged" :format-tooltip="frequencyTooltip"></el-slider>
+						</div>
+						<div v-text="firstFrequecyData.data_value"></div>
+						<div>Hz</div>
+					</div>
+					<!--一网阀n频率设定-->
+					<div class="dragItemBox"  v-cloak v-show="valveSelectedType == 6 && numberSelectionShow" v-for="(frequency,index) in frequencyData">
+						<div class="dragItemTitle" v-text="frequency.data_name">一网泵n频率设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="frequency.data_value" @change="firstPumpChanged" max="55" :format-tooltip="frequencyTooltip"></el-slider>
+						</div>
+						<div v-text="frequency.data_value"></div>
+						<div>Hz</div>
+					</div>
+					
+					<div class="topRight"></div>
+				</div>
+				<!--按钮组-->
+				<div class="btnGroup">
+					<button class="saveChanges" :class="{'usable': !firstBtnDsiabled}" :disabled="firstBtnDsiabled" @click="saveModify(1)">保存修改</button>
+					<button class="cancelChange" :class="{'usable': !firstBtnDsiabled}" :disabled="firstBtnDsiabled" @click="cancelModify(1)">取消修改</button>				
+				</div>
+			</div>
+			
+			<!--循环泵控制-->
+			<div class="strategyBox">
+				<ul class="strategyNavBox">
+					<li>循环泵控制</li>				
+				</ul>
+				<div class="strategySubNavBox">
+					<li v-for="(opaion,index) in circulatingPumpData.tag_option"  @click="circulatingPumpType(index)">
+						<div class="strategyCheckbox">
+							<div class="strategySelectedCheckbox"  v-cloak v-show="circulatingPumpSelectedType == index"></div>
+						</div>
+						<div class="strategySubNavText" v-text="opaion.name">手动定频</div>
+					</li>
+					
+				</div>				
+				<!--拖拽块-->
+				<div class="dragBox">
+					<div class="dragItemBox"  v-cloak v-show="circulatingPumpSelectedType == 0 && circulatingPumpFrequency.data_tag!= -1">
+						<div class="dragItemTitle" v-text="circulatingPumpFrequency.data_name">循环泵频率设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="circulatingPumpFrequency.data_value"  max="55" @change="circulatingPumpChanged" :format-tooltip="frequencyTooltip"></el-slider>
+						</div>
+						<div v-text="circulatingPumpFrequency.data_value"></div>
+						<div>Hz</div>
+					</div>
+					
+					<div class="dragItemBox"  v-cloak v-show="circulatingPumpSelectedType == 1 && pressureSupplyData.data_tag!= -1">
+						<div class="dragItemTitle" v-text="pressureSupplyData.data_name">二网供压设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="pressureSupplyData.data_value"  step="0.1" max="2"  @change="circulatingPumpChanged" :format-tooltip="mpaTooltip"></el-slider>
+						</div>
+						<div v-text="pressureSupplyData.data_value"></div>
+						<div>MPa</div>
+					</div>
+					<div class="dragItemBox"  v-cloak v-show="circulatingPumpSelectedType == 2  && differentialPressureData.data_tag!= -1">
+						<div class="dragItemTitle" v-text="differentialPressureData.data_name">二网压差设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="differentialPressureData.data_value"  step="0.1" max="2"  @change="circulatingPumpChanged" :format-tooltip="mpaTooltip"></el-slider>
+						</div>
+						<div v-text="differentialPressureData.data_value"></div>
+						<div>MPa</div>
+					</div>
+					<div class="notConfigured" v-cloak v-show="circulatingPumpSelectedType == 0 && circulatingPumpFrequency.data_tag == -1">很抱歉,您暂未配置此操作</div>
+					<div class="notConfigured" v-cloak v-show="circulatingPumpSelectedType == 1 && pressureSupplyData.data_tag == -1">很抱歉,您暂未配置此操作</div>
+					<div class="notConfigured" v-cloak v-show="circulatingPumpSelectedType == 2 && differentialPressureData.data_tag == -1">很抱歉,您暂未配置此操作</div>
+					<div class="topRight"></div>
+				</div>
+
+				<!--按钮组-->
+				<div class="btnGroup">
+					<button class="saveChanges" :class="{'usable': !circulatingPumpBtnDsiabled}" :disabled="circulatingPumpBtnDsiabled" @click="saveModify(2)">保存修改</button>
+					<button class="cancelChange" :class="{'usable': !circulatingPumpBtnDsiabled}" :disabled="circulatingPumpBtnDsiabled" @click="cancelModify(2)">取消修改</button>
+				</div>
+			</div>
+			<!--补水泵控制-->
+			<div class="strategyBox">
+				<ul class="strategyNavBox">
+					<li>补水泵控制</li>				
+				</ul>
+				<div class="strategySubNavBox">
+					<li  v-for="(opaion,index) in feedWaterPumpData.tag_option" @click="feedWaterPumpType(index)">
+						<div class="strategyCheckbox">
+							<div class="strategySelectedCheckbox" v-cloak v-show="feedWaterPumpSelectedType == index"></div>
+						</div>
+						<div class="strategySubNavText" v-text="opaion.name">手动定频</div>
+						
+					</li>					
+				</div>				
+				<!--拖拽块-->
+				<div class="dragBox" >
+					<div class="dragItemBox" v-cloak v-show="feedWaterPumpSelectedType == 0 && feedWaterHzData.data_tag!= -1">
+						<div class="dragItemTitle" v-text="feedWaterHzData.data_name">补水泵频率设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="feedWaterHzData.data_value" max="55" @change="feedWaterPumpChanged" :format-tooltip="frequencyTooltip"></el-slider>
+						</div>
+						<div v-text="feedWaterHzData.data_value"></div>
+						<div>Hz</div>
+					</div>
+				
+					<div class="dragItemBox" v-cloak v-show="feedWaterPumpSelectedType == 1 && feedWaterMpaData.data_tag!= -1" >
+						<div class="dragItemTitle" v-text="feedWaterMpaData.data_name">二网回压设定:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="feedWaterMpaData.data_value"  step="0.1" max="2"  @change="feedWaterPumpChanged"  :format-tooltip="mpaTooltip"></el-slider>
+						</div>
+						<div v-text="feedWaterMpaData.data_value"></div>
+						<div>MPa</div>
+					</div>
+					<div class="notConfigured" v-cloak v-show="feedWaterPumpSelectedType == 0 && feedWaterHzData.data_tag == -1">很抱歉,您暂未配置此操作</div>
+					<div class="notConfigured" v-cloak v-show="feedWaterPumpSelectedType == 1 && feedWaterMpaData.data_tag == -1">很抱歉,您暂未配置此操作</div>
+					<div class="topRight"></div>
+				</div>
+				<!--按钮组-->
+				<div class="btnGroup">
+					<button class="saveChanges" :class="{'usable': !feedWaterPumpBtnDsiabled}" :disabled="feedWaterPumpBtnDsiabled" @click="saveModify(3)">保存修改</button>
+					<button class="cancelChange" :class="{'usable': !feedWaterPumpBtnDsiabled}" :disabled="feedWaterPumpBtnDsiabled" @click="cancelModify(3)">取消修改</button>
+				</div>
+			</div>
+			<!--泻压阀控制-->
+			<div class="strategyBox">
+				<ul class="strategyNavBox">
+					<li>泻压阀控制</li>				
+				</ul>			
+				<!--拖拽块-->
+				<div class="dragBox pressureBox">
+					<div class="dragItemBox" v-cloak v-if="deadZoneShow">
+						<div class="dragItemTitle" v-text="deadZoneData.data_name">控制死区:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="deadZoneData.data_value"  step="0.1" max="2" @change="atmosphericValveChanged" :format-tooltip="mpaTooltip"></el-slider>
+						</div>
+						<div v-text="deadZoneData.data_value"></div>
+						<div>MPa</div>
+					</div>
+					<div class="dragItemBox" v-cloak v-if="openPressureShow">
+						<div class="dragItemTitle" v-text="openPressureData.data_name">开启压力:</div>
+						<div class="dragItemChart">
+							<el-slider v-model="openPressureData.data_value" step="0.1" max="2"  @change="atmosphericValveChanged" :format-tooltip="mpaTooltip"></el-slider>
+						</div>
+						<div v-text="openPressureData.data_value"></div>
+						<div>MPa</div>
+					</div>
+					<div class="dragItemBox" v-cloak v-if="closePressureShow">
+						<div class="dragItemTitle"  v-text="closePressureData.data_name">关闭压力:</div>					
+						<div class="dragItemChart">
+							<el-slider v-model="closePressureData.data_value" step="0.1" max="2" @change="atmosphericValveChanged" :format-tooltip="mpaTooltip"></el-slider>
+						</div>
+						<div v-text="closePressureData.data_value"></div>
+						<div>MPa</div>
+					</div>
+					<div class="topRight"></div>
+				</div>
+				<!--按钮组-->
+				<div class="btnGroup">
+					<button class="saveChanges" :class="{'usable': !atmosphericValveBtnDsiabled}" :disabled="atmosphericValveBtnDsiabled" @click="saveModify(4)">保存修改</button>
+					<button class="cancelChange" :class="{'usable': !atmosphericValveBtnDsiabled}" :disabled="atmosphericValveBtnDsiabled" @click="cancelModify(4)">取消修改</button>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script src="https://cdn.bootcss.com/echarts/3.7.2/echarts-en.min.js"></script>
+	<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/js/bootstrap.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/layer/layer.min.js" ></script>
+	<script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+	<script src="https://cdn.bootcss.com/element-ui/1.4.6/index.js"></script>
+	<script src="https://cdn.bootcss.com/vue-resource/1.3.4/vue-resource.min.js"></script>
+	<script src="../plugins/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/public_resources.js" ></script>
+	<script type="text/javascript" src="../js/control_strategy.js"  ></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>智慧供热系统</title>
+	<link rel="shortcut icon"  href="../img/logo_fav.png"/>
+	<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+	<script src="../plugins/jQuery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--r日期插件-->
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-datepicker/css/datepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+    <!--表格插件-->
+    <link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/operate_log.css" media="screen"/>
+</head>
+<style type="text/css" media="print">
+	 #logTableCopy,#ologTableCopy{
+		display: block;
+		width:100%;
+		margin:0;
+		padding:0;
+	}
+	#ologTableCopy thead th{
+		width:20%;
+		border-right:1px solid #ccc;
+	}
+
+	#logTableCopy tr, #ologTableCopy tr{
+		border:1px solid #ccc;
+		border-right:none;
+	}
+	#logTableCopy tr>td, #ologTableCopy tr>td,#logTableCopy thead th{
+		border-right:1px solid #ccc
+	}
+	caption{
+		text-align: center;
+		margin-bottom:10px;
+		font-size:18px;
+	}
+</style>
+<body>
+	<div class="accountBox boxInfo">
+		<div class="accountTop boxTop">
+				<span>操作日志    / </span>
+				<span class="location">
+					当前位置 :<font style="color:#19b293"> 操作日志</font>
+				</span>			
+				<div class="excel_o"><a href="" id="excel_o"><i class="fa fa-file-excel-o"></i>导出</a></div>		
+				<div class="print"><i class="fa fa-print"></i>打印</div>		
+		</div>
+		<hr>
+		<div id="searchInput">
+			   <!--option单选框-->
+			   <div class="kindOperation">
+			   	<button value="0" class="selected" >直接下发</button>
+			   	<button value="1" >控制策略</button>
+			   </div>
+			   <!--<select class="kindOperation" onchange="getType(this.value)">
+			        <option value="0">直接下发</option>
+			        <option value="1">控制策略</option>
+			   </select>-->
+			   <!--日期插件-->
+			    <div class="timer">
+			   		<input type="text" name="reservation" id="reservationtime"class="span4"/>
+			    </div>
+			    
+                <!--搜索实现-->
+				<div class="search">
+					<input  type="text" placeholder="请输入关键字查找" id="searchId" onkeypress="if(event.keyCode==13) {searchLog();return false;}"/>
+					<i class="fa fa-search" onclick="searchLog()"></i>
+				</div>
+	    </div>
+	    <!--列表容器-->
+		<div class="boxList" >
+			<table class="table table-hover" id="logTable"> 
+			</table>
+			<table class="table table-hover" id="logTableCopy"> 
+				<caption>直接下发</caption>
+			</table>
+		</div>
+		
+		<div class="oboxList" >
+			<table class="table table-hover" id="ologTable" >
+			</table>
+			<table class="table table-hover" id="ologTableCopy"> 
+				<caption>控制策略</caption>
+			</table>
+		</div>
+		</div>
+		<script type="text/javascript" src="../plugins/layer/layer.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../plugins/bootstarp/js/bootstrap.js"  charset="utf-8"></script>
+		<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.js"  charset="utf-8"></script>
+		<script src="../js/moment.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../plugins/printThis-master/printThis.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../plugins/bootstarp/export/jquery.table2excel.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table-zh-CN.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/public_resources.js" ></script>
+		<script type="text/javascript" src="../js/operate_log.js"  ></script>
+</body>	
+</html>
+
+

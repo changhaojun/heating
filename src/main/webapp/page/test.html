@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索定位</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+ 
+        #map {
+            width: 800px;
+            height: 800px;
+         }
+    </style>
+   
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=zdgd4171rI06zLQBNad9vKGCn6fcTsIm"></script>
+	<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+    <div id="map">
+ 
+    </div>
+    <input type="text" id="address">
+    <button id="btn">搜索</button>
+    <script>
+    	// 百度地图API功能
+		var map = new BMap.Map("map");
+		map.centerAndZoom("西安", 11);
+		var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+		var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+		 
+		// 标尺控件
+		map.addControl(top_left_control);
+		map.addControl(top_left_navigation);
+		 
+		//定位
+		function setPlace(value) {
+		    var local, point, marker = null;
+		    local = new BMap.LocalSearch(map, { //智能搜索
+		        onSearchComplete: fn
+		    });
+		 
+		    local.search(value);
+		 
+		    function fn() {
+		        //如果搜索的有结果
+		        if(local.getResults() != undefined) {
+		            map.clearOverlays(); //清除地图上所有覆盖物
+		            if(local.getResults().getPoi(0)) {
+		                point = local.getResults().getPoi(0).point; //获取第一个智能搜索的结果
+		                map.centerAndZoom(point, 18);
+		                marker = new BMap.Marker(point); // 创建标注
+		                map.addOverlay(marker); // 将标注添加到地图中
+		                marker.enableDragging(); // 可拖拽
+		                alert("当前定位经度:"+point.lng+"纬度:"+point.lat);
+		            } else {
+		                alert("未匹配到地点!可拖动地图上的红色图标到精确位置");
+		            }
+		        } else {
+		            alert("未找到搜索结果")
+		        }
+		    }
+		}
+		// 按钮事件
+		$("#btn").click(function(){
+		    setPlace($("#address").val());
+		});
+    </script>
+</body>
+</html>

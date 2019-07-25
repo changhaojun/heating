@@ -1,0 +1,220 @@
+html{
+	background:#f3f3f4 !important;
+	}
+.branchBox{	
+	width:100%;
+	background:#f3f3f4;
+	float:left;
+	position: relative;	
+	/*min-width:1366px;*/
+	overflow-y: hidden;
+	overflow-x: hidden;
+	padding:0 20px
+}
+/*账户top区域*/
+
+.branchBox .accountTop{
+	width:100%;
+	height:65px;
+	
+}
+.branchBox .accountTop span{
+	padding-top:25px;
+	display: inline-block;
+}
+.branchBox .accountTop span:nth-child(1){
+	font-size:22px;	
+	margin-left:20px;
+	color:#5d5d5d;	
+}
+.branchBox .accountTop span:nth-child(2){
+	margin-left:5px;
+	margin-right:5px;
+}
+.branchBox .accountTop span:nth-child(3){
+	color:#1ab394;
+		
+}
+.branchBox hr{
+	width:100%;
+	height:4px;
+	background:#e0e0e0;
+	border:0;
+	display: inline-block;
+}
+.branchContent{
+	width:100%;
+}
+.branchContent .branchCompany{
+	height:55px;
+	width:100%;
+	border-bottom:2px solid #1ab394;
+	position: relative;
+	/*overflow: hidden;*/
+}
+.branchContent .branchCompany .companyList{
+	height:53px;
+	position: absolute;
+	top:0;
+	left:0;
+	width:2400px;
+}
+.branchContent  .branchCompany .companyList li{
+	float:left;
+	height:100%;
+	width:207px;
+	line-height:53px;
+	text-align:center;
+	color:#1ab394;
+	cursor: pointer;
+}
+.branchContent  .branchCompany .companyList li .fa-plus{
+	display:none;
+	color:#fff;
+	 transition:All 0.4s ease-in-out;
+    -webkit-transition:All 0.4s ease-in-out;
+    -moz-transition:All 0.4s ease-in-out;
+    -o-transition:All 0.4s ease-in-out;
+}
+.branchContent  .branchCompany .companyList li:hover{
+	background:#1ab394;
+	color:#fff;
+}
+.branchContent  .branchCompany .companyList li:hover .fa-plus{
+	display: inline-block;
+    font-size: 14px;
+    width: 30px;
+    height: 50px;
+    color:#fff;
+    margin-top: 2px;
+    transform:rotate(180deg);
+	-ms-transform:rotate(180deg); /* Internet Explorer */
+	-moz-transform:rotate(180deg); /* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg); /* Opera */
+	translateZ(z)
+}
+.branchContent  .branchCompany .fa{
+	display: inline-block;
+	position: absolute;
+	color:#1ab394;
+	width:70px;
+	height: 53px;
+	line-height:53px;
+	font-size:22px;
+	z-index:9;
+	text-align:center;
+	cursor: pointer;
+}
+.branchContent  .branchCompany .left{
+	left:0px;
+}
+.branchContent  .branchCompany .right{
+	right:0px;
+}
+.branchContent  .branchCompany .left:hover{
+	background:rgba(216,242,237,0.5);
+}
+.branchContent  .branchCompany .right:hover{
+	background:rgba(216,242,237,0.5);
+}
+.branchContent  .branchCompany .companyList .active{
+	background:#1ab394;
+	color:#fff;
+}
+.branchContent  .branchCompany .companyList .active .fa-plus{
+	
+	display: inline-block;
+    font-size: 14px;
+    width: 30px;
+    height: 50px;
+    color:#fff;
+    margin-top: 2px;
+}
+.branchListBox{
+	width:100%;
+	height:100%;	
+}
+.branchListBox .list{
+	margin-right: 1.4%;
+    width: 15.5%;
+    float: left;
+}
+.branchListBox .list:last-child{
+	margin-right: 0;
+}
+.branchListBox .branchList{
+	width:100%;
+	
+	border:1px solid #1ab394;
+	float:left;
+	border-radius: 4px 4px;
+	margin-top:20px;
+	color:#fff;
+}
+.branchListBox .branchList .branchTitle{
+	background:rgba(26,179,128,0.7);
+	height:45px;
+	line-height:40px;
+	text-align:center;
+}
+.branchListBox .branchList .dragsort li{
+	color:#515151;
+	height:40px;
+	line-height:40px;
+	border-top:1px solid #CCCCCC;
+}
+.fa-wrench{
+	margin-left:10px;
+	color:#1ab394;
+	filter:Alpha(opacity=10);
+	opacity: 0.1;
+}
+.branchListBox .branchList .branchTitle:hover .fa-wrench{
+	color:#fff;
+	filter:Alpha(opacity=100);
+	opacity: 1;
+}
+.branchListBox .branchList .dragsort li .index{
+	margin-right: 20px;
+    float: left;
+    margin-left: 20px;
+}
+.branchListBox .branchList dt .editName{
+	border:1px solid #1ab394;
+	text-align:center;
+	height:30px;
+	width:150px;
+	background:#fff;
+	color:#1ab394;
+}
+.branchListBox .branchList .dragsort li:hover{
+	background:rgba(26,179,128,0.7);
+	color:#fff;
+}
+.searchBox{
+	float: right;
+	margin-top: 25px;
+}
+.searchInput{
+	width: 360px;
+    border-radius: 5px;
+    height: 42px;
+    border: 1px solid #c1c1c1;
+    outline: none;
+    margin-right: 10px;
+    padding-left: 10px;
+    color: #1ab394;
+    padding-right: 40px;
+}
+.searchBtn{
+	color: #1ab394;
+    position: absolute;
+    right: 45px;
+    top: 38px;
+    cursor: pointer;
+}
+.branchListBox .branchList .dragsort li.selectedItem{
+	background:rgba(26,179,128,0.7);
+	color:#fff;
+}

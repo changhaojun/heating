@@ -1,0 +1,538 @@
+.homeTop .left{
+	width:75.4%;
+	height:100%;
+	float:left;
+	/*background:#e45;*/
+}
+.homeTop .right{
+	width:23%;
+	height:100%;
+	float:right;
+	/*background:#a23;*/
+}
+.homeTop .topLeft{
+	float: left;;
+	width:20%;
+	height:352px;
+	border-right: 1px solid #e2e2e2;
+	border-bottom: 1px solid #e2e2e2;
+	position: relative;
+	-moz-box-shadow:0.1px 0px 10px #ddd;              /* For Firefox3.6+ */
+	-webkit-box-shadow:0.1px 0px 10px #ddd ;           /* For Chrome5+, Safari5+ */
+	box-shadow:0.1px 0px 10px #ddd; 
+}
+.homeTop .bottomBox{
+	width:37px;
+	height:37px;
+	position: absolute;
+	bottom:-19px;
+	right:-19px;
+	background: #fff;
+	transform:rotate(45deg);
+	-ms-transform:rotate(45deg); 	/* IE 9 */
+	-moz-transform:rotate(45deg); 	/* Firefox */
+	-webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+	-o-transform:rotate(45deg); 	/* Opera */
+	border-left:1px solid #e2e2e2;
+	-moz-box-shadow:20px -2px 15px -20px #ddd inset;              /* For Firefox3.6+ */
+	-webkit-box-shadow:20px -2px 15px -20px #ddd inset;           /* For Chrome5+, Safari5+ */
+	box-shadow:20px -2px 15px -20px  #ddd inset;        
+}
+.homeTop  .topList{
+	width:100%;
+	height:58px;	
+}
+.homeTop .listIcon{
+	float: left;
+	margin-left:12%;
+	width:41px;
+	height:41px;
+	border-radius: 20px 20px;
+	color:#fff;
+	font-size:18px;
+	text-align:center;
+	line-height: 41px;
+	margin-top:10px;
+}
+.homeTop .listText{
+	float: left;
+	margin-top:7px;
+	margin-left:10%;
+}
+.homeTop .listText span:nth-child(1){
+	display: block;
+	color:#c0c0c0;
+	font-size:16px;
+}
+.homeTop .listText span:nth-child(2)>em{
+	font-size:18px;
+	font-weight: 600;
+}
+.homeTop .topList:nth-child(1) .listIcon:nth-child(1)>span{
+	width:24px;
+	height: 23px;
+	margin-top:8px;
+	display: inline-block;
+}
+.homeContent .topList:nth-child(1) .listIcon:nth-child(1){
+	background:#58c8b0;
+}
+.homeTop .stsationNum{
+	color:#58c8b0;
+}
+.homeContent .topList:nth-child(2) .listIcon:nth-child(1){
+	background:#8ec0cb;
+}
+.homeTop .yesterday{
+	color:#8ec0cb;
+}
+.homeContent .topList:nth-child(3) .listIcon:nth-child(1){
+	background:#cabed2;
+}
+.homeTop .monthData{
+	color:#cabed2;
+}
+.homeContent .topList:nth-child(4) .listIcon:nth-child(1){
+	background:#d6a886;
+}
+.homeTop .area{
+	color:#d6a886;
+}
+.homeContent .topList:nth-child(5) .listIcon:nth-child(1){
+	background:#f7c530;
+}
+.homeTop .weekData{
+	color:#f7c530;
+}
+.homeContent .topList:nth-child(6) .listIcon:nth-child(1){
+	background:#ff8393;
+}
+.homeTop .sumData{
+	color:#ff8393;
+}
+.allWeather{
+	margin-left:28px;
+	background: url(../img/weatherTop.png) no-repeat;
+	width:77%;
+	height:86px;
+	float:left;
+	background-size:100% 100%;
+}
+.topCenter_u b{
+	font-size: 18px;
+	font-weight: normal;
+}
+.topCenter_u em{
+	font-size: 14px;
+	font-weight: normal;
+	
+}
+.topCenter_u .statusWeather{
+	display: inline-block;
+	width:40%;
+	text-align:center;
+}
+.topCenter_u .todayWeather {
+	float: left;
+	color:#8c8c8c;
+	width: 38%;
+	margin-left:12%;
+	margin-top:12px;
+	
+	border-right:1px solid #ccc;
+}
+.topCenter_u  .todayTime{
+	display: inline-block;
+	float:left;
+	width:20%;	
+	text-align: center;
+}
+.topCenter_u  .todayTime b{
+	display: block;
+}
+.temperature{
+	display: inline-block;
+	width:38%;
+	text-align:center;
+	font-size: 20px;
+	
+}
+.todayWeather .todayTime{
+	margin-top:5px;
+	margin-left:10px;
+}
+.todayWeather .temperature{
+	display: inline-block;
+    margin-left: 10%;
+    font-size: 26px;
+    line-height:58px;
+}
+.tomorrowWeather {
+	width:38%;
+	height:39px;
+	margin-left:15px;
+	line-height:39px;
+	display: inline-block;
+	color:#a2a2a2;
+	padding-left:10px;
+	padding-right:10px
+}
+
+.borderBtm{
+	border-bottom: 1px dashed #bfbfbf;
+}
+.weatherStatus{
+	float: left;
+	width:69px;
+	height:58px;
+	/*background:url(../img/weathercn02/0.png) no-repeat;*/
+}
+.topCenter_d{
+	margin-left:28px;
+	padding-left:48px;
+	padding-right:48px;
+	width:77%;
+	float:left;
+	height:262px;
+}
+.topCenter_d .carousel{
+	overflow: hidden;
+	height:262px;
+}
+.carousel ul{
+	height: auto;
+	overflow: hidden;
+	margin-bottom: 0 !important;
+	position: relative;
+	left: 0;
+	top: 0;	
+}
+.carousel ul>li{
+	height: 258px;
+	width: 100%;
+}
+.carousel ul li ol>li{
+	height:52px;
+	line-height: 52px;
+	border-bottom: 1px dashed #bfbfbf;
+	font-size: 14px;
+	color: #a7a7a5;
+	cursor: pointer;
+	position: relative;
+	padding-left:25px;
+}
+
+.carousel ul li ol>li>span:nth-of-type(1){
+	display: inline-block;
+	width: 75px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 40px;
+}
+.carousel ul li ol>li>span:nth-of-type(3){
+	/*float: right;*/
+	position: absolute;
+	right: 35%;
+}
+.carousel ul li ol>li>span:nth-of-type(4){
+	/*float: right;*/
+	position: absolute;
+	right: 5%;
+}
+.carousel ul li ol>li>span:nth-of-type(2){
+	/*float: right;*/
+	position: absolute;
+	right: 65%;
+}
+.carousel ul li ol>li>span:nth-of-type(2) i{
+	display: inline-block;
+	width:70px;
+	height:26px;
+	padding-left:40px;
+	margin-top:10px;
+	line-height:30px;
+}
+.carousel ul li ol>.abnormalColor{
+	color:#ea475a;
+}
+.carousel ul li ol>.normalColor{
+	color:#898989;
+}
+.homeBtm {
+	margin-top: 14px;
+	width:100%;
+	height:278px;
+	float:left;
+	position: relative;
+	border: 1px solid #e2e2e2;
+	background: #fff;
+	-moz-box-shadow:0.1px 0px 10px #ddd;              /* For Firefox3.6+ */
+	-webkit-box-shadow:0.1px 0px 10px #ddd ;           /* For Chrome5+, Safari5+ */
+	box-shadow:0.1px 0px 10px #ddd; 
+}
+.homeBtm .topBox{
+	width:37px;
+	height:37px;
+	position: absolute;
+	top:-19px;
+	right:-19px;
+	background: #fff;
+	transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg); 	/* IE 9 */
+	-moz-transform:rotate(-45deg); 	/* Firefox */
+	-webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
+	-o-transform:rotate(-45deg); 	/* Opera */
+	border-left:1px solid #e2e2e2;
+	-moz-box-shadow:20px -2px 15px -20px #ddd inset;              /* For Firefox3.6+ */
+	-webkit-box-shadow:20px -2px 15px -20px #ddd inset;           /* For Chrome5+, Safari5+ */
+	box-shadow:20px -2px 15px -20px  #ddd inset;  
+}
+.homeBtm p{
+	width: 22%;
+	color: #1ab394;
+	height:38px;
+	line-height:38px;
+	margin-left:5px;
+	padding-left:10px;
+	border-bottom:1px solid #e2e2e2;
+}
+#trendChart{
+	height: 220px;
+	margin: 0 auto;
+}
+.homeCenterLeft{
+	width: 56%;
+	background: #FFF;
+	border:1px solid #e2e2e2;
+	/*border-radius: 3px;*/
+	position: relative;
+	height:208px;
+	float:left;
+	margin-top: 14px;
+	-moz-box-shadow:0.1px 0px 10px #ddd;              /* For Firefox3.6+ */
+	-webkit-box-shadow:0.1px 0px 10px #ddd ;           /* For Chrome5+, Safari5+ */
+	box-shadow:0.1px 0px 10px #ddd;;
+}
+.homeCenterLeft>p{
+	position: absolute;
+	right:0;
+	top:10px;
+	/*text-align:center;*/
+	width:38px;
+	height:116px;
+	font-size: 16px;
+	border-left:1px solid #ccc;
+	color: #1AB380;
+}
+.homeCenterLeft .heatConsum{
+	padding-left: 20px;
+	width:92%;
+	float:left;
+}
+.homeCenterLeft .heatConsum li{
+	height: 42px;
+	line-height: 42px;
+	position: relative;
+}
+.homeCenterLeft .heatConsum li label{
+	width: 80px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+	font-size: 14px;
+	color: #7a7879;
+	font-weight:normal;
+	text-align: right;
+}
+.homeCenterLeft .heatConsum li .progressLine{
+	/*width: 400px;*/
+	width: 60%;
+	height: 15px;
+	background: #e1e1e1;
+	border: 1px solid #cdcdcd;
+	position: absolute;
+	left: 102px;
+	top: 13px;
+	border-left: 0;
+}
+.homeCenterLeft .heatConsum li .progressColor{
+	width: 60%;
+	height: 15px;
+	background: #1ab394;
+	border: 1px solid #cdcdcd;
+	position: absolute;
+	left: 102px;
+	top: 13px;
+	border-left: 0;
+	background:#1ab395;
+}
+.homeCenterLeft .heatConsum li span{
+	width: 20%;
+	float: right;
+	position: absolute;
+	left: 82%;
+	top:0;
+	color: #787878;
+}
+.homeCenterLeft .heatConsum li i{
+	position: absolute;
+	left: 157px;
+	top:0;
+	color: #fff;
+}
+.homeCenterLeft>p>span:nth-child(1){
+	margin:0 10px;
+	display: block;
+}
+.homeCenterLeft>p>span:nth-child(2){
+	display: block;
+	/*margin:0 10px;*/
+	margin-top:5px;
+	margin-left:2px;
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); 	/* IE 9 */
+	-moz-transform:rotate(90deg); 	/* Firefox */
+	-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+	-o-transform:rotate(90deg); 	/* Opera */
+	position: absolute;
+}
+.homeCenterRight{
+	width:44%;
+	height:222px;
+	float:left;
+}
+.normalAbnormal,.onlineDrop{
+	height:100%;
+	display: inline-block;
+
+}
+.normalAbnormal{
+	width:45.5%;
+}
+.onlineDrop{
+	width:53.5%;
+}
+.pull-right {
+	width:100%;
+	height:278px;
+	border-left:1px solid #E2E2E2;
+	border-bottom:1px solid #E2E2E2;
+	z-index: 999;
+	-moz-box-shadow:0.1px 0px 10px #ddd;              /* For Firefox3.6+ */
+	-webkit-box-shadow:0.1px 0px 10px #ddd ;           /* For Chrome5+, Safari5+ */
+	box-shadow:0.1px 0px 10px #ddd;
+	position: relative;
+}
+ .bottomLeftBox{
+	width:38px;
+	height:38px;
+	border-left:1px solid #E2E2E2;
+	background:#fff;
+	left:-19px;
+	bottom:-19px;
+	transform:rotate(135deg);
+	-ms-transform:rotate(135deg); 	/* IE 9 */
+	-moz-transform:rotate(135deg); 	/* Firefox */
+	-webkit-transform:rotate(135deg); /* Safari 和 Chrome */
+	-o-transform:rotate(135deg); 	/* Opera */
+	position: absolute;
+	-moz-box-shadow:20px -2px 15px -20px #ddd inset;              /* For Firefox3.6+ */
+	-webkit-box-shadow:20px -2px 15px -20px #ddd inset;           /* For Chrome5+, Safari5+ */
+	box-shadow:20px -2px 15px -20px  #ddd inset; 
+	
+}
+.topLeftBox{
+	width:38px;
+	height:38px;
+	border-left:1px solid #E2E2E2;
+	background:#fff;
+	left:-19px;
+	top:-19px;
+	transform:rotate(225deg);
+	-ms-transform:rotate(225deg); 	/* IE 9 */
+	-moz-transform:rotate(225deg); 	/* Firefox */
+	-webkit-transform:rotate(225deg); /* Safari 和 Chrome */
+	-o-transform:rotate(225deg); 	/* Opera */
+	position: absolute;
+	-moz-box-shadow:20px -2px 15px -20px #ddd inset;              /* For Firefox3.6+ */
+	-webkit-box-shadow:20px -2px 15px -20px #ddd inset;           /* For Chrome5+, Safari5+ */
+	box-shadow:20px -2px 15px -20px  #ddd inset; 
+}
+.pull-right .title>p{
+	height:37px;
+	width:45%;
+	border-bottom:1px solid #ccc;
+	margin-left:14px;
+	line-height:40px;
+	float: left;;
+}
+.homeRight,.homeBottom{
+	margin-top:20px;
+}
+.homeCenterCen>.title{
+	color: #5ca5b4;
+	line-height:37px;
+}
+.homeRight>.title{
+	color: #f7c85c;
+	line-height:37px;
+}
+.homeBottom>.title{
+	color: #5eb499;
+	line-height:37px;
+}
+#netsChart,#rangeChart,#networkChart{
+	width:97%;
+	height:220px;
+}
+.pull-right .title{
+	width:100%;
+	height:37px;
+}
+.pull-right .title>button{
+	float:right;
+	width:55px;
+	font-size:8px;	
+	margin-top:10px;
+	line-height: 17px;
+	height:20px;
+	margin-right:10px;
+	border:1px solid #5ca5b4;
+	border-radius: 5px 5px;
+}
+.homeRight>.title button{
+	border:1px solid #f7c85c;
+	border-radius: 5px 5px;
+}
+.homeCenterCen>.title button:hover{
+	background:#5ca5b4 ;
+	color:#fff;
+}
+.homeCenterCen>.title .blueColor{
+	background:#5ca5b4 ;
+	color:#fff;
+}
+.homeRight>.title button:hover{
+	background:#f7c85c ;
+	color:#fff;
+}
+.homeRight>.title .yellowColor{
+	background:#f7c85c ;
+	color:#fff;
+}
+.homeBottom>.title button{
+	border:1px solid #5eb499;
+	border-radius: 5px 5px;
+}
+.homeBottom>.title button:hover{
+	background:#5eb499 ;
+	color:#fff;
+}
+.homeBottom>.title .greenColor{
+	background:#5eb499 ;
+	color:#fff;
+}
+
+

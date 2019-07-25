@@ -1,0 +1,231 @@
+  <!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>智慧供热系统</title>
+		<link rel="shortcut icon" href="../img/logo_fav.png" />
+		<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/daterangepicker-bs3.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/heat_info.css" />
+	</head>
+
+	<body>
+		<input type="text" id="stationId" hidden="hidden" value=${stationId!""} />
+		<input type="text" id="companyCode" hidden="hidden" value=${companyCode!""} />
+		<input type="text" id="companyId" hidden="hidden" value=${companyId!""} />
+		<div class="accountBox">
+			<div class="accountTop">
+				<span>换热站配置 /</span>
+				<span class="location">
+					当前位置：设备配置 ><i class="local locationCol">换热站信息</i>
+				</span>
+			</div>
+			<hr> 
+			<!--主要内容部分-->
+				<div class="dataInfo" id="demo">
+					<div class="boxContent clearfix">
+						<div class="equipment">
+							<i class="fa fa-book"></i>&nbsp;设备信息
+						</div>
+						<div class="dataCircle">
+							<label for="station_name">名称</label>
+							<input type="text" id="station_name" class="textInput" 
+								v-model="stationData.station_name" datasrc="stationData.station_name" 
+								v-bind:empty="!stationData.station_name&&stationData.station_name!==0 ? true : false" 
+								warning="请输入名称" placeholder="请输入名称"/>
+						</div>
+						<div class="dataCircle">
+							<label for="create_company">换热站厂家</label>
+							<input id="create_company" type="text" class="textInput" 
+								v-model="stationData.create_company" datasrc="stationData.create_company" 
+								warning="请输入换热站厂家" placeholder="请输入换热站厂家"/>
+						</div>
+						<div class="dataCircle">
+							<label for="create_date">建成时间</label>
+							<input id="create_date" type="text" class="textInput" time-limit="limit"
+								v-model="stationData.create_date" datasrc="stationData.create_date" 
+								warning="请输入建成时间" placeholder="请输入建成时间"/>
+						</div>
+						<div class="dataCircle">
+							<label >供热用途</label>
+							<input type='hidden' class="textInput" id="heat_purpose"  
+								v-model="stationData.heat_purpose" 
+								v-bind:empty="!stationData.heat_purpose&&stationData.heat_purpose===0 ? true : false" 
+								warning="请选择供热用途" placeholder="请选择供热用途"/>
+							<select v-model="stationData.heat_purpose" class="textInput" >
+								<option value="0">请选择供热用途</option>
+								<option value="1">采暖</option>
+								<option value="2">生活热水</option>
+							</select>
+						</div>
+						<div class="dataCircle">
+							<label>换热类型</label>
+							<input type='hidden' class="textInput" id="exchange_type"  
+								v-model="stationData.exchange_type" 
+								v-bind:empty="!stationData.exchange_type&&stationData.exchange_type===0 ? true : false" 
+								warning="请选择换热类型" placeholder="请选择换热类型"/>
+							<select v-model="stationData.exchange_type">
+								<option value="0" >请选择换热类型</option>
+								<option value="1">水水换热</option>
+								<option value="2">水汽换热</option>
+							</select>
+						</div>
+						<div class="dataCircle">
+							<label>散热类型</label>
+							<input type='hidden' class="textInput" id="heat_type"  
+								v-model="stationData.heat_type" 
+								v-bind:empty="!stationData.heat_type&&stationData.heat_type===0 ? true : false" 
+								warning="请选择散热类型" placeholder="请选择散热类型"/>
+							<select v-model="stationData.heat_type">
+								<option value="0">请选择散热类型</option>
+								<option value="1">地暖</option>
+								<option value="2">散热器</option>
+							</select>
+						</div>
+						<div class="dataCircle">
+							<label>地理坐标</label>
+							<div class="coordinates">
+								<input id="station_loc" type="text" num-limit="limit" class="textInput" 
+								v-model="stationLoc.station_loc" datasrc="stationLoc.station_loc" 
+								v-bind:empty="!stationLoc.station_loc&&!stationLoc.station_loc!==0 ? true : false" 
+								warning="请输入地理坐标" placeholder="请输入地理坐标" />
+								<i class="fa fa-map-marker"></i>
+							</div>
+						</div>
+						<div class="dataCircle">
+							<label for="station_elevation">地势标高</label>
+							<input id="station_elevation" type="text" warning="请输入地势标高" placeholder="请输入地势标高" num-limit="limit"
+								v-model="stationData.station_elevation" datasrc="stationData.station_elevation" 
+								v-bind:empty="!stationData.station_elevation&&stationData.station_elevation!==0 ? true : false" 
+								warning="请输入供热面积" placeholder="请输入供热面积"/>
+								<div class="areaUnit">万平方米</div>	
+						</div>
+						<div class="dataCircle">
+							<label for="total_area">供热面积</label>
+							<input id="total_area" type="text" num-limit="limit" class="textInput" 
+								v-model="stationData.total_area" datasrc="stationData.total_area" 
+								v-bind:empty="!stationData.total_area&&stationData.total_area!==0 ? true : false" 
+								warning="请输入供热面积" placeholder="请输入供热面积"/>
+								<div class="areaUnit">万平方米</div>
+						</div>
+						<div class="dataCircle">
+							<label for="branchName">所属支线</label>
+							<select id="branchName" >
+								<option value="请选择所属支线">请选择所属支线</option>
+							</select>
+						</div>
+						<div class="dataCircle">
+							<label for="building_area">公建面积</label>
+							<input id="building_area" type="text" num-limit="limit" class="textInput" 
+								v-model="stationData.building_area" datasrc="stationData.building_area" 
+								v-bind:empty="!stationData.building_area&&!stationData.building_area!==0 ? true : false" 
+								warning="请输入公建" placeholder="请输入公建面积"/>
+								<div class="areaUnit">万平方米</div>
+						</div>
+						<div class="dataCircle">
+							<label for="building_count">公建个数</label>
+							<input id="building_count" type="text" num-limit="limit" class="textInput" 
+								v-model="stationData.building_count" datasrc="stationData.building_count" 
+								v-bind:empty="!stationData.building_count&&!stationData.building_count!==0 ? true : false" 
+								warning="请输入公建个数" placeholder="请输入公建个数"/>
+						</div>
+						<div class="dataCircle">
+							<label for="building_sum">楼栋总数</label>
+							<input id="building_sum" type="text" num-limit="limit" class="textInput" 
+								v-model="stationData.building_sum" datasrc="stationData.building_sum" 
+								v-bind:empty="!stationData.building_sum&&!stationData.building_sum!==0 ? true : false" 
+								warning="请输入楼栋总数" placeholder="请输入楼栋总数"/>
+						</div>
+						<div class="dataCircle">
+							<label>换热站调控类型</label>
+							<input type='hidden' class="textInput" id="control_type"  
+								v-model="stationData.control_type" 
+								v-bind:empty="!stationData.control_type&&stationData.control_type===0 ? true : false" 
+								warning="请选择调控类型" placeholder="请选择调控类型"/>
+							<select v-model="stationData.control_type">
+								<option value="0">请选择调控类型</option>
+								<option value="1">控阀</option>
+								<option value="2">控泵</option>
+							</select>
+						</div>
+						<div class="dataCircle">
+							<label for="heat_consumer">热用户总数</label>
+							<input id="heat_consumer" type="text" num-limit="limit" class="textInput" 
+								v-model="stationData.heat_consumer" datasrc="stationData.heat_consumer" 
+								v-bind:empty="!stationData.heat_consumer&&!stationData.heat_consumer!==0 ? true : false" 
+								warning="请输入热用户总数" placeholder="请输入热用户总数"/>
+						</div>
+						<div class="dataCircle">
+							<label for="heat_source_distance">热源距离</label>
+							<input id="heat_source_distance" type="text" num-limit="limit" class="textInput" 
+								v-model="stationData.heat_source_distance" datasrc="stationData.heat_source_distance" 
+								v-bind:empty="!stationData.heat_source_distance&&!stationData.heat_source_distance!==0 ? true : false" 
+								warning="请输入热用户总数" placeholder="请输入热用户总数"/>
+						</div>
+						<div class="dataCircle">
+							<label>热力站类型</label>
+							<input type='hidden' class="textInput" id="heat_station_type"  
+								v-model="stationData.heat_station_type" 
+								v-bind:empty="!stationData.heat_station_type&&stationData.heat_station_type===0 ? true : false" 
+								warning="请选热力站类型" placeholder="请选热力站类型"/>
+							<select v-model="stationData.heat_station_type">
+								<option value="0">请选热力站类型</option>
+								<option value="1">换热站</option>
+								<option value="2">混水站</option>
+							</select>
+						</div>
+						<div class="dataCircle">
+							<label for="houses">住宅个数</label>
+							<input id="houses" type="text" num-limit="limit" class="textInput" 
+								v-model="stationData.houses" datasrc="stationData.houses" 
+								v-bind:empty="!stationData.houses&&!stationData.houses!==0 ? true : false" 
+								warning="请输入住宅个数" placeholder="请输入住宅个数"/>
+						</div>
+						<div class="dataCircle">
+							<label for="residential_area">住宅面积</label>
+							<input id="residential_area" type="text" num-limit="limit" class="textInput" 
+								v-model="stationData.residential_area" datasrc="stationData.residential_area" 
+								v-bind:empty="!stationData.residential_area&&!stationData.residential_area!==0 ? true : false" 
+								warning="请输入住宅面积" placeholder="请输入住宅面积"/>
+								<div class="areaUnit">万平方米</div>
+						</div>
+						<div class="dataCircle">
+							<label>换热站的系统形式</label>
+							<input type='hidden' class="textInput" id="system_form"  
+								v-model="stationData.system_form" 
+								v-bind:empty="!stationData.system_form&&stationData.system_form===0 ? true : false" 
+								warning="请选热力站类型" placeholder="请选热力站类型"/>
+							<select v-model="stationData.system_form">
+								<option value="0">请选择换热站的系统形式</option>
+								<option value="1">传统供热系统</option>
+								<option value="2">分布式供热系统</option>
+								<option value="3">混合供热系统</option>
+							</select>
+						</div>
+						<div class="dataCircle info">
+							<label for="otherInfo">备注</label>
+							<textarea id="otherInfo" v-model="stationData.remark">请输入备注信息</textarea>
+						</div>
+					</div>
+					
+					<div class="saveSettings">
+						<button id="main-submit">保存配置</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tsNG4E4zQrrMYVH69GGXaAkQ0fSDjpsy" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+		<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"  charset="utf-8"></script>
+	  <script type="text/javascript" src="../js/moment.js"></script>
+		<script type="text/javascript" src="../js/daterangepicker.js"></script>
+		<script type="text/javascript" src="../plugins/vue/dist/vue.min.js"></script>
+		<script type="text/javascript" src="../plugins/layer/layer.min.js"></script>
+		<script type="text/javascript" src="../js/public_resources.js"></script>
+		<script type="text/javascript" src="../js/heat_info.js" ></script>
+	</body>
+
+</html>

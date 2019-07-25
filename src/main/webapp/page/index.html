@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<title>智慧供热系统</title>
+		<link rel="shortcut icon"  href="../img/logo_fav.png"/>
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css" />
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<!--添加-->
+		<link rel="stylesheet" type="text/css" href="../plugins/toastr/toastr.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/system_frame.css"/>
+	</head>
+	<body>
+		<div id="wrapper">
+			<!--顶部导航-->
+			<nav class="fixedTop"  >
+				<p>
+					<img class="logo" src="../img/frame_logo.png" />
+				</p>
+			
+				<ul class="nav" id="side-menu">
+				</ul>
+				<div class="personInfo">
+					<dl class="personInfo-dl">
+						<dt>
+							<em class="userName"></em>
+							<i class="fa fa-caret-down"></i>
+						</dt>
+						<dd class="personMsg">
+							<a class="popup" href="javascript:;">修改密码</a>
+							<a  href="javascript:;" @click="issuedBtn">下发密码</a>
+							<a  href="/logout">退出</a>
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							<a  id="showAlarmList" href="javascript:;" target="iframe0"><i class="fa fa-envelope"></i>
+								<em class="msgNum">0</em></a>
+						</dt>
+						<dd>
+							<div class="msgContent"></div>
+						</dd>
+					</dl>
+				</div>
+			</nav>
+			
+			<!--主要内容-->
+			<div class="indexMain" >
+				<iframe src="" width="100%" height="100%" name="iframe0" style="overflow:hidden"></iframe>
+			</div>
+			<div class="hidden pop step1">
+				<div class="clearfix pop-title">
+					<p class="pull-left">修改密码</p>
+					<a href="###" class="pull-right pop-close maskClose"></a>
+				</div>
+				<div class="pop-main">
+					<div class="oldPassword">
+						<label>原密码</label>
+						<input type="password" placeholder="原密码" class="pop-username passwordOld"/>
+						
+					</div>
+					<div class="newPassword">
+						<label>新密码</label>
+						<input type="password" placeholder="新密码" class="pop-username passwordNew"/>
+						
+					</div>
+					<div class="confirmPassword">
+						<label>确认新密码</label>
+						<input type="password" placeholder="确认新密码" class="pop-username passwordConfirm"/>
+						
+					</div>
+					<button class="pop-submit">确定</button>
+				</div>
+				<div class="popMsg">
+					<div class="clearfix pop-title">
+						<p class="pull-left">修改密码提示框</p>
+						<a href="###" class="pull-right pop-close "></a>
+					</div>
+					<div class="popMsg_content">
+						<p class="errorMsg">
+							<i ></i>
+							<span></span>
+						</p>
+						<button class="clearfix">确定</button>
+					</div>
+				</div>
+			</div>
+			<!--实时告警
+			<div class="alarmContent">
+			</div>-->
+			<!--下发密码弹窗-->
+
+			<div class="pop-msg-mask" v-show="issuedShow" v-clack></div>
+			<div class="pop-msg" v-show="issuedShow" v-clack>
+
+					<div class="pop-title">
+						<p class="pull-left">下发密码</p>
+						<a href="###" class="pull-right pop-close " @click="close"></a>
+					</div>		
+					<div class="pop-msg-item">
+						<span>手机号码</span>
+						<input class="pop-username" type="text" id="mobile" v-model="mobile"/>
+					</div>
+					<div class="pop-msg-item">
+						<span>变更周期  (天)</span>
+						<input class="pop-username" type="number" min="1" step="1" id="updatePeriod" v-model="updatePeriod"/>
+					</div>
+					<div class="notes-box">
+						<div class="notes">注：该号码接收下发密码，只能设置一个。</div>
+						<div class="immediately" @click="getPassword">立即获取下发密码</div>
+					</div>
+
+					<button class="pop-msg-submit" @click="submitConfig">保存配置</button>
+			</div>
+			
+			<div class="hidden pop-mask"></div>
+			<!--修改密码结束-->
+		</div>
+			<script type="text/javascript" src="../plugins/vue/dist/vue.min.js"></script>
+			<script type="text/javascript" src="../plugins/vue/dist/vue-resource.js"></script>
+			<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"></script>
+			<script type="text/javascript" src="../plugins/layer/layer.min.js"></script>				
+			<script src="../plugins/mqtt/mqttws31.min.js" type="text/javascript"></script>
+			<script src="../plugins/toastr/toastr.min.js"></script>
+			<script src="../js/public_resources.js"></script>
+			<script src="../js/system_frame.js?1.02"></script>	
+	</body>
+</html>

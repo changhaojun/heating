@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css"/>
+		<link rel="stylesheet" href="../css/daterangepicker-bs3.css" />
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/heatingSeason_manage.css"/>
+
+	</head>
+	<body>
+		<input type="text" id="companyCode" value=${companyCode} hidden="hidden"/>
+		<input type="text" id="companyId" value=${companyId} hidden="hidden"/>
+		<div class="heatingSeasonBox">
+			<!--分支top-->
+			<div class="accountTop">
+				<span>供热季管理 &nbsp;/&nbsp;</span>
+				<span>当前位置：</span>
+				<span>供热季管理</span>				
+			</div>
+			<hr>
+			<!--分支时间-->
+			<div class="heatingSeasonContent">
+				<div class="heatingSeasonDate">
+					<ul class="dateList">
+					</ul>
+					<span class="fa fa-angle-double-left left"></span>
+					<span class="fa fa-angle-double-right right"></span>
+				</div>
+				<div class="heatingSeasonLongTable">
+					<table class="table table-hover" id="longYearTable">
+		    		</table>		    		
+				</div>
+				<div class="heatingSeasonNowTable">
+					<table class="table table-hover" id="nowYearTable">
+		    		</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../plugins/jQuery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/js/bootstrap.js" charset="utf-8"></script> 
+	<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/extensions/editable/bootstrap-table-editable.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table-zh-CN.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/moment.js"></script>
+	<script type="text/javascript" src="../js/daterangepicker.js"></script>
+	<script src="../js/public_resources.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/heatingSeason_manage.js" type="text/javascript" charset="utf-8"></script>
+</html>

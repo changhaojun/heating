@@ -1,0 +1,93 @@
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    position: relative;
+    font-family: "Microsoft Yahei";
+}
+input, button, select, textarea{
+	outline: 0;
+    font-family: inherit;
+}
+a{
+    color:#333;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.map{
+    height: 100%;
+    position: relative;
+}
+.left{
+    width: 386px;
+    height:auto;
+    overflow: hidden;
+    position: absolute;
+    left:20px;top:20px;
+    z-index: 2;
+}
+.left .top input{
+    box-sizing: border-box;
+    border: 0;
+    padding: 9px 0;
+    border-left: 10px solid transparent;
+    border-right: 27px solid transparent;
+    line-height: 20px;
+    font-size: 16px;
+    height: 38px;
+    color: #333;
+    width: 329px;
+    border-radius: 2px 0 0 2px;
+    float: left;
+    outline:none;
+   /* color: #1AB394;*/
+    border-bottom: 1px solid #eee;
+}
+#search_button{
+    pointer-events: auto;
+    background: url(http://webmap0.map.bdstatic.com/wolfman/static/common/images/new/searchbox_f175577.png) no-repeat 0 -76px #1ab394;
+    width: 57px;
+    height: 38px;
+    float: left;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    outline:none;
+    border-radius: 0 2px 2px 0;
+    box-shadow: 1px 2px 1px rgba(0,0,0,.15);
+}
+.cardlist{
+    width: 309px;
+    /*padding: 5px 10px;*/
+    margin-top: 0;
+    background: #fff;
+    max-height:800px;
+    overflow: auto;
+}
+.cardlist li{
+    padding: 5px 10px;
+    border-bottom: 1px solid #eee;
+}
+.cardlist li:hover{
+    background: #eee;
+}
+.cardlist li p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.cardlist li p:nth-child(1){
+   color:green;
+}
+.cardlist li span{
+    color:#666;
+    margin-right: 20px;
+}
+.layui-layer-dialog .layui-layer-content .layui-layer-ico{
+	width:37px !important;
+	height: 37px !important;
+	margin-top: -3px;
+	margin-right:3px ;
+}

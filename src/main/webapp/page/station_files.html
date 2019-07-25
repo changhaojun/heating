@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>换热站档案</title>
+		<link rel="stylesheet"    type="text/css"  href="../css/common_style.css" />
+		<link rel="stylesheet" 	  type="text/css"  href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet"    type="text/css"  href="../css/station_files.css" />
+		<link rel="stylesheet"    type="text/css"  href="../plugins/layer/skin/layer.css" />
+	</head>
+	<body>
+		<input type="text" id="stationId" hidden="hidden" value=${stationId} />
+		<div id="showstateMessage" >
+				    <header class="dataTop">
+						<div  class="tableContainer">
+							<div class="navName">
+								<a class="aActive">换热站信息</a>
+								<a >换热站参数</a>
+							</div>
+						</div>
+					</header>
+					<h3 class="contentInfo show">
+							<div class="partOne">
+								 <div class="deviceInfoTitle">
+								 	<i class="fa fa-book" style="color:#19b393"></i> &nbsp;&nbsp;设备信息
+								 </div>
+								 <ul class="deviceInfoContent">
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationCode'>换热站编码：</span>
+											<input type="text" class='onlyRead code' readonly />	
+										</div>
+										<div class='rightOne'>
+											<span class='stationName'>换热站名称：</span>
+											<input type="text" class='onlyRead name' readonly />	
+										</div>		
+									</li>
+									
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationFactory'>换热站厂家：</span>
+											<input type="text" class='onlyRead factory' readonly />		
+										</div>
+										<div class='rightOne'>
+											<span class='stationTime'>建成时间：</span>
+											<input type="text"class='onlyRead time' readonly />	
+										</div>		
+									</li>
+									
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationRink'>换热类型：</span>
+											<input type="text" class='onlyRead rink' readonly />		
+										</div>
+										<div class='rightOne'>
+											<span class='stationNumber'>系统数：</span>
+											<input type="text" class='onlyRead number' readonly />	
+										</div>		
+									</li>
+									
+									
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationZone'>供热面积：</span>
+											<input type="text" class='onlyRead zone' readonly />		
+										</div>
+										<div class='rightOne'>
+											<span class='stationLocation'>地理坐标：</span>
+											<input type="text" class='onlyRead location' readonly />	
+										</div>		
+									</li>
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationOneR'>一网总管径：</span>
+											<input type="text" class='onlyRead oneR' readonly />		
+										</div>
+										<div class='rightOne'>
+											<span class='stationTwoR'>二网总管径：</span>
+											<input type="text" class='onlyRead twoR' readonly />	
+										</div>		
+									</li>
+									
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationIP'>IP地址：</span>
+											<input type="text" class='onlyRead ip' readonly />	
+										</div>
+										<div class='rightOne'>
+											<span class='stationHight'>地势标高：</span>
+											<input type="text" class='onlyRead high' readonly />	
+										</div>		
+									</li>
+									
+								 </ul>
+								 <div class="otherInfo">
+								 	<span>备注其他 </span>
+								 	<div class="textInput"></div>
+								 </div>
+							</h3>
+							
+							<h3 class="partTwo">
+								 <div class="systemInfoTitle">
+								 	 <i class="fa fa-book" style="color:#19b393"></i> 
+								 	 <font></font>
+								 </div>
+								 <ul class="systemInfoContent">
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationUse'>供热用途：</span>
+											<input type="text" class='onlyRead use' readonly />	
+										</div>
+										<div class='rightOne'>
+											<span class='stationScope'>供热范围：</span>
+											<input type="text" class='onlyRead scope' readonly />	
+										</div>		
+									</li>
+									
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationOne'>一次分管径：</span>
+											<input type="text" class='onlyRead one' readonly />		
+										</div>
+										<div class='rightOne'>
+											<span class='stationTwo'>二次分管径：</span>
+											<input type="text"class='onlyRead two' readonly />	
+										</div>		
+									</li>
+									
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationKindof'>板换类型：</span>
+											<input type="text" class='onlyRead kindof' readonly />		
+										</div>
+										<div class='rightOne'>
+											<span class='stationSqure'>板换换热面积：</span>
+											<input type="text" class='onlyRead squre' readonly />	
+										</div>		
+									</li>
+									
+									
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationQuality'>板换数量：</span>
+											<input type="text" class='onlyRead quality' readonly />		
+										</div>
+										<div class='rightOne'>
+											<span class='stationhotnum'>板换换热量：</span>
+											<input type="text" class='onlyRead hotnum' readonly />	
+										</div>		
+									</li>
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationrecycle'>循环泵功率：</span>
+											<input type="text" class='onlyRead recycle' readonly />		
+										</div>
+										<div class='rightOne'>
+											<span class='stationrecycleflow'>循环泵流量：</span>
+											<input type="text" class='onlyRead recycleflow' readonly />	
+										</div>		
+									</li>
+									
+									<li>
+				        				<div class='leftOne'>
+											<span class='stationsupplypower'>补水泵功率：</span>
+											<input type="text" class='onlyRead supplypower' readonly />	
+										</div>
+										<div class='rightOne'>
+											<span class='stationsupplyflow'>补水泵流量：</span>
+											<input type="text" class='onlyRead supplyflow' readonly />	
+										</div>		
+									</li>
+								 </ul>
+							</h3>
+					</div>
+				</div>
+	    </div>
+	    <script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"></script>
+	    <script type="text/javascript" src="../plugins/layer/layer.min.js"></script>
+	    <script type="text/javascript" src="../js/public_resources.js"></script>
+	    <script type="text/javascript" src="../js/station_files.js"></script>   
+	</body>
+</html>

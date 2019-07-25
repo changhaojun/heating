@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+	    <link rel="stylesheet"    type="text/css"  href="../plugins/layer/skin/layer.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-datetimepicker/css/datetimepicker.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css">-->
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/month_report.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/print.css" media="print" />
+		<style media="print">
+			caption{
+				display: block;
+				position: absolute;
+				top:-10px;
+				font-size: 12px;
+				border: none!important;
+				margin-left: calc(50% - 15px);
+			}
+			table{
+				margin-top: 20px!important;
+				background-color: #fff!important;
+			}
+			thead{
+				position: relative;
+			}
+			thead th {
+				/*color:#999!important;*/
+				border: 1px solid #eee!important;
+				vertical-align: top!important;
+				border-bottom: 1px solid #eee!important;
+			}
+			#reportList thead th{
+				color:#333!important;
+			}
+			#reportList tbody td{
+				text-align: right;
+			}
+			#reportList tbody tr td:first-child{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="monthReport">
+			<div class="monthList">
+				<div class="listTop">
+					<span>&nbsp;&nbsp;&nbsp;选择月份</span>&nbsp;&nbsp;&nbsp;
+					<input type="text" name="reservation" id="reservationtime"class="span4"/>
+					<button onclick="changeList1()" class="btnColor">本月</button><button onclick="changeList2()">上月</button><button onclick="changeList3()">去年本月</button><button onclick="changeList4()">去年上月</button>
+					<span class="excel_o"><a href="" id="excel_o" style="color: #1ab394;"><i class="fa fa-file-excel-o"></i> 导出</a></span>
+					<span id="btn_print"><i class="fa fa-print"></i> 打印</span>
+				</div>
+				<div class="listContent">
+					<table class="table table-hover"  id="reportList">
+						<caption style="display: none; font-size: 12px;">月度统计</caption>
+						<thead>
+							<tr>
+								<th>站名</div></th>
+								<th>供热面积(㎡)</th>
+								<th>热耗(GJ)</th>
+								<th>热单耗(GJ/㎡)</th>
+								<th>水耗(T)</th>
+								<th>水单耗(T/㎡)</th>
+								<th>电耗(KW)</th>
+								<th>电单耗(KW/h)</th>
+								<th>累计流量</th>
+								<th>累计热量</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="returnTop"><img src="../img/returnTop.png"/></div>
+		<script src="../plugins/jQuery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../plugins/bootstarp/js/bootstrap.js" charset="utf-8"></script> 
+		<script type="text/javascript" src="../plugins/vue/dist/vue.min.js"></script>
+	    <script type="text/javascript" src="../plugins/layer/layer.min.js"  charset="utf-8"></script>
+		<script type="text/javascript" src="../js/public_resources.js" ></script>
+		<script src="../js/moment.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+		<script src="../plugins/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="../plugins/bootstarp/export/jquery.table2excel.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../plugins/bootstarp/bootstrap-table/printThis.js"></script>
+		
+		<script type="text/javascript" src="../js/getDate.js" ></script>
+		<script type="text/javascript" src="../js/month_report.js" ></script>
+	</body>
+</html>

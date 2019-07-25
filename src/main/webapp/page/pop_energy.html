@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>智慧供热系统</title>
+	<link rel="shortcut icon"  href="../img/logo_fav.png"/>
+	<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/daterangepicker-bs3.css" />
+	<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/pop_energy.css" />
+</head>
+<body>
+	<input type="text" id="showId" hidden="hidden" value=${showId!""} />
+	<input type="text" id="maplevel" hidden="hidden" value=${maplevel!""} />
+	<input type="text" id="companyCode" hidden="hidden" value=${companyCode!""} />
+	<div class="chartMain">
+		<!--折线图-->
+		<div class="allChart">
+			<div class="chartLeft pull-left">
+				<div class="chartLine">
+					<p ></p>
+					<!--折线图-->
+					<div id="chartContent"></div>
+				</div>
+				<div class="hotEnergy">
+					<p></p>
+					<div id="hotContent"></div>
+				</div>
+			</div>
+			<div class="pull-right chartRight">
+				<ul>
+					<li>
+						<dl>
+							<dt>热耗</dt>
+							<dd>
+								<span></span>
+								<b></b>
+							</dd>
+							<dd>
+								<span></span>
+								<b></b>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>水耗</dt>
+							<dd>
+								<span></span>
+								<b></b>
+							</dd>
+							<dd>
+								<span></span>
+								<b></b>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>电耗</dt>
+							<dd>
+								<span></span>
+								<b></b>
+							</dd>
+							<dd>
+								<span></span>
+								<b></b>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!---->
+		<div id="diagram">
+			<div id="waterEnergy" class="heatConsum">
+				<p>水耗TOP</p>
+				<ol>
+				</ol>
+			</div>
+			<div id="electricEnergy" class="heatConsum">	
+				<p>电耗TOP</p>
+				<ol>
+					
+				</ol>
+			</div>
+			
+		</div>
+	</div> 
+	<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js" ></script>
+	<script type="text/javascript" src="../plugins/bootstarp/js/bootstrap.js" ></script>
+	<script type="text/javascript" src="../js/moment.js"></script>
+	<script type="text/javascript" src="../js/daterangepicker.js"></script>
+	<!--<script type="text/javascript" src="../plugins/echarts/echarts.js" ></script>-->
+	<script src="https://cdn.bootcss.com/echarts/3.6.1/echarts.min.js"></script>
+	<script type="text/javascript" src="../plugins/layer/layer.min.js" ></script>
+	<script type="text/javascript" src="../js/public_resources.js" ></script>
+	<script type="text/javascript" src="../js/pop_energy.js"></script>
+</body>
+</html> 

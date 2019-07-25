@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>智慧供热系统</title>
+	<link rel="shortcut icon"  href="../img/logo_fav.png"/>
+	<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css"/>
+	<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/box_list.css" />
+</head>
+<body>
+	<div class="accountBox boxInfo">
+		<div class="accountTop boxTop">
+				<span>换热站配置 </span>
+				<!--<span class="location">
+					当前位置：<i class="local locationCol" onclick="fn1()">分公司</i>
+				</span>-->
+				<span class="search">
+					<input  type="text" id="searchId" data-info='请输入关键字查找' placeholder="请输入关键字查找" onkeyup="if(event.keyCode==13) {searchCollectot();return false;}" />
+					<i class="fa fa-search" isSearch='false'  onclick="searchCollectot()"></i>
+				</span>
+				<button type="button"  class="btn-primary" >新增</button>
+		</div>
+		<hr>
+		<div class="boxList entityList">
+			<table class="table table-hover" id="dtuList" class="entityList">
+		    </table>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/js/bootstrap.js" charset="utf-8"></script> 
+	<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table-zh-CN.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/layer/layer.min.js" ></script>
+	<script type="text/javascript" src="../plugins/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="../js/public_resources.js" ></script>
+	<script type="text/javascript" src="../js/box_list.js" ></script>
+</body>	
+</html>

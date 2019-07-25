@@ -1,0 +1,456 @@
+html{
+	background:#f3f3f5 !important;
+	height: 100%;
+}
+.accountBox{
+	width:calc(100% - 30px);		
+	background:#f3f3f5;
+	float:left;
+	padding-left: 30px;
+	position: relative;	
+}
+/*top区域*/
+.accountBox .accountTop{
+	height:65px;	
+}
+.accountBox .accountTop span{
+	padding-top:30px;
+	display: inline-block;
+}
+.accountBox .accountTop span:nth-child(1){	
+	margin:0 20px;
+	font-size:24px;
+	color:#5d5d5d;	
+}
+.accountBox .accountTop span:nth-child(2){
+	margin-left:5px;
+	font-size:14px;
+	margin-right:5px;
+}
+.accountBox .accountTop span:nth-child(2) i{
+	margin-left:5px;
+	/*margin-right:5px;
+	padding-left: 5px;	*/
+}
+.accountBox .accountTop span:nth-child(2) .fa-dot-circle-o{
+	color: #1ab394;
+}
+.accountBox .accountTop span:nth-child(2) .fa-circle{
+	color: #7a7a7c;
+}
+.locationCol{
+	color: #1ab394;
+}
+/*搜索*/
+.accountBox .accountTop .search{
+	border:1px solid #c1c1c1;
+	background:#fff;
+	float:right;
+	border-radius: 5px 5px;
+	width:360px;
+	padding:0;
+	height:42px;
+	font-size:15px;
+	margin-top:25px;
+	line-height: 41px;
+}
+.accountBox .accountTop i{
+	cursor: pointer;
+}
+.accountBox .accountTop .search input:nth-child(1){
+	color:#1ab394;
+	width:321px;
+	height: 41px;
+	padding-left:12px;
+	border-radius: 5px 5px;
+}
+.accountBox .accountTop .search i:nth-child(2){
+	color:#1ab394;
+	font-size:14px;
+	cursor: pointer;
+}
+.accountBox hr{
+	width:100%;
+	height:4px;
+	background:#e0e0e0;
+	border:0;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+/*列表的样式*/
+.boxList{
+	background: #fff;
+	width: 100%;
+}
+.boxList{
+	width: 100%;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+}
+.table{
+	
+	border-radius: 5px;
+}
+.boxList h4{
+	font-weight: 700;
+	text-align: center;
+	padding-bottom: 20px;
+}	
+.boxList dl{
+	box-sizing: border-box;
+	float: left;
+	padding-right: 20px;
+	width: 10%;
+}
+.table{
+	margin-bottom:0 ;
+}
+div.th-inner {
+	border: none !important;
+}
+.table>tbody>tr>td, 
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th, 
+.table>thead>tr>td,
+.table>thead>tr>th{
+	cursor: pointer;
+	height: 34px;
+	line-height: 34px;
+	border-bottom: 1px solid #ddd;
+	font-size: 16px;
+	font-weight: 100;
+	padding: 0;
+}
+.table>tbody>tr>td:nth-of-type(1),.table>thead>tr>th:nth-of-type(1){
+	padding-left:20px ;
+}
+.table>tbody>tr td b{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	font-size: 14px;
+	line-height: 24px;
+	background: #3B3B3B;
+	border-radius: 50%;
+	text-align: center;
+	color: #1ab394;
+	margin-right: 5px;
+}
+.table>tbody>tr td b.onLine{
+	display: inline-block;
+	width: 21px;
+	height: 20px;
+	line-height: 20px;
+	background: url(../img/box_info.png) no-repeat;
+	vertical-align: middle;
+    margin-top: -5px;
+}
+.table>thead>tr>th{
+	color:#515151;
+	border: 0;
+}
+.table>tbody>tr{
+	color: #a3a3a3;
+}
+.table>tbody>tr.borderColor {
+	border-left:3px solid #1ab394 ;
+	color: #1ab394;
+}
+.table thead>tr{
+	background: #f9f9f9;
+}
+.table tbody tr:nth-of-type(2n+1){
+	background: #fff;
+}
+.table tbody tr:nth-of-type(2n+2){
+	background: #f9f9f9;
+}
+.table tbody tr:hover{
+	color:#1ab394 ;
+}
+.table tbody tr td.color1{
+	color: #A3A3A3;
+}
+.table tbody tr td.color0{
+	color: #f00;
+}
+.table>tbody>tr .fa{
+	color: #1ab394;
+	/*margin-right: 20px;*/
+}
+
+/*tip信息提示*/
+.tooltip-inner {
+	background: #1ab394;
+	opacity: 0.88;
+	filter:alpha(opacity=88);
+	white-space:nowrap;
+}
+.tooltip.top .tooltip-arrow{
+	border-top-color:#1ab394;
+	opacity: 0.88;
+	filter:alpha(opacity=88);
+}
+/*遮罩层*/
+.pop-mask{
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.2;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 201;
+}
+/*图表标题*/
+
+/*日历样式*/
+.timeData{
+	height: 100%;
+}
+.timeData .dataTop{
+	width:98%;
+	height:50px;
+	border-bottom: 1px solid #e6e6e6;
+	color:#acacac;
+	font-size:16px;
+	line-height:50px;
+	margin-left:10px;
+	margin-right:20px;
+}
+.timeData .dataTop span:nth-child(1){
+	margin-left:15px;
+}
+.timeData .dataTop .dataTime{
+	float: right;
+	border-left:1px solid #E6E6E6;
+	width:580px;
+	font-size:14px;
+	height:50px;
+}
+#reservationtime{
+	width:510px !important;
+	font-size:14px;
+	margin-top:0 !important;
+	border:0 !important;
+	outline: none !important;
+	height:30px;
+	border-bottom:1px solid #ccc !important;
+	height:100%;
+	cursor: pointer;
+}
+.btn-small{
+	margin-top:20px;
+}
+.applyBtn{
+	background:#1ab394;
+	color:#fff;
+	margin-left:10px;
+}
+.daterangepicker.opensright .ranges{
+	width:510px;
+	height:50px;
+	float:left;
+	/*text-align:right;*/
+	padding-left:8px;
+	
+}
+.daterangepicker .calendar-date{
+	margin-left: 10px;
+}
+.daterangepicker select{
+	border:1px solid #ccc;
+	text-align:center;
+	
+}
+.rangefooter{
+	height:290px;
+	width:510px;
+}
+.rangefooter .right{
+	display: inline-block !important;
+	float:left;
+	
+}
+.rangefooter .left{
+display: inline-block !important;
+float:left !important;
+}
+.nodata{
+	width:100%;
+	height:316px;
+	text-align:center;
+	font-size:24px;
+
+	line-height:316px;
+	background:#E5E5E5;
+	border-bottom:1px solid #ccc;
+	display:block;
+}
+.daterangepicker .daterangepicker_start_input label,.daterangepicker .daterangepicker_end_input label,.daterangepicker .ranges .input-mini{
+	font-size: 12px;
+	
+}
+#line{
+	width:800px;
+	height:316px;
+	margin:auto;
+	color:#1ab394;
+	text-align:center;
+	float:left;
+	margin-left:10px;
+}
+.closeChart{
+	font-size:28px;
+	color:#1ab394;
+	float:right;
+	cursor: pointer;
+	display: inline-block;
+	width:30px;
+	height:30px;
+}
+.dataChartBox{
+	text-align:center;
+	color:#acacac;
+	line-height:300px;
+}
+.hourselect,.minuteselect,.ampmselect{
+	text-align:center !important;
+}
+.daterangepicker td.active{
+	background: #1ab394;
+	border-radius: 5px 5px;
+}
+.daterangepicker td.active:hover{
+	background: #24c5a4;
+	border-radius: 5px 5px;
+}
+option:hover{
+	background:#1ab394 !important;
+}
+option{
+	text-align:center;
+}
+.layui-layer{
+	box-shadow: 8px 8px rgba(0,0,0,.5) !important;
+}
+.fa-sliders{
+	margin-right: 10px;
+}
+
+
+.layui-layer-title{
+	color:#fff;
+	background:#1ab394;
+}
+.layui-layer-close{
+	color:#fff;
+}
+.layui-layer-btn .layui-layer-btn0{
+	background:#1ab394;
+	color:#fff;
+}
+.layui-layer-btn1{
+	color:#1cb392;
+	background:#fff !important;
+}
+.layui-layer-btn{
+	text-align: center;
+	padding: 0 10px 19px;
+}
+.layui-layer-btn a{
+	margin:0px 36px !important;
+	padding:0 20px !important;
+	border:1px solid #1cb392;	
+}
+#addentityName,#modifyentityName{
+	border:1px solid #cccccc;
+	padding:5px 10px;
+	width:100%;
+}
+.layui-layer-dialog .layui-layer-content{
+	margin-left:14px !important;
+	}
+.fixed-table-body  #dtuList thead tr th:nth-child(1){
+	width: 40% !important;
+}
+.fixed-table-body  #dtuList thead tr th:nth-child(2){
+	width: 45% !important;
+}
+.fixed-table-body #dtuList thead  tr th:nth-child(3){
+	width:15% !important;
+}
+.layui-layer-tips {
+	box-shadow: none !important;
+	/*left:882px !important;*/
+}
+#dtuList tbody tr td:nth-child(2){
+	text-align:left !important;
+}
+.table>tbody>tr.borderColor {
+	border-left:3px solid #1ab394 ;
+	color: #1ab394;
+}
+#dtuList{
+	width:100%;
+	border:0;
+}
+.pagination-info{
+	color:#8b91a0;
+}
+.pagination>li>a, .pagination>li>span{
+	color:#1A1A1A;
+}
+.pagination > .active > a{
+	color:#fff;
+	background-color: #1AB394;
+    border-color: #1AB394;
+}
+.pagination > .active > a:hover{
+	background-color: #1AB394;
+	border-color: #1AB394;
+	color: #fff;
+}
+.fixed-table-pagination .pagination a:hover{
+	color: #fff;
+	background-color: #1AB394;
+	border-color: #1AB394;
+}
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus, 
+.dropdown-menu>.active>a:hover{
+	background-color: #1AB394;
+}
+.fixed-table-container tbody td{
+	border:0 !important;	
+}
+/*新增*/
+.accountBox .accountTop .btn-primary{
+	width:128px;
+	height:42px;
+	background:#1AB394;
+	float:right;
+	border-radius: 5px 5px;
+	color:#fff;
+	font-size:14px;
+	cursor: pointer;
+	border:0;
+	margin-top:25px;
+	margin-right:20px;
+}
+.accountBox .accountTop .btn-primary:hover{
+	background:#1ab380;
+}
+.layui-layer-content .optionList  li{
+	height: 36px;
+    line-height: 36px;
+    color:#a3a3a3;
+    cursor: pointer;
+    padding-left: 20px;
+    border-bottom: 1px solid #eee;
+}
+.layui-layer-content .optionList  li:hover{
+	background: #eee;
+}

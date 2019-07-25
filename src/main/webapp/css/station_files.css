@@ -1,0 +1,126 @@
+
+/*地图档案样式*/
+#showstateMessage{
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		color:#959593;
+		font-size:10px;
+		font-family:"微软雅黑";	
+}
+#showstateMessage .dataTop{
+	width: 100%;
+	height:35px;
+	color: #1ab394;
+	font-size: 17px;
+	border-bottom: 1px solid #e8e8e8;
+	overflow: hidden;
+	padding-bottom: 7px;
+}
+#showstateMessage .dataTop .tableContainer{
+	width:49%;
+	float: left;
+}
+.navName a{
+	display:inline-block;
+	width:auto;
+	height:35px;
+	text-decoration: none;
+	color:black;
+	cursor:pointer;
+	line-height:35px;
+	margin:0px 15px 0px 30px;
+	text-align: center;
+}
+.navName .aActive{
+	color:#19b293;
+	border-bottom:2px solid #19b293;
+}
+.contentInfo{
+	width:100%;
+	height:auto;
+}
+.contentInfo,.partTwo{
+	display:none;
+}
+.show{
+	display:block;
+}
+
+.deviceInfoTitle,.systemInfoTitle{
+		width:90%;
+		height:80px;
+		font-size: 16px;
+		line-height: 80px;
+		text-indent:16px;
+}
+.systemInfoTitle{
+	width:100%;
+	border-bottom: 1px solid #ccc;
+	margin-bottom:30px;
+	
+}
+.deviceInfoContent,.systemInfoContent{
+		list-style: none;
+		width:100%;
+		height: auto;
+		text-indent:40px;
+		border-bottom: 1px solid #ccc;
+}
+.deviceInfoContent li,.systemInfoContent li{
+		width:95%;
+		height: 40px;
+		margin-bottom: 25px;
+		overflow: hidden;
+}
+.deviceInfoContent li .leftOne,.systemInfoContent li .leftOne{
+		width:45%;
+		height: 38px;
+		float:left;
+		overflow: hidden;
+}
+.deviceInfoContent li .rightOne,.systemInfoContent  li .rightOne{
+		width:45%;
+		height: 38px;
+		float:right;
+		overflow: hidden;
+}
+.deviceInfoContent li .leftOne span:nth-child(1) ,.deviceInfoContent li .rightOne span:nth-child(1),.systemInfoContent li .leftOne span:nth-child(1) ,.systemInfoContent li .rightOne span:nth-child(1){
+		display:block;
+         width:150px;
+         height:38px;
+         line-height:38px;
+         color:#808080;
+         font-family:"微软雅黑";
+         font-size:13px;
+         text-align: left;
+         float: left;
+}
+.deviceInfoContent li .leftOne input[type="text"],.deviceInfoContent li .rightOne input[type="text"],.systemInfoContent li .leftOne input[type="text"],.systemInfoContent li .rightOne input[type="text"]{
+		display:block;
+		width:50%;
+		height: 36px;
+		border:1px solid #ccc;
+		line-height: 36px;
+		float: left;
+		text-align:left;
+		text-indent: 5px;
+		margin-left:20px;
+}
+.otherInfo{
+		text-indent: 35px;
+		margin-top:30px;
+		overflow: hidden;
+}
+.otherInfo span{
+	float: left;
+	font-size:16px;
+}
+.textInput{
+	width:80%;
+	height: 120px;
+	border:1px solid #ccc;
+	float: left;
+	margin:0px 0px 0px 38px;
+}
+/*系统参数样式*/

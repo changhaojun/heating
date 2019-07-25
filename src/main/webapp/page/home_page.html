@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="shortcut icon"  href="../img/logo_fav.png"/>
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/css/bootstrap.css"/>
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/home_page.css"/>
+	</head>
+	<body>
+		<div class="homeContent" >
+			<div class="homeTop clearfix">
+				<div class="left">
+					<!--换热站数量热量统计-->
+					<div class="topLeft">
+						<div class="topList">
+							<div class="listIcon"><span style="background:url(../img/station.png) no-repeat;"></span></div>
+							<div class="listText">
+								<span>换热站数量</span>
+								<span class="stsationNum"><em>223244</em><i class="unit">个</i></span>
+							</div>
+						</div>
+						<div class="topList">
+							<div class="listIcon"><span>昨</span></div>
+							<div class="listText">
+								<span>昨日热量</span>
+								<span class="yesterday"><em>2325</em><i class="unit">万GJ</i></span>
+							</div>
+						</div>
+						<div class="topList">
+							<div class="listIcon"><span>月</span></div>
+							<div class="listText">
+								<span>本月热量</span>
+								<span class="monthData"><em></em><i class="unit">万GJ</i></span>
+							</div>
+						</div>
+						<div class="topList">
+							<div class="listIcon"><span>㎡</span></div>
+							<div class="listText">
+								<span>供热面积</span>
+								<span class="area"><em></em><i class="unit">万㎡</i></span>
+							</div>
+						</div>
+						<div class="topList">
+							<div class="listIcon"><span>周</span></div>
+							<div class="listText">
+								<span>本周热量</span>
+								<span class="weekData"><em></em><i class="unit">万GJ</i></span>
+							</div>
+						</div>
+						<div class="topList">
+							<div class="listIcon"><span>总</span></div>
+							<div class="listText">
+								<span>累计热量</span>
+								<span class="sumData"><em></em><i class="unit">万GJ</i></span>
+							</div>
+						</div>
+						<div class="bottomBox"></div>
+					</div>
+					<!--气象-->
+					<div class="topCenter_u">
+						<div class="allWeather">
+							<div class="todayWeather">
+								<span class="weatherStatus"></span>
+								<span class="todayTime">
+									<b>今天</b>
+									<em>多云转晴</em>
+								</span>
+								<span class="temperature">25~35℃</span>							
+							</div> 
+							<div class="tomorrowWeather borderBtm">
+								<span class="todayTime">
+									<b>明天</b>
+								</span>
+								<span class="statusWeather">
+									<em>多云转晴</em>
+								</span>
+								<span class="temperature">25~35℃</span>
+							</div>
+							<div class="tomorrowWeather">
+								<span class="todayTime">
+									<b>后天</b>
+								</span>
+								<span class="statusWeather">
+									<em>多云转晴</em>
+								</span>
+								<span class="temperature">25~35℃</span>
+							</div>
+						</div>					
+					</div>
+					<!--我的关注-->
+					<div class="topCenter_d">
+						<div class="carousel">
+							<ul>
+								
+							</ul>
+						</div>					
+					</div>
+					<!--热量趋势图-->
+					<div class="homeBtm clearfix">
+						<p class="commonStyle">热量趋势图</p>
+						<div id="trendChart"></div>
+						<div class="topBox"></div>
+					</div>
+					<!--热耗-->
+					<div class="homeCenterLeft pull-left">
+						
+						<div class="heatConsum" >
+							<ul>
+								
+							</ul>
+						</div>
+						<p class="commonStyle"><span>热耗</span><span>TOP</span></p>
+						<div class="bottomBox"></div>
+					</div>
+					<!--异常-->
+					<div class="homeCenterRight">
+						<div class="normalAbnormal"></div>
+						<div class="onlineDrop"></div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="homeCenterCen pull-right" tag_id="20">
+						<div class="title"><p class="commonStyle">二网供温   </p><button sort="asc" tag_id="20" color="blue">BOTTOM</button><button sort="desc" tag_id="20" color="blue" class="blueColor">TOP</button></div>
+						<div id="netsChart"></div>
+						<div class="bottomLeftBox"></div>
+					</div>
+					<div class="homeRight pull-right" tag_id="14">
+						<div class="title"><p class="commonStyle">一网温差   </p><button sort="asc"  tag_id="14" color="yellow">BOTTOM</button> <button  sort="desc" tag_id="14" color="yellow" class="yellowColor">TOP</button></div>
+						<div id="rangeChart"></div>
+						<div class="bottomLeftBox"></div>
+						<div class="topLeftBox"></div>
+					</div>
+					<div class="homeBottom pull-right" tag_id="24">
+						<div class="title"><p class="commonStyle">二网温差   </p> <button  sort="asc" tag_id="24" color="green">BOTTOM</button> <button sort="desc" tag_id="24" color="green" class="greenColor" >TOP</button></div>
+						<div id="networkChart"></div>
+						<div class="topLeftBox"></div>
+					</div>
+				</div>
+				
+				
+		</div>
+	</body>
+		<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"></script>
+		<script src="https://cdn.bootcss.com/echarts/3.6.2/echarts.min.js"></script>
+		<script type="text/javascript" src="../plugins/layer/layer.min.js"></script>
+		<script type="text/javascript" src="../js/public_resources.js"></script>
+		<script type="text/javascript" src="../js/home_page.js"></script>
+</html>

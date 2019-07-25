@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>智慧供热系统</title>
+		<link rel="shortcut icon" type="text/css"  href="../img/logo_fav.png"/>
+		<link rel="stylesheet"    type="text/css"  href="../css/common_style.css" />
+		<link rel="stylesheet" 	  type="text/css"  href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet"    type="text/css"  href="../css/mapshow.css" charset="utf-8"/>
+		<link rel="stylesheet"    type="text/css"  href="../plugins/layer/skin/layer.css" />
+		<!--嵌入地图开发秘钥-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=zdgd4171rI06zLQBNad9vKGCn6fcTsIm"></script> 
+	</head>
+	<body>
+		<div class="mapShow">
+			<div class="showDetails"  id="bgInfo">
+				    <!--右边侧栏信息展示-->
+		            <div class="pageTitle">热 网 运 行 图</div>
+		            <!--搜索框-->
+			    	<div class="input-group" id="iptSearch">
+					  <input type="text"  id="searchFunction" value="请搜索" onkeypress="search()" >
+					  <img src="../img/ser.png"  id="searchPicture"  onclick="searchFunction()">
+					</div>
+					<!--保存查询结果-->
+					<ul id="messageTable">
+					
+			      	</ul>
+					<!--单选按钮切换指标-->
+					<div class="changeIndex" >
+			      	</div>
+			      
+		    </div>
+		    <!--地图容器-->
+	        <div id="map">
+	        </div>	
+	    <script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"></script>
+	    <script type="text/javascript" src="../plugins/layer/layer.min.js"></script>
+	    <script type="text/javascript" src="../js/public_resources.js"></script>
+	    <script type="text/javascript" src="../js/mapshow.js?1.03"></script>  
+	</body>
+</html>
+ 

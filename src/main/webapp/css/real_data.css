@@ -1,0 +1,90 @@
+html,body{
+	width:100%;
+	height:100%;
+	background:#F3F3F5;	
+}
+.realData{
+	
+	width:100%;
+	height:100%;
+}
+.realData .header {
+	height:63px;
+}
+.realData .header .print{
+	float:right;
+	color:#1c9c83;
+	margin-right:35px;	
+	cursor: pointer;
+	line-height:63px;;
+}
+.realData .header .excel_o{
+	float:right;
+	color:#1c9c83;
+	margin-right:25px;
+	cursor: pointer;
+	line-height:63px;
+}
+.realData .header .excel_o a{
+	color:#1c9c83;
+	text-decoration: none;
+}
+.realData .header .fa{
+	margin-right:5px;
+}
+.rcontent{
+	width:98%;
+	background:#fff;
+	padding:0;
+	margin:0;
+	margin-left:20px;
+	
+	
+}
+#dtuList{	
+	margin:0;
+	padding:0;
+	width:100%;
+	background:#fff;	
+	border:1px solid #EEEEEE;
+}
+#dtuList thead{
+ 	width:100%;
+ }
+ #dtuList thead tr:nth-child(1) td:nth-child(1),#dtuList thead tr:nth-child(1) td:nth-child(3){
+ 	width:27% !important;
+ }
+#dtuList thead tr:nth-child(1) td:nth-child(2){
+	width:46% !important;
+}
+#dtuList td{
+	text-align:center;
+	border:1px solid #eee;
+	color:#909090
+}
+#dtuList thead tr:nth-child(1) td{
+	background:#1C9C83;
+	color:#fff;
+}
+
+#dtuList thead tr:nth-child(2) td{
+	color:#1C9C83;
+}
+#dtuList tbody tr:nth-child(2n+1){
+	background: #f9f9f9;
+}
+#dtuList tbody tr:hover{
+	background: #f9f9f9;
+}
+
+.returnTop{
+	position: fixed;
+	bottom:10px;
+	right:10px;
+	width:52px;
+	height:72px;
+	text-align: center;
+	display: none;
+}
+
+

@@ -1,0 +1,234 @@
+html{
+	background:#f3f3f4 !important;
+	}
+.heatingSeasonBox{	
+	width:100%;
+	background:#f3f3f4;
+	float:left;
+	position: relative;	
+	/*min-width:1366px;*/
+	overflow-y: hidden;
+	overflow-x: hidden;
+	padding:0 20px
+}
+/*账户top区域*/
+
+.heatingSeasonBox .accountTop{
+	width:100%;
+	height:65px;
+	
+}
+.heatingSeasonBox .accountTop span{
+	padding-top:25px;
+	display: inline-block;
+}
+.heatingSeasonBox .accountTop span:nth-child(1){
+	font-size:22px;	
+	margin-left:20px;
+	color:#5d5d5d;	
+}
+.heatingSeasonBox .accountTop span:nth-child(2){
+	margin-left:5px;
+	margin-right:5px;
+}
+.heatingSeasonBox .accountTop span:nth-child(3){
+	color:#1ab394;
+		
+}
+.heatingSeasonBox hr{
+	width:100%;
+	height:4px;
+	background:#e0e0e0;
+	border:0;
+	display: inline-block;
+}
+.heatingSeasonContent{
+	width:100%;
+	background:#fff;
+	height:700px;
+}
+.heatingSeasonContent .heatingSeasonDate{
+	height:55px;
+	width:100%;
+	border-bottom:2px solid #1AB380;
+	position: relative;
+	overflow: hidden;
+}
+.heatingSeasonContent .heatingSeasonDate .dateList{
+	height:53px;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.heatingSeasonContent  .heatingSeasonDate .dateList li{
+	float:left;
+	height:100%;
+	width:207px;
+	line-height:53px;
+	text-align:center;
+	color:#1AB380;
+	cursor: pointer;
+}
+.heatingSeasonContent  .heatingSeasonDate .dateList li:hover{
+	background:#1AB380;
+	color:#fff;
+}
+.heatingSeasonContent  .heatingSeasonDate .fa{
+	display: inline-block;
+	position: absolute;
+	color:#1AB380;
+	width:70px;
+	height: 53px;
+	line-height:53px;
+	font-size:22px;
+	z-index:9;
+	text-align:center;
+	cursor: pointer;
+}
+.heatingSeasonContent  .heatingSeasonDate .left{
+	left:0px;
+}
+.heatingSeasonContent  .heatingSeasonDate .right{
+	right:0px;
+}
+.heatingSeasonContent  .heatingSeasonDate .left:hover{
+	background:rgba(216,242,237,0.5);
+}
+.heatingSeasonContent  .heatingSeasonDate .right:hover{
+	background:rgba(216,242,237,0.5);
+}
+.heatingSeasonContent  .heatingSeasonDate .dateList .active{
+	background:#1AB380;
+	color:#fff;
+}
+.table>tbody>tr>td, 
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th, 
+.table>thead>tr>td,
+.table>thead>tr>th{
+	cursor: pointer;
+	height:45px;
+	line-height: 26px;
+	border-style:none;
+	border-width:0;
+	border-bottom: 1px solid #ddd;
+	font-size: 15px;
+	font-weight: 100;
+	padding: 0;	
+}
+.table>thead>tr>th{
+	font-family: "微软雅黑";
+	font-size: 15px;
+	color:#606060;
+	font-weight: bolder;
+	
+}
+.table>tbody>tr>td:nth-of-type(1),.table>thead>tr>th:nth-of-type(1){
+	padding-left:20px ;
+}.table>thead>tr>th{
+	color:#515151;
+	border: 0;
+}
+.table>thead>tr{
+	border-left:none;
+	border-right:none;
+}
+.table>tbody>tr{
+	color: #a3a3a3;
+	border-left:none;
+	border-right:none;
+}
+.table>tbody>tr.borderColor {
+	border-left:3px solid #1ab394 ;
+	color: #1ab394;
+}
+.table thead>tr{
+	background: #f9f9f9;
+}
+.table tbody tr:nth-of-type(2n+1){
+	background: #fff;
+}
+.table tbody tr:nth-of-type(2n+2){
+	background: #f9f9f9;
+}
+.table tbody tr:hover{
+	color:#1ab394 ;
+	border-left:4px solid #1AB380;
+}
+.table tbody td{
+	position: relative;
+}
+.fixed-table-pagination .pagination-detail{
+	margin-left: 27px;
+}
+.fixed-table-pagination div.pagination{
+	margin-right: 25px;
+	margin-top: 25px;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+	background-color: #1ab394;
+    border-color: #1ab394;
+}
+.pagination>li>a, .pagination>li>span{
+	color: #ccc;
+}
+.heatingSeasonLongTable{
+	display: none;
+}
+.textInput{
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	text-align: center;
+	border:1px solid #e2e2e2;
+	display: none;
+}
+.using .fa-edit,.fa-check,.fa-times{
+	color: #1AB394;
+}
+.daterangepicker.opensright .ranges{
+	width:510px;
+	height:50px;
+	float:left;
+	padding-left:8px;
+
+}
+.daterangepicker .calendar-date{
+	margin-left: 10px;
+}
+.daterangepicker select{
+	border:1px solid #ccc;
+	text-align:center;
+
+}
+.rangefooter{
+	height:290px;
+	width:510px;
+}
+.rangefooter .right{
+	display: inline-block !important;
+	float:left;
+
+}
+.rangefooter .left{
+	display: inline-block !important;
+	float:left !important;
+}
+.calendar-date{
+
+}
+.daterangepicker td.active{
+	background: #1ab394;
+	border-radius: 5px 5px;
+}
+.daterangepicker td.active:hover {
+	background: #24c5a4;
+	border-radius: 5px 5px;
+}
+.using .fa-edit,.fa-check,.fa-times{
+	color: #1AB394;
+}
+.table .textInput{
+	display: none;
+}

@@ -1,0 +1,6 @@
+@media print {
+	#reportList thead th {
+		background: green!important;
+		color:#fff;
+	}
+}

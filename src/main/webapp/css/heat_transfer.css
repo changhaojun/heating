@@ -1,0 +1,247 @@
+html,body{
+	background:#f3f3f5 !important;
+	height: 100%;
+}
+.accountBox{
+	width:100% ;		
+	background:#f3f3f5;
+	float:left;
+	padding-left: 30px;
+	position: relative;	
+}
+/*top区域*/
+.accountBox .accountTop{
+	height:65px;	
+}
+.accountBox .accountTop span{
+	padding-top:30px;
+	display: inline-block;
+}
+.accountBox .accountTop span:nth-child(1){	
+	margin:0 20px;
+	font-size:24px;
+	color:#5d5d5d;	
+}
+.accountBox .accountTop span:nth-child(2){
+	margin-left:5px;
+	font-size:14px;
+	margin-right:5px;
+}
+.accountBox .accountTop span:nth-child(2) i{
+	margin-left:5px;
+	/*margin-right:5px;
+	padding-left: 5px;	*/
+}
+.accountBox .accountTop span:nth-child(2) .fa-dot-circle-o{
+	color: #1ab394;
+}
+.accountBox .accountTop span:nth-child(2) .fa-circle{
+	color: #7a7a7c;
+}
+.locationCol{
+	color: #1ab394;
+}
+/*搜索*/
+.accountBox .accountTop .search{
+	border:1px solid #c1c1c1;
+	background:#fff;
+	float:right;
+	border-radius: 5px 5px;
+	width:360px;
+	padding:0;
+	height:42px;
+	font-size:15px;
+	margin-top:25px;
+	line-height: 41px;
+}
+.accountBox .accountTop i{
+	cursor: pointer;
+}
+.accountBox .accountTop .search input:nth-child(1){
+	color:#1ab394;
+	width:321px;
+	height: 41px;
+	padding-left:12px;
+	border-radius: 5px 5px;
+}
+.location{
+	cursor: pointer;
+}
+.accountBox .accountTop .search i:nth-child(2){
+	color:#1ab394;
+	font-size:14px;
+	cursor: pointer;
+}
+.accountBox hr{
+	width:100%;
+	height:4px;
+	background:#e0e0e0;
+	border:0;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+/*主要内容*/
+html{
+	background:#f3f3f4 !important;
+	}
+body{
+	width: 100%;
+	height: 100%;
+	font-family: "Open Sans","Microsoft YaHei","Hiragino Sans GB","Hiragino Sans GB W3","微软雅黑","Helvetica Neue",Arial,sans-serif;
+}
+body *{
+	box-sizing: border-box;
+}
+select::-ms-expand{
+	display: none;
+}
+td>.fa{
+	margin-left: 8px;
+	cursor: pointer;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #c2c2c2; opacity:1; 
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #c2c2c2; opacity:1;
+}
+
+input:-ms-input-placeholder{
+    color: #c2c2c2; opacity:1;
+}
+
+input::-webkit-input-placeholder{
+    color: #c2c2c2; opacity:1;
+}
+
+input:disabled{
+	background-color: #f2f2f2;
+}
+
+.boxAccess{
+	width: 100%;
+	height: 100% ;
+	background: #F3F3F4;
+	padding: 20px 20px;
+	overflow: hidden;
+}
+.boxAccess .boxHeader{
+	border-bottom:3px solid #e0e0e0;
+	padding-bottom: 15px;
+	padding-top: 5px;
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+.boxAccess .boxHeader h3{
+	font: 20px/20px "微软雅黑";
+	font-weight: 500;
+	color:#5d5d5d;
+	float: left;
+}
+.boxAccess .boxHeader h4{
+	float: right;
+	font: 14px/20px "微软雅黑";
+	font-size: 14px;
+	font-weight: 500;
+}
+.boxAccess .boxHeader span:nth-last-child(1){
+	color: #1ab394;
+}
+/*================主要内容部分=================*/
+.dataInfo{
+	width: 98%;
+	overflow: hidden;
+	background: #fff;
+}
+.boxContent{
+	padding:10px 10px;
+}
+.boxContent .equipment{
+	position: relative;
+	height: 44px;
+	line-height: 44px;
+	color:#39bda2 ;
+	font-size: 16px; 
+	border-bottom: 1px solid #1ab394;
+}
+.boxContent .dataCircle{
+	width: 50%;
+	float: left;
+	padding-top: 25px;
+	position: relative;
+}
+.boxContent .transfer{
+	width:33.3%;
+}
+.boxContent .transfer input,
+.boxContent .transfer select,
+.dataEdit input,
+.dataEdit select{
+	width: 70% !important;
+}
+.boxContent .dataCircle label,
+.dataEdit label{
+	float: left;
+	color: #9f9f9f;
+	width: 90px;
+	height: 35px;
+	text-align: right;
+	line-height: 35px;
+	font-size: 14px;
+	padding: 0 10px 0 8px ;
+	font-weight: 500;
+}
+.boxContent .dataCircle input,
+.boxContent .dataCircle select,
+.dataEdit input,
+.dataEdit select{
+	display: block;
+	float: left;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    width: 80%;
+    height: 34px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #a7a7a7;
+}
+.boxContent .dataCircle input,
+.dataEdit input{
+    text-indent: 12px;
+}
+.boxContent .dataCircle select,
+.dataEdit select{
+	padding-left: 12px;
+	background: url(../img/select_arrow.png) no-repeat scroll right center transparent; 
+}
+.saveSettings{
+	margin: 40px auto;
+	
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	margin-bottom:45px ;
+	cursor: pointer;
+	border-top: 1px solid #1ab394;
+}
+.saveSettings button{
+	width: 300px;
+	background: #1ab394;
+	height: 36px;
+	margin-top: 40px;
+	line-height: 36px;
+	border-radius: 3px;
+}
+button:hover{
+	background: #24c5a4;
+}
+.fixIeSelect{
+	width: 50px;
+	overflow: hidden;
+}
+.fixIeSelect select{
+	width: 100px;
+	overflow: hidden;
+}

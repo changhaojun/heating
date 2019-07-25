@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="parentBox">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>智慧供热系统</title>
+		<link rel="shortcut icon" href="../img/logo_fav.png" />
+		<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css" />
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/data_list.css" />
+	</head>
+
+	<body>
+		<div class="accountBox boxInfo">
+			<div class="accountTop boxTop">
+				<span>运行监控 /</span>
+				<span class="location">
+					当前位置：<i class="local locationCol" onclick="fn1()">分公司</i>
+				</span>
+				<span class="search" tabindex="1" hidefocus="true" >
+					<input  type="text" value="请输入关键字查找换热站" id="searchId" onkeyup="if(event.keyCode==13) {searchCollectot();return false;}"/>
+					<i class="fa fa-search" onclick="searchCollectot()"></i>
+				</span>
+			</div>
+			<hr>
+			<div class="total">
+
+			</div>
+			<div class="boxList">
+				<table class="table table-hover" id="dtuList">
+
+				</table>
+			</div>
+			<div id="column" class="column hidden">
+				<div class="keep-open btn-group " >
+					<span class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-toggle="tooltip" data-placement="top" aria-expanded="true" title="列">
+						<i class="glyphicon glyphicon-th icon-th"></i> 
+						<!--<span class="caret"></span>-->
+					</span>
+					<ul class="dropdown-menu select" role="menu">
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		<div class="hidden pop-mask"></div>
+		<div class="hidden dataChart">
+			<header class="chartHeader">
+				<a id="dataChart" href="javascript:;" target="iframe1">图表数据</a>
+				<span class="pop-close"></span>
+			</header>
+			<div class="chartData">
+				<iframe id="chart" src="" width="100%" height="100%" name="iframe1" style="overflow:hidden"></iframe>
+			</div>
+		</div>
+		<script src="../plugins/jQuery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../plugins/bootstarp/js/bootstrap.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table-zh-CN.min.js" charset="utf-8"></script>	
+		<script type="text/javascript" src="../js/jquery.tablesorter.js" ></script>
+		<script type="text/javascript" src="../plugins/layer/layer.min.js"></script>
+		<script type="text/javascript" src="../js/public_resources.js"></script>
+		<script src="../js/data_list1.js" type="text/javascript"></script>
+	</body>
+
+</html>

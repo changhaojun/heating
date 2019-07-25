@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>智慧供热系统</title>
+	<link rel="shortcut icon"  href="../img/logo_fav.png"/>
+	<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+	<script src="../plugins/jQuery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet"    type="text/css"  href="../plugins/layer/skin/layer.css" />
+	<!--r日期插件-->
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-datepicker/css/datepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="../plugins/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+	
+	<!--<link rel="stylesheet" href="../plugins/bootstrap-daterangepicker/bootstrap-datepicker.css" />
+	<script src="../plugins/bootstrap-daterangepicker/bootstrap-datepicker.js"></script>
+    <script src="../plugins/bootstrap-daterangepicker/bootstrap-datepicker.zh-CN.min.js"></script>-->
+    <!--分页插件-->
+    <link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/alarm_manage.css" />
+</head>
+<body>
+	<div class="accountBox boxInfo">
+		<div class="accountTop boxTop">
+				<span>告警管理   / </span>
+				<span class="location">
+					当前位置 :<font style="color:#19b293"> 告警历史</font>
+				</span>
+				
+		</div>
+		<hr>
+		<div id="searchInput">
+			   <!--option单选框-->
+			   <div class="kindOperation">
+				   	<button value="0" class="selected" >告警</button>
+				   	<button value="1" >异常</button>
+			   </div>
+			   <!--日期插件-->
+			   <div class="timer">
+			   		<input type="text" name="reservation" id="reservationtime"class="span4"/>
+			    </div>
+			    <!--<div class="input-daterange input-group" id="datepicker">
+                    <div id="start">
+                    	<p>起始：</p>
+                    	<input  id="startDate" size="16" type="text" value="2016-07-20" data-date-format="yyyy-mm-dd" data-date-viewmode="years"class="form_datetime">
+	                </div>	
+	                <div id="end">
+	                	<p>截止：</p>
+	                	<input id="endDate"   size="16" type="text" value="2016-07-27"   data-date-format="yyyy-mm-dd" data-date-viewmode="years" class="form_datetime">
+                	</div>
+	            </div>-->
+                <!--搜索实现-->
+				<div class="search">
+						<input  type="text" placeholder="请输入告警内容进行查找" id="searchId" onkeypress="if(event.keyCode==13) {searchAlarm();return false;}"/>
+						<i class="fa fa-search" onclick="searchAlarm()"></i>
+				</div>
+	    </div>
+	    
+	    
+		<div class="boxList" >
+			<table class="table table-hover" id="alarmList" > 
+				
+			</table>
+		</div>
+		<div class="oboxList" >
+			<table class="table table-hover" id="normalTable">
+			</table>
+		</div>
+	<!--弹窗内容-->	
+		<div class="confirmInfo" hidden="hidden">
+			<p>处理内容</p>
+			<textarea class="infoDetails"></textarea>	
+			<div class="submitButton">
+				<button id="submitInfo">处 理</button>
+			</div>
+		</div>
+</body>	
+
+    <script type="text/javascript" src="../plugins/bootstarp/js/bootstrap.js" charset="utf-8"></script> 
+    <script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../plugins/bootstarp/bootstrap-table/bootstrap-table-zh-CN.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../plugins/layer/layer.min.js"  charset="utf-8"></script>
+	<script type="text/javascript" src="../js/public_resources.js" ></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" ></script>
+	<script type="text/javascript" src="../js/alarm_manage.js" ></script>
+	<!--添加-->
+	<script src="../js/moment.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript" charset="utf-8"></script>
+</html>
+
+

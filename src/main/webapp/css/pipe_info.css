@@ -1,0 +1,226 @@
+html,body{
+	width:100%;
+	height:100%;
+	position: relative;
+}
+#allMap {
+	width: 100%;
+	height: 100%;
+}
+.mapContent{
+	width:100%;
+	height: 100%;
+	position: relative;
+}
+.mapContent .top {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 10;
+}
+.mapContent .top input {
+	box-sizing: border-box;
+	width: 329px;
+	height: 38px;
+	line-height: 38px;
+	background: #fff;
+	border: 1px solid #1ab394;
+	border-radius: 2px 0 0 2px;
+	float: left;
+	padding-left: 10px;
+	color: #adadad;
+}
+#searchBtn{
+	pointer-events: auto;
+	background: url(http://webmap0.map.bdstatic.com/wolfman/static/common/images/new/searchbox_f175577.png) no-repeat 0 -76px #1ab394;
+	width: 57px;
+	height: 38px;
+	float: left;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	outline:none;
+	border-radius: 0 2px 2px 0;
+	box-shadow: 1px 2px 1px rgba(0,0,0,.15);
+}
+/*弹窗样式*/
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #c2c2c2; opacity:1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #c2c2c2; opacity:1;
+}
+
+input:-ms-input-placeholder{
+	color: #c2c2c2; opacity:1;
+}
+
+input::-webkit-input-placeholder{
+	color: #c2c2c2; opacity:1;
+}
+
+input:disabled{
+	background-color: #f2f2f2;
+}
+.dataInfo{
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+}
+.boxContent{
+	overflow: hidden;
+	padding:0  20px ;
+}
+.boxContent .equipment{
+	position: relative;
+	height: 44px;
+	line-height: 44px;
+	color:#39bda2 ;
+	font-size: 16px;
+	border-bottom: 1px solid #1ab394;
+}
+.boxContent .dataCircle{
+	width: 50%;
+	float: left;
+	padding-top: 35px;
+	position: relative;
+}
+.boxContent .dataCircle label,
+.dataEdit label{
+	float: left;
+	color: #9f9f9f;
+	width: 20%;
+	height: 35px;
+	text-align: right;
+	line-height: 35px;
+	font-size: 14px;
+	padding: 0 10px 0 8px ;
+	font-weight: 500;
+}
+.boxContent .coordinates{
+	width: 100%;
+	height: 34px;
+}
+.boxContent .local{
+	width: 100%;
+}
+.fa-map-marker{
+	color: #c4c3c3;
+	margin-left: -18px;
+	margin-top:10px;
+	cursor: pointer;
+}
+.boxContent .local input{
+	width: 90% !important;
+
+}
+.boxContent .dataCircle input,
+.boxContent .dataCircle select,
+.dataEdit input,
+.dataEdit select{
+	display: block;
+	float: left;
+	border: 1px solid #e5e6e7;
+	border-radius: 1px;
+	width: 75%;
+	height: 34px;
+	line-height: 32px;
+	font-size: 14px;
+	color: #a7a7a7;
+}
+.boxContent .dataCircle input,
+.dataEdit input{
+	text-indent: 12px;
+}
+.boxContent .dataCircle select,
+.dataEdit select{
+	padding-left: 12px;
+	background: url(../img/select_arrow.png) no-repeat scroll right center transparent;
+}
+.boxContent .info{
+	width: 100%;
+}
+.boxContent .info label{
+	width:10%;
+}
+#otherInfo{
+	width: 86%;
+	border: 1px solid #e5e6e7;
+	height: 100px;
+	color: #c2c2c2;
+	padding-left: 12px;
+	padding-top: 12px;
+	font-family:'微软雅黑';
+}
+.saveSettings{
+	margin: 40px auto;
+	text-align: center;
+	font-size: 14px;
+	margin-bottom:45px ;
+	border-top: 1px solid #1ab394;
+}
+.saveSettings button{
+	background: #1ab394;
+	height: 36px;
+	margin-top: 40px;
+	line-height: 36px;
+	cursor: pointer;
+	text-indent: 55px;
+	letter-spacing: 50px;
+	color: #fff;
+	border-radius: 3px;
+}
+.saveSettings button#savePipe{
+	margin:0 30px;
+}
+.saveSettings button#savePipe:hover,.saveSettings button#delePipe:hover{
+	background: #24c5a4;
+}
+/*日历样式*/
+.daterangepicker{
+	display: none;
+	border: 1px solid rgba(0,0,0,.15) !important;
+	box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+}
+.daterangepicker.dropdown-menu{
+	z-index:99999999 !important;
+}
+
+.layui-layer-shade{
+	display: none !important;
+}
+.confirmInfo ul li{
+	color:rgba(160, 159, 159, 0.93);
+	cursor: pointer;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+	height: 35px;
+	line-height: 35px;
+	padding-left: 20px;
+}
+.confirmInfo ul li:hover{
+	background:#eee ;
+}
+.confirmInfo .fix {
+	width: 277px;
+	padding-left: 20px;
+	height: 28px;
+	line-height: 28px;
+	position: fixed;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+}
+.confirmInfo{
+	height: 294px;
+	overflow: auto;
+}
+/*搜索列表*/
+#searchResultPanel{
+	border:1px solid #C0C0C0;
+	width:150px;
+	height:auto; 
+	display:none;
+	position: absolute;
+	background: #fff;
+}

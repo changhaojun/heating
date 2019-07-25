@@ -1,0 +1,313 @@
+html{
+	background:#f3f3f5 !important;
+	height: 100%;
+}
+.controlStrategy{
+	width:calc(100% - 30px);	
+	background:#f3f3f5;
+	float:left;
+	padding-left: 30px;
+	position: relative;	
+}
+/*top区域*/
+.controlStrategy .accountTop{
+	height:65px;	
+}
+.controlStrategy .accountTop span{
+	padding-top:30px;
+	display: inline-block;
+}
+.controlStrategy .accountTop span:nth-child(1){	
+	margin:0 20px;
+	font-size:24px;
+	color:#5d5d5d;	
+}
+.controlStrategy .accountTop span:nth-child(2){
+	margin-left:5px;
+	font-size:14px;
+	margin-right:5px;
+}
+.controlStrategy .accountTop span:nth-child(2) i{
+	margin-left:5px;
+}
+.controlStrategy .accountTop span:nth-child(2) .fa-dot-circle-o{
+	color: #1ab394;
+}
+.controlStrategy .accountTop span:nth-child(2) .fa-circle{
+	color: #7a7a7c;
+}
+.locationCol{
+	color: #1ab394;
+}
+/*搜索*/
+.controlStrategy .accountTop .search{
+	border:1px solid #c1c1c1;
+	background:#fff;
+	float:right;
+	border-radius: 5px 5px;
+	width:360px;
+	padding:0;
+	height:42px;
+	font-size:15px;
+	margin-top:25px;
+	line-height: 41px;
+}
+.controlStrategy .accountTop i{
+	cursor: pointer;
+}
+.controlStrategy .accountTop .search input:nth-child(1){
+	color:#1ab394;
+	width:321px;
+	height: 41px;
+	padding-left:12px;
+	border-radius: 5px 5px;
+}
+.controlStrategy .accountTop .search i:nth-child(2){
+	color:#1ab394;
+	font-size:14px;
+	cursor: pointer;
+}
+.controlStrategy hr{
+	width:100%;
+	height:4px;
+	background:#e0e0e0;
+	border:0;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+.controlStrategy .localColor{
+	color: #1ab394;
+}
+.strategyMain{
+	background: #fff;
+	padding:20px 20px 0 20px;
+	overflow: hidden;
+	height:778px;
+}
+.strategyMain .left{
+	float:left;
+	width:44.5%;
+	height:778px;
+}
+.strategyMain .right{
+	float:right;
+	width:54.5%;
+	height:456px;
+}
+.strategyMain .righ .timer{
+	float: right;
+    margin-top: 20px;
+    color: #757575;
+    margin-bottom: 20px;
+}
+@media only screen and (max-width:1920px ) {
+	.strategyMain .righ .timer{
+		margin-left: 15%;
+	}
+}
+@media only screen and (max-width:1680px ) {
+	.strategyMain .righ .timer{
+		margin-left: 10%;
+	}
+}
+@media only screen and (max-width:1600px ) {
+	.strategyMain .righ .timer{
+		margin-left: 8%;
+	}
+}
+@media only screen and (max-width:1440px ) {
+	.strategyMain .righ .timer{
+		margin-left: 3.5%;
+	}
+}
+@media only screen and (max-width:1400px ) {
+	.strategyMain .righ .timer{
+		margin-left: 2.2%;
+	}
+}
+@media only screen and (max-width:1366px ) {
+	.strategyMain .righ .timer{
+		margin-left: 1.7%;
+	}
+}
+
+#reservationtime{
+	border: 1px solid #ccc;
+    width: 600px !important;
+    line-height: 40px;
+    text-align: center;
+    color: #1ab394;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+    float: right;
+    margin-bottom: 20px;
+}
+.daterangepicker.opensright .ranges{
+	width:582px;
+	height:50px;
+	float:left;
+	/*text-align:right;*/
+	padding-left:8px;	
+}
+.daterangepicker .ranges .input-mini{
+	width: 105px!important;
+}
+.daterangepicker select{
+	border:1px solid #ccc;
+	text-align:center;
+}
+.rangefooter{
+	height:290px;
+	width:580px;
+}
+.rangefooter .right{
+	display: inline-block !important;
+	float:left;
+	
+}
+.rangefooter .left{
+	display: inline-block !important;
+	float:right;
+    margin-right: 20px!important;
+}
+.right .daterangepicker td.active,.right .daterangepicker td.active:hover{
+	background: #1ab394 ! important;
+	border-radius: 5px 5px;
+}
+
+.applyBtn{
+	background:#1ab394;
+	color:#fff;
+	margin-left:10px;
+}
+.btn-small{
+	margin-top:20px;
+}
+.btn{
+	padding: 5px 12px;
+}
+.boxList{
+	background: #fff;
+	width: 100%;
+}
+.boxList{
+	width: 100%;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+}
+.table{
+	font-size:1.1em;
+	font-family:"微软雅黑";
+	color:black;
+	border-radius: 5px;
+}
+.table>tbody>tr>td, 
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th, 
+.table>thead>tr>td,
+.table>thead>tr>th{
+	cursor: pointer;
+	height: 60px;
+	line-height: 46px;
+	border-style:none;
+	border-width:0;
+	border-bottom: 1px solid #ddd;
+	font-size: 15px;
+	font-weight: 100;
+	padding: 0;	
+}
+.table>thead>tr>th{
+	font-family: "微软雅黑";
+	font-size: 15px;
+	color:#606060;
+	font-weight: bolder;
+	
+}
+.table>tbody>tr>td:nth-of-type(1),.table>thead>tr>th:nth-of-type(1){
+	padding-left:20px ;
+}
+.table>tbody>tr td b{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	background: #3B3B3B;
+	border-radius: 50%;
+	text-align: center;
+	color: #1ab394;
+	margin-right: 5px;
+}
+.table>thead>tr>th{
+	color:#515151;
+	border: 0;
+}
+.table>tbody>tr{
+	color: #a3a3a3;
+}
+.table>tbody>tr.borderColor {
+	border-left:3px solid #1ab394 ;
+	color: #1ab394;
+}
+.table thead>tr{
+	background: #f9f9f9;
+}
+.table tbody tr:nth-of-type(2n+1){
+	background: #fff;
+}
+.table tbody tr:nth-of-type(2n+2){
+	background: #f9f9f9;
+}
+.table tbody tr:hover{
+	color:#1ab394 ;
+}
+.table tbody tr td.color1{
+	color: #A3A3A3;
+}
+.table tbody tr td.color0{
+	color: #f00;
+}
+#heatEachart{
+	width:100%;
+	height:778px;
+}
+.confirmInfo {
+    padding: 10px 20px;
+}
+.oboxList .bootstrap-table .fixed-table-container .fixed-table-pagination{
+	display: none !important;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover{
+	background:#1AB394 !important;
+}
+/*弹窗的内容*/
+.confirmInfo{
+	padding:10px 20px;
+}
+.confirmInfo p{
+	width:100%;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.infoDetails{
+	border:1px solid #ccc;
+	width: 100%;
+    height: 150px;
+    resize: none;
+}
+.submitButton{
+	text-align: center;
+	margin-top: 10px;
+	border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+#submitInfo{
+	width:197px;
+	height:40px;
+	background-color: #19b293;
+	border-radius:25px;
+	color:white;
+	word-spacing: 10px;
+	cursor:pointer;
+}

@@ -1,0 +1,185 @@
+html{
+	background:#f3f3f5 !important;
+	height: 100%;
+}
+a:hover{
+	text-decoration: none!important;
+}
+
+.monthReport{
+	width: calc(100% - 30px);
+    background: #f3f3f5;
+    float: left;
+    padding-left: 30px;
+    position: relative;
+}
+.monthList .listTop{
+	height: auto;
+	overflow: hidden;
+	background: #fff;
+	margin: 15px 0;
+	padding: 15px 0;
+} 
+.monthList .listContent{
+	background: #fff;
+}
+.monthList .listTop span{
+	color: #999;
+}
+#reservationtime {
+    border: 1px solid #ccc;
+    width: 435px !important;
+    line-height: 35px;
+    text-align: center;
+    color: #9096a4;
+    cursor: pointer;
+}
+.monthList .listTop button {
+    border: 1px solid #1AB394;
+    color: #1AB394;
+    padding: 7px 25px;
+    margin-left: 25px;
+    border-radius: 4px;
+    width: 108px;
+    white-space: nowrap;
+}
+.monthList .listTop .btnColor {
+    background: #1AB394;
+    color: #fff;
+}
+.monthList .listTop span:nth-child(7){
+	float: right;
+    color: #1ab394;
+    margin-right: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+    padding: 6px 12px;
+}
+.monthList .listTop span:nth-child(8){
+	float: right;
+    color: #1ab394;
+    margin-right: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+    padding: 6px 12px;
+}
+
+@media only screen and (max-width:1920px ) {
+	#reservationtime{
+		width: 600px;
+	}
+	.monthList .listTop button{
+		margin-left: 60px;
+		width: 130px;
+	}
+}
+@media only screen and (max-width:1680px ) {
+	#reservationtime{
+		width: 580px;
+	}
+	.monthList .listTop button{
+		margin-left: 50px;
+		width: 108px;
+	}
+}
+@media only screen and (max-width:1600px ) {
+	#reservationtime{
+		width: 550px;
+	}
+	.monthList .listTop button{
+		margin-left: 45px;
+		width: 108px;
+	}
+}
+@media only screen and (max-width:1440px ) {
+	#reservationtime{
+		width: 500px;
+	}
+	.monthList .listTop button{
+		margin-left: 20px;
+		width: 108px;
+	}
+}
+@media only screen and (max-width:1400px) {
+	#reservationtime{
+		width: 450px;
+	}
+	.monthList .listTop button{
+		margin-left: 20px;
+		width: 108px;
+	}
+}
+@media only screen and (max-width:1366px ) {
+	#reservationtime{
+		width: 435px;
+	}
+	.monthList .listTop button{
+		margin-left: 20px;
+		width: 108px;
+	}
+}
+
+
+/*time*/
+.datetimepicker thead tr th:nth-child(2){
+	text-align: center;
+}
+tfoot .today{
+	padding: 0!important;
+	height: 0;
+}
+
+/*导出报表*/
+.glyphicon{
+	color:#1ab394;
+}
+
+/*table*/
+caption{
+	display: none;
+}
+.fixed-table-container{
+	clear: none;
+}
+#reportList thead th{
+	text-align: center;
+	color: #fff!important;
+	font-size: 15px;
+	font-weight: initial;
+	border-right: 1px solid #ccc;
+    background: #1ab394!important;
+    border-bottom: 0;
+}
+#reportList thead tr th:first-child{
+	border-radius: 4px 0 0 0;
+}
+#reportList thead tr th:last-child{
+	border-radius: 0 4px 0 0;
+	border-right: 0
+}
+#reportList tbody tr{
+	color:#999;
+}
+#reportList tbody tr:nth-child(even){
+	background: #f9f9f9;
+}
+#reportList tbody td{
+	border:1px solid #eee;
+	text-align: center;
+}
+#reportList tbody tr:first-child{
+	border-top:1px solid transparent;
+}
+
+/*returnTop*/
+.returnTop{
+	position: fixed;
+    bottom: 10px;
+    right: 25px;
+    width: 52px;
+    height: 72px;
+    text-align: center;
+    display: none;
+}
+
+

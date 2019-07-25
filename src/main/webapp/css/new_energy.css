@@ -1,0 +1,195 @@
+/*图表头部样式*/
+.chartMain{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+.chartMain .dataTop{
+	width: 100%;
+	color: #1ab394;
+	font-size: 17px;
+	padding:  0 20px;
+	height: 43px;
+	line-height: 43px;
+	border-bottom: 1px solid #e8e8e8;
+	overflow: hidden;
+}
+.chartMain .dataTop span.stationName{
+	float: left;
+	width: 50%;
+	height: 100%;
+	border-right: 1px solid #C0C0C0;
+}
+.chartMain .dataTop .dataTime{
+	float: right;
+	
+}
+.chartMain .dataTop .dataTime .form-control{
+	border: none;
+	height: auto;
+	color:#1ab394 ;
+	cursor: pointer;
+}
+.chartMain .selectData{
+	padding:0 0 0 20px ;
+	height: auto;
+	overflow: hidden;
+}
+.chartMain .selectData li{
+	float: left;
+	cursor: pointer;
+	color: #484848;
+	padding: 20px  20px ;
+}
+.chartMain .selectData li b{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-top: -5px;
+	margin-right:5px ;
+	background: #1AB394;
+}
+.chartMain .dataTop span.energy{
+	float: left;
+    width: 100% !important; 
+    border-right: none !important;
+}
+
+/*图表样式*/
+.allChart{
+	overflow: hidden;
+	border-bottom: 1px solid #e8e8e8;
+}
+/*左边样式*/
+.allChart .chartLeft{
+	width: 75%;
+}
+.allChart .chartLeft p{
+	padding-left: 50px;
+	color: #1AB394;
+	padding-top: 15px;
+}
+/*折线图*/
+#chartContent ,#hotContent{
+	height:300px ;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: -20px;
+}
+/*右边样式*/
+.chartRight{
+	width: 25%;
+	border-left:1px solid #1AB394 ;
+	margin-top: 10px ;
+}
+.chartRight ul li{
+	width:168px;
+	margin: 0 auto;
+	text-align:center ;
+	margin-bottom: 10px;
+}
+.chartRight ul li dl{
+	width: 168px;
+}
+.chartRight ul li dt{
+	font-size: 14px;
+	font-weight: 100;
+	margin-bottom: 5px;
+}
+.chartRight ul li:nth-of-type(1) dt{
+	color: #1AB394;
+}
+.chartRight ul li:nth-of-type(2) dt{
+	color: #26c6da;
+}
+.chartRight ul li:nth-of-type(3) dt{
+	color: #ffa726;
+}
+.chartRight ul li dd:nth-of-type(1){
+	width: 168px;
+	height: 80px;
+	text-align: center;
+	border:2px solid #1AB394 ;
+	border-radius:  168px 168px 0 0 ;
+	-webkit-border-radius:  168px 168px 0 0 ;
+	margin-bottom: 5px;
+	font-size:14px ;
+	color:#1AB394;
+}
+.chartRight ul li dd:nth-of-type(2){
+	width: 168px;
+	height: 80px;
+	text-align: center;
+	border-radius:0 0  168px 168px  ;
+	-webkit-border-radius: 0 0 168px 168px  ;
+	border:2px solid #55c9b2 ;
+	font-size:14px;
+	color:#55c9b2;
+}
+.chartRight ul li:nth-of-type(2) dd:nth-of-type(1){
+	border-color: #26c6da;
+	color:#26c6da;
+}
+.chartRight ul li:nth-of-type(2) dd:nth-of-type(2){
+	border-color: #8bcad2;
+	color:#8bcad2;
+}
+.chartRight ul li:nth-of-type(3) dd:nth-of-type(1){
+	border-color: #ffa726;
+	color:#ffa726;
+}
+.chartRight ul li:nth-of-type(3) dd:nth-of-type(2){
+	border-color: #ffcb7e;
+	color:#ffcb7e;
+}
+
+.chartRight ul li dd span{
+	font-size: 28px;
+	display: inline-block;
+	width: 100%;
+	margin-top: 8px;
+}
+/*南丁格尔图*/
+div#diagram{
+	margin-top: 10px;
+	margin-left: 50px;
+	overflow: hidden;
+}
+#diagram .chartTitle{
+	height: 43px;
+	line-height: 43px;
+	font-size: 16px !important;
+	color: #1AB394;
+	font-weight: 700;
+   /* color: #4C4C4C;*/
+    
+}
+
+#diagram ol li{
+	width: 350px;
+	height: 330px;
+	border: 2px solid #e0e0e0;
+	border-radius: 3px;
+	margin-right: 60px;
+	float: left;
+	margin-bottom: 20px;
+}
+#diagram ol li>p{
+	font-size: 14px;
+	color: #333;
+	height: 45px;
+	line-height: 46px;
+	padding-left: 10px;
+	background: #f9f9f9;
+	border-bottom: 1px solid #f3f3f3;
+}
+#diagram ol li>div{
+	width: 100%;
+	height: calc(100% - 45px);
+	margin: 0 auto;
+}
+.layui-layer{
+	box-shadow: 8px 8px rgba(0,0,0,.5) !important;
+}

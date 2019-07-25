@@ -1,0 +1,332 @@
+body,html{
+	width: 100%;
+	height: 100%;
+}
+#wrapperFactory{
+	width: 100%;
+	height: 100%;
+    background: #f3f3f4;
+    float: left;
+    position: relative;
+    min-width: 1366px; 
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 20px;
+}
+.accountTop span{
+	padding-top:25px;
+	display: inline-block;
+}
+.accountTop span:nth-child(1){
+	font-size:22px;	
+	margin-left:20px;
+	color:#5d5d5d;	
+}
+.accountTop span:nth-child(2){
+	margin-left:5px;
+	margin-right:5px;
+}
+.current_page{
+	color:#1ab394;		
+}
+.accountTop+hr{
+	width:100%;
+	height:4px;
+	background:#e0e0e0;
+	border:0;
+	display: inline-block;
+}
+
+.companyBox{
+	height:55px;
+	width:100%;
+	border-bottom:2px solid #1ab394;
+	position: relative;
+	/*overflow: hidden;*/
+}
+.companyBox .companyList{
+	height:53px;
+	position: absolute;
+	top:0;
+	left:0;
+}
+.companyBox .companyList li{
+	float:left;
+	height:100%;
+	width:207px;
+	line-height:53px;
+	text-align:center;
+	color:#1ab394;
+	cursor: pointer;
+}
+.companyList .active {
+    background: #1ab394;
+    color: #fff;
+}
+.companyBox .companyList li .fa-plus{
+	display:none;
+	color:#fff;
+	 transition:All 0.4s ease-in-out;
+    -webkit-transition:All 0.4s ease-in-out;
+    -moz-transition:All 0.4s ease-in-out;
+    -o-transition:All 0.4s ease-in-out;
+}
+.companyBox .companyList li:hover{
+	background:#1ab394;
+	color:#fff;
+}
+.companyBox .companyList li:hover .fa-plus{
+	display: inline-block;
+    font-size: 14px;
+    width: 30px;
+    height: 50px;
+    color:#fff;
+    margin-top: 2px;
+    transform:rotate(180deg);
+	-ms-transform:rotate(180deg); /* Internet Explorer */
+	-moz-transform:rotate(180deg); /* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg); /* Opera */
+	translateZ(z)
+}
+.companyBox .fa{
+	display: inline-block;
+	position: absolute;
+	color:#1ab394;
+	width:70px;
+	height: 53px;
+	line-height:53px;
+	font-size:22px;
+	z-index:9;
+	text-align:center;
+	cursor: pointer;
+}
+.companyBox .left{
+	left:0px;
+}
+.companyBox .right{
+	right:0px;
+}
+.companyBox .left:hover{
+	background:rgba(216,242,237,0.5);
+}
+.companyBox .right:hover{
+	background:rgba(216,242,237,0.5);
+}
+.companyBox .companyList .active{
+	background:#1ab394;
+	color:#fff;
+}
+.companyBox .companyList .active .fa-plus{
+	
+	display: inline-block;
+    font-size: 14px;
+    width: 30px;
+    height: 50px;
+    color:#fff;
+    margin-top: 2px;
+}
+.companyTableBox{
+	margin-top: 10px;
+	width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.table {
+    margin-bottom: 0;
+}
+
+.table tbody>tr {
+	border:none;
+	border:0;
+    border-left:3px solid transparent;
+    line-height: 46px;
+    height: 46px;
+}
+.table tbody>tr:hover{
+	border-left:3px solid #1ab394 ;
+	color: #1ab394 ;
+}
+.table>tbody>tr>td:nth-of-type(1), .table>thead>tr>th:nth-of-type(1) {
+    padding-left: 20px;
+}
+
+.table>thead>tr>th {
+    color: #515151;
+    border: 0;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 0;
+}
+.table>tbody>tr>td{
+	padding: 12px;
+	border:none;
+}
+.table tbody tr:nth-of-type(2n+1) {
+    background: #f9f9f9;
+}
+.dataInfo {  
+    overflow: hidden;
+    background: #fff;
+}
+.boxContent {
+    padding: 10px 10px;
+}
+.boxContent .equipment {
+    position: relative;
+    height: 44px;
+    line-height: 44px;
+    color: #39bda2;
+    font-size: 16px;
+    border-bottom: 1px solid #1ab394;
+}
+.boxContent .dataCircle {
+    width: 50%;
+    float: left;
+    padding-top: 40px;
+    position: relative;
+}
+.boxContent .dataCircle label {
+    float: left;
+    color: #9f9f9f;
+    width: 145px;
+    height: 35px;
+    text-align: right;
+    line-height: 35px;
+    font-size: 14px;
+    padding: 0 10px 0 8px;
+    font-weight: 500;
+}
+.boxContent .dataCircle input, .boxContent .dataCircle select {
+    display: block;
+    float: left;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    width: 80%;
+    height: 34px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #a7a7a7;
+    padding-left: 15px;
+}
+.boxContent .dataCircle input:focus,.boxContent .dataCircle select:focus,#otherInfo:focus{
+	border: 1px solid #1ab394;
+}
+.fa-map-marker {
+    color: #c4c3c3;
+    margin-left: -18px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.boxContent .info {
+    width: 100%;
+}
+#otherInfo {
+    width: 90%;
+    border: 1px solid #e5e6e7;
+    height: 100px;
+    color: #a7a7a7;
+    padding-left: 12px;
+    padding-top: 12px;
+}
+.saveSettings {
+    margin: 40px auto;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 45px;
+    border-top: 1px solid #1ab394;
+    clear: both;
+}
+.saveSettings button {
+    width: 300px;
+    background: #1ab394;
+    height: 36px;
+    margin-top: 40px;
+    line-height: 36px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.boxContent .dataCircle select {
+    padding-left: 12px;
+    background: url(../img/select_arrow.png) no-repeat scroll right center transparent;
+}
+.companyContainer{
+	position: relative;
+	
+}
+/*地图样式*/
+#allmap{
+	height: 100%;
+	width: 100%;
+}
+[v-cloak]{display:none}
+.company.active{
+	background: #1ab394;
+	color:#fff;
+}
+.addBtn{
+	display: inline-block;
+    font-size: 14px;
+    width: 30px;
+    height: 50px;
+    color: #fff;
+    margin-top: 2px;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+color: #a7a7a7; 
+} 
+input:-moz-placeholder, textarea:-moz-placeholder { 
+color: #a7a7a7; 
+} 
+input::-moz-placeholder, textarea::-moz-placeholder { 
+color: #a7a7a7; 
+} 
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+color: #a7a7a7; 
+} 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0; 
+}
+input[type="number"]{-moz-appearance:textfield;
+}
+.table>tbody>tr .fa {
+    color: #1ab394;
+    margin-right: 20px; 
+    margin-top: 8px;
+    cursor: pointer;
+}
+.el-tooltip__popper.is-dark {
+    background: #fff !important;
+    color: #1ab394 !important;
+    border:1px solid rgb(204,204,204)
+}
+.el-tooltip__popper[x-placement^=top] .popper__arrow::after {
+    
+    border-top-color: rgb(204,204,204) !important;
+    
+}
+.el-tooltip__popper[x-placement^=top] .popper__arrow {  
+    border-top-color: rgb(204,204,204) !important;
+}
+.el-tooltip__popper {
+    
+    line-height: 0.5 !important;
+}
+.areaUnit{
+	position: absolute;
+	font-size: 13px;
+	color:#9f9f9f;
+	bottom: 10px;
+	right: 7%;
+}
+.subPage{
+	cursor: pointer;
+}

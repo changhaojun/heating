@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/layer/skin/layer.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/font-awesome/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/real_data.css" media="screen"/>
+		<style type="text/css" media="print">
+			.rcontent{
+				background:#fff !important;		
+				margin-bottom:0;
+				margin-right:0;
+				padding-right:0;
+				margin:0;
+				padding:0;
+			}
+			.rcontent .caption{
+				display: block;
+				text-align: center;
+				margin-bottom:10px;		
+			}
+			.rcontent #dtuList tbody td{
+				text-align:right !important;
+				color:#909090 !important;
+				border:1px solid #e8e8e8 !important;
+				margin:0;
+				padding:0;
+				vertical-align: middle;
+			}
+			.rcontent #dtuList tbody td:nth-child(1){
+				text-align:center !important;
+			}
+			.rcontent #dtuList thead td{
+				color:#1c9c83 !important;
+				border:1px solid #e8e8e8 !important;
+				text-align:center;
+			}			
+			#dtuList thead tr:nth-child(1) td{
+				background:#1C9C83;
+				color:#fff !important;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="realData">
+			<input type="text" id="companyCode" hidden="hidden" value=${companyCode} />
+			<input type="text" id="companyId" hidden="hidden" value=${companyId} />
+			<div class="header">
+				<div class="excel_o"><a href="" id="excel_o"><i class="fa fa-file-excel-o"></i>导出</a></div>
+				<div class="print"><i class="fa fa-print"></i>打印</div>	
+			</div>
+		
+			<div class="rcontent">
+				<div class="caption" style="display: none;">实时监测</div>
+				<table class="table" id="dtuList">					
+						<thead>
+							<tr>
+								<td colspan="3">换热站信息</td>
+								<td colspan="8" >一次网监测数据</td>
+								<td colspan="4" >二次网监测数据</td>
+							</tr>
+							<tr>
+								<td >站名</td>
+								<td >采集时间(日)</td>
+								<td id="data_time">供热面积(㎡)</td>							
+								<td id="15">阀位反馈</td>
+								<td id="5">供温(℃)</td>
+								<td id="3">回温(℃)</td>
+								<td id="12">供压(MPa)</td>
+								<td id="13">回压(MPa)</td>
+								<td id="4">瞬时流量(m³/h)</td>
+								<td id="19">累计流量(m³/h)</td>
+								<td id="21">累计热量(GJ)</td>
+								<td id="14">供温(℃)</td>
+								<td id="16">回温(℃)</td>
+								<td id="18">供压(MPa)</td>
+								<td id="22">回压(MPa)</td>								
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+				</table>
+			</div>
+		
+		</div>
+		<div class="returnTop"><img src="../img/returnTop.png"/></div>
+	</body>
+	<script src="../js/public_resources.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../plugins/jQuery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/bootstarp/export/jquery.table2excel.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/printThis-master/printThis.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/real_data.js" type="text/javascript" charset="utf-8" async></script>
+</html>

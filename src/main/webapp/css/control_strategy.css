@@ -1,0 +1,451 @@
+html{
+	background:#f3f3f5 !important;
+	height: 100%;
+}
+.controlStrategy{
+	width:calc(100% - 30px);	
+	background:#f3f3f5;
+	float:left;
+	padding-left: 30px;
+	position: relative;	
+}
+/*top区域*/
+.controlStrategy .accountTop{
+	height:65px;	
+}
+.controlStrategy .accountTop span{
+	padding-top:30px;
+	display: inline-block;
+}
+.controlStrategy .accountTop span:nth-child(1){	
+	margin:0 20px;
+	font-size:24px;
+	color:#5d5d5d;	
+}
+.controlStrategy .accountTop span:nth-child(2){
+	margin-left:5px;
+	font-size:14px;
+	margin-right:5px;
+}
+.controlStrategy .accountTop span:nth-child(2) i{
+	margin-left:5px;
+}
+.controlStrategy .accountTop span:nth-child(2) .fa-dot-circle-o{
+	color: #1ab394;
+}
+.controlStrategy .accountTop span:nth-child(2) .fa-circle{
+	color: #7a7a7c;
+}
+.locationCol{
+	color: #1ab394;
+}
+/*搜索*/
+.controlStrategy .accountTop .search{
+	border:1px solid #c1c1c1;
+	background:#fff;
+	float:right;
+	border-radius: 5px 5px;
+	width:360px;
+	padding:0;
+	height:42px;
+	font-size:15px;
+	margin-top:25px;
+	line-height: 41px;
+}
+.controlStrategy .accountTop i{
+	cursor: pointer;
+}
+.controlStrategy .accountTop .search input:nth-child(1){
+	color:#1ab394;
+	width:321px;
+	height: 41px;
+	padding-left:12px;
+	border-radius: 5px 5px;
+}
+.controlStrategy .accountTop .search i:nth-child(2){
+	color:#1ab394;
+	font-size:14px;
+	cursor: pointer;
+}
+.controlStrategy hr{
+	width:100%;
+	height:4px;
+	background:#e0e0e0;
+	border:0;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+.controlStrategy .localColor{
+	color: #1ab394;
+}
+/*策略内容*/
+.strategyMain{
+	
+}
+.strategyNavBox{
+	width: 100%;
+	border-bottom: 3px solid #e0e0e0;
+	height: 50px;
+	position: relative;
+}
+.strategyNavBox li{
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	color:#1ab394;
+    line-height: 46px;
+    padding: 0 20px;
+    font-size: 20px;
+    border-bottom: 3px solid #1ab394;
+}
+.strategySubNavBox{	
+	height: 50px;
+	padding-top:10px;
+	margin: 15px 0 20px;
+	overflow: hidden;	
+}
+.strategySubNavBox li{
+	overflow: hidden;
+	float: left;
+	height: 40px;
+	width: 182px;
+	padding:10px 50px;
+	background: #fff;
+	cursor: pointer;	
+}
+.strategySubNavBox li:first-child{
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.strategySubNavBox li:last-child{
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.strategySubNavBox li>div{
+	float: left;
+}
+.strategyCheckbox{
+	width: 15px;
+    height: 15px;
+    background: #FAFAFA;
+    border: 1px solid #D5D5D5;
+    margin-top: 3px;
+    margin-right:10px;
+}
+.strategySubNavText{
+	color:#979797;
+	font-size: 14px;
+}
+.strategySelectedCheckbox{
+	width: 7px;
+    height: 7px;
+    margin: 3px auto;
+    background-color: #1ab394;
+    border-radius: 50%;
+}
+.chartBox{
+	width: 100%;
+	height: 350px;	
+}
+.chartBoxLeft{
+	float: left;
+	width: 1200px;
+	height: 100%;
+	position: relative;
+	background-color: #fff;
+	margin-right: 20px;
+}
+.chartBoxRight{
+	float: left;
+	width: 220px;
+	height: 100%;
+	background-color: #fff;
+	position: relative;
+	background-color: #fff;
+}
+
+.topRight{
+    width: 27px;
+    height: 37px;
+    position: absolute;
+    top: -17px;
+    right: -9px;
+    background: #f3f3f5;
+    transform: rotate(-50deg);
+    -ms-transform: rotate(-50deg);
+    -moz-transform: rotate(-50deg);
+    -webkit-transform: rotate(-50deg);
+    -o-transform: rotate(-50deg);
+}
+.chartBoxTitle{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #E2E2E2;
+	color:#1ab394;
+	font-size: 14px;
+	padding-left: 15px;
+}
+.chartBoxContent{
+	height: calc( 100% - 40px );
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+}
+.chartBoxLeft .table,
+.chartBoxRight .table{
+	width: 50%;
+    float: left;
+}
+/*图表容器*/
+.chatContent{
+	width: calc( 100% - 220px );
+	height: calc( 100% - 40px );
+	float: left;
+}
+.tableBox{
+	float: right;
+	width: 220px;
+	padding:10px;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.chartBoxContent .tableContent{
+	width: 200px;
+	height: calc( 100% - 40px );
+	overflow: auto;	
+}
+.tableTitleBox{
+	width: 200px;
+	height: 40px;
+	
+}
+.tableTitleBox div{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #F9F9F9;
+	border:1px solid #ddd;
+}
+.tableTitleBox div.outdoor{
+	border-right: none;
+}
+.dragBox{
+	width: 800px;
+	height: auto;
+	background-color: #fff;
+	margin-top: 20px;
+	position: relative;
+	padding:40px 15px 30px;
+}
+.dragBox.pressureBox{
+	height: 190px;
+}
+.dragItemBox{
+	overflow: hidden;
+	padding-top: 10px;
+}
+.dragItemBox>div{
+	float: left;
+}
+.dragItemChart{
+	margin-right: 15px;
+	width: calc( 100% - 190px );
+	margin-top: -12px;
+}
+.dragItemTitle{
+	width: 110px;
+}
+.el-slider__bar{
+	height: 12px !important;
+	background-color: #47C1A8 !important;
+}
+.el-slider__button {
+    width: 17px !important;
+    height: 17px !important;
+    background-color: #f0f0f0 !important;
+    border: 1px solid #ddd;
+}
+.el-slider__button-wrapper {
+	top: -13px !important;
+}
+.el-slider__runway{
+	height: 12px !important;
+	background-color: #E0E7EF !important;
+}
+.el-slider__button:hover {
+    background-color: #f0f0f0 !important;
+}
+.el-tooltip__popper.is-dark {
+    background: #1ab394 !important;
+    padding: 10px 15px !important;
+    border-radius: 20px !important;
+}
+.el-tooltip__popper[x-placement^=top] .popper__arrow::after {
+    border-top-color: #1ab394 !important;
+}
+.el-tooltip__popper[x-placement^=top] .popper__arrow {
+    border-top-color:  #1ab394 !important;
+}
+.btnGroup{
+	height: 40px;
+	width: 350px;
+	margin: 30px auto;
+}
+.btnGroup button{
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;	
+	border-radius: 20px;
+	float: left;	
+	background: transparent;
+	border:1px solid #ddd;
+	color:#ddd;
+}
+
+.btnGroup button.cancelChange{
+	float: right;
+}
+.btnGroup button.saveChanges.usable{
+	background: #F25B62;
+	border:1px solid #F25B62;
+	color:#fff;
+}
+.btnGroup button.cancelChange.usable{
+	color:#656766;
+	border:1px solid #656766;
+	background: transparent;
+}
+
+/*滚动条样式*/
+div::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+div.tableContent::-webkit-scrollbar {
+  width: 0px;
+  height: 8px;
+}
+div::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #dbdbdb;
+  border-radius: 4px;
+  background-clip: border-box;
+}
+/*滚动条样式结束*/
+[v-cloak] {
+ display: none;
+}
+.chartBox .chartBoxLeftHide{
+	position: absolute;
+	top:1000px;
+	left:0;
+}
+.table {
+    margin-bottom: 0;
+}
+.tableContent .table tr:first-child>td {
+    border-top: none;
+}
+.table>thead>tr>th {
+    text-align: center;
+    background-color: #F9F9F9;
+    border: 0;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    font-weight: 100;
+    padding: 0;
+}
+.outdoorTable.table>thead>tr>th,
+.outdoorTable.table>tbody>tr>td{
+	border-right: none;
+}
+.table tbody>tr {
+	
+	border:0;   
+    line-height: 30px;
+    height: 30px;
+}
+
+.table>tbody>tr>td{
+	text-align: center;
+	padding: 8px;
+	border:1px solid #ddd;
+}
+.table tbody>tr td:hover{		
+	background-color: #F5F5F5;
+}
+.outdoorTable.table tbody>tr td:hover{
+	background-color: #fff;
+}
+.table>tbody>tr>td input{
+	width: 40px;
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+	
+}
+.table>tbody>tr>td span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	float: right;
+	opacity: 0;
+}
+.table>tbody>tr>td:hover span{
+	opacity: 1;
+}
+.tableContent{
+	width: 100%;
+	height:calc( 100% - 40px );
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+input[type=number] {  
+    -moz-appearance:textfield;  
+}  
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button {  
+    -webkit-appearance: none;  
+    margin: 0;  
+} 
+.issuedPassword {
+    font-size: 13px;
+    padding-left: 10px;
+    margin-left: 5px;
+    height: 23px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);   
+    border-radius: 3px;
+} 
+.notConfigured{
+	padding: 11px 0;
+}
+.table>tbody>tr>td.errorVal{
+	border:1px solid red !important;
+}
+.savePwd{
+	margin-top: 5px;
+}
+.savePwd input{
+	margin-left: 6px;
+    vertical-align: sub;
+}

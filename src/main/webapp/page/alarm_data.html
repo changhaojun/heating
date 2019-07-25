@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/layer/skin/layer.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css">
+		<link href="../css/alarm_data.css" rel="stylesheet" type="text/css" />
+		<style>
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="stationId" hidden="hidden" value=${stationId} />
+
+		<div class="alarmEntity" id="alarmConfig" v-cloak>
+			<div class="alarmTop">
+				<span>数据配置</span>
+				<span style="font-size:14px;" class="thingName">/&nbsp;当前位置:&nbsp;<a href="/boxlist" style="color: #333;">换热站数据配置</a>&nbsp;></span>
+				<span style="font-size:14px;">${stationName}</span>
+				<!--<span class="search">
+
+					<input  type="text" placeholder="请输入关键字查找" id="searchId"/>
+					<i class="fa fa-search" onclick="searchThing($('#searchId'))"></i>
+				</span>-->
+				<hr>
+			</div>
+			<div class="IContent clearfix">
+				<div class="noConfig">
+					<ul>
+						<li v-for="(item,index) in noConfigData">
+							<p>{{ !item.data_name ? 'null' : item.data_name  }}</p>
+							<p>
+								<em>未配置</em>
+								<i class="fa fa-tags"  @click="confoigLabel(index,$event)" data-toggle="tooltip" data-placement="top" title=""  data-original-title="标签"></i>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="config">
+					<div class = 'collectorData'>
+						<h3>采集数据</h3>
+						<div class = 'oneNetData'>
+							<h5>一网数据</h5>
+							<ol>
+							</ol>
+
+						</div>
+						<div class = 'towNetData'>
+							<h5>二网数据</h5>
+							<ol>
+							</ol>
+						</div>
+					</div>
+					<div class = 'deliveryData clearfix'>
+						<h3 style="margin-top: 10px;">下发数据</h3>
+						<div class = 'oneNetData'>
+							<h5>一网下发</h5>
+						</div>
+						<div class = 'towNetData'>
+							<h5>二网下发</h5>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--弹窗内容-->	
+			<div class="confirmInfo" hidden="hidden">
+				<div class="fix">
+					<input type="text" placeholder="请输入关键字查找" id="searchData"/>
+					<i class="fa fa-search"></i>
+					<p><span id="deleConfig">取消配置</span></p>
+
+				</div>
+				<ul class="selectedUl">
+					
+				</ul>	
+			</div>
+
+		</div>
+		<div class="alarmSet" hidden="hidden">
+			<input type="number" id="dataMin" placeholder="请输入最小值"  num-limit="limit"> ~
+			<input type="number" id="dataMax" placeholder="请输入最小值"  num-limit="limit">
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
+		<script src="https://cdn.bootcss.com/vue/2.0.3/vue.min.js"></script>
+	    <script src="../plugins/bootstarp/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript" src="../js/public_resources.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+	    <script type="text/javascript" src="../js/alarm_data.js?1.01"></script>
+	</body>
+</html>

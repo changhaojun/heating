@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../plugins/layer/skin/layer.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link href="../css/energy.css" rel="stylesheet" type="text/css" />
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=tsNG4E4zQrrMYVH69GGXaAkQ0fSDjpsy" type="text/javascript" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+	</head>
+	<body>
+		<div class="map">
+		    <div class="left" id="searchData">
+		        <div class="top" style="height: auto;overflow: hidden;">
+		            <input type="text" value="请输入关键字查找" id="searchId"/>
+		            <button id="search_button" data-title="搜索"></button>
+		        </div>
+		        <ul class="cardlist">
+		           
+		        </ul>
+		    </div>
+		    <div class="right">
+		        <div class="top">
+		            <div class="citychangeopt">
+		                <u class="city_inner">
+		                    <span style="cursor: pointer;"></span>
+		                    <em></em>
+		                </u>
+		            </div>
+		            <div class="pointer">
+		                <div class="energy">
+		                    <!--<b></b>-->
+		                    <!--<span></span>-->
+		                    <i></i>
+		                </div>
+		                <div class="area">
+		                    <!--<b></b>-->
+		                    <i></i>
+		                </div>
+		                <div class="clog">
+		                    <img src="../img/data0.png"  style="width: 16px; cursor: pointer; height: 16px; margin-top: 9px;"/>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="company_name" style="display: none;">
+		            <div class="listTop">
+		                <u style="cursor: pointer; text-decoration: none;"><span class="sColor"></span></u>
+		                <span class="fa fa-remove"></span>
+		            </div>
+		            <ul class="company_ul">
+		                
+		            </ul>
+		        </div>
+		    </div>
+		    <!--地图容器-->
+		    <div id="allMap" style="height: 100%"></div>
+		</div>
+		<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../plugins/layer/layer.min.js"></script>
+	    <script type="text/javascript" src="../plugins/vue/dist/vue.min.js"></script>
+	    <script type="text/javascript" src="../js/public_resources.js"></script>
+	    <script type="text/javascript" src="../js/energy.js"></script>
+	</body>
+</html>

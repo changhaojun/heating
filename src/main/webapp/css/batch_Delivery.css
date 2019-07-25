@@ -1,0 +1,162 @@
+body,html{
+	height: 100% !important;
+}
+.deliveryCon{
+	height: 100%;
+	width:100%;
+	position: relative;
+	overflow: hidden;
+}
+
+/*选项卡样式*/
+/*canvas样式*/
+.batchDelivery{
+	height: 100%;
+    position: relative;
+}
+.batchLeft{
+	width: 260px;
+	/*margin: 60px 0 0 0;*/
+	float: left;
+	/*padding-top:60px ;*/
+	position: fixed;
+	left: 0;
+	/*position: absolute;*/
+	top:50%;
+	margin-top: -100px;
+}
+.batchLeft .canvasCon{
+	margin-left: 55px;
+	margin-right:37px ;
+}
+/*下发样式*/
+.deliveryBtn{
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	background: #1ab394;
+	border-radius: 15px;
+	color: #FFFFFF;
+	margin-left:90px;
+	margin-top:-5px ;
+	position: relative;
+	top: -30px;
+}
+.deliveryDate{
+	color: #b5b5b5;
+	width: 273px;
+	margin-left: 0;
+	/*margin: 28px auto;*/
+	text-align: center;
+	margin-top: -18px;
+}
+/*下发右边*/
+/*.batchRight::-webkit-scrollbar{width:3px;background-color:#1ab394;}
+.batchRight::-webkit-scrollbar-thumb{
+	background-color:#69b201;
+	-webkit-border-radius:4px;
+}*/
+.batchRight{
+	float: left;
+	margin-top: 60px;
+	margin-right: 8px;
+	margin-bottom: 60px;
+	border-left:1px solid #1ab394;
+	position: absolute;
+	left: 260px;
+	height: 555px;
+	overflow: auto;
+}
+/*滚动条样式*/
+.batchRight::-webkit-scrollbar{
+	width:4px;
+	background-color:#ccc;
+}
+.batchRight::-webkit-scrollbar-thumb{
+	background-color:#1ab394;
+	-webkit-border-radius:4px;
+	
+}
+
+
+.batchRight li{
+	width:230px;
+	height: 135px;
+	background: #535353;
+	border-radius: 10px;
+	float: left;
+	margin: 25px 0 25px 25px;
+	color: #fff;
+}
+/*.batchRight li:nth-of-type(3n){
+	margin-right: 0 !important;
+} */
+.batchRight li dl{
+	padding:15px 9px;
+}
+.batchRight li dt{
+	font-size: 14px;
+	padding-bottom: 7px;
+	border-bottom: 1px solid #fff;
+	font-weight: 100;
+}
+.batchRight li dd{
+	width: 100%;
+	margin-top: 7px ;
+	border-bottom: 1px solid #fff;
+	text-align: center;
+}
+.batchRight li .dataNum{
+	font-size: 30px;
+}
+.batchRight li .selectImg{
+	display: inline-block;
+	width:37px;
+	height:37px;
+	cursor: pointer;
+	background: url(../img/select_btn.png) no-repeat 0 0;
+	margin-left: 5px;
+	vertical-align: middle;
+    margin-top: -5px;
+}
+.batchRight li .selectImg2{
+	display: inline-block;
+	width:37px;
+	height:37px;
+	cursor: pointer;
+	background: url(../img/select_btn.png) no-repeat -38px 0;
+	margin-left: 5px;
+	vertical-align: middle;
+    margin-top: -5px;
+}
+.batchRight li .dataDate{
+	color: #b5b5b5;
+	padding-bottom:5px;
+	margin-top: 3px;
+}
+.batchRight li span{
+	display: inline-block;
+	width: 100%;
+}
+/*弹窗样式*/
+.layui-layer-title{
+	background: #1ab394 !important;
+	color: #fff !important;
+}
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #1ab394 !important;
+    background-color: #1ab394 !important;
+    color: #fff;
+}
+.issuedPasswordTitle{
+	font-size: 14px;
+    color: #333;
+}
+.issuedPassword{
+	border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+    padding-left: 10px;
+    margin-left: 5px;
+    height: 23px;
+}

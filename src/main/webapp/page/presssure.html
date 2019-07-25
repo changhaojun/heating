@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>智慧供热系统</title>
+		<link rel="shortcut icon"  href="../img/logo_fav.png"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/layer/skin/layer.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link href="../css/pressure.css" rel="stylesheet" type="text/css" />
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=tsNG4E4zQrrMYVH69GGXaAkQ0fSDjpsy" type="text/javascript" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+	</head>
+	<body>
+		<div class="map">
+			<div class="left" id="searchData">
+		        <div class="top" style="height: auto;overflow: hidden;">
+		            <input type="text" data-info='请输入关键字查找' value="请输入关键字查找" id="searchId"/>
+		            <button id="search_button" data-title="搜索"></button>
+		        </div>
+		        <ul class="cardlist">
+		           
+		        </ul>
+		    </div>
+		    <!--地图容器-->
+		    <div id="allMap" style="height: 100%"></div>
+		</div>
+		<script type="text/javascript" src="../plugins/jQuery/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../plugins/layer/layer.min.js"></script>
+	    <script type="text/javascript" src="../js/public_resources.js"></script>
+	    <script type="text/javascript" src="../js/pressure.js"></script>
+	</body>
+</html>

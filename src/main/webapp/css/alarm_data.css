@@ -1,0 +1,406 @@
+html,body{
+	margin:0;
+    padding:0;
+    font-family: "Microsoft Yahei";
+    background:#f3f3f5 !important;
+}
+.alarmEntity {
+    width: calc(100% - 30px);
+    background: #f3f3f4;
+    float: left;
+    padding-left: 30px;
+    position: relative;
+}
+.alarmEntity .alarmTop {
+    position: fixed;
+    z-index: 100;
+    overflow: hidden;
+    width: calc(100% - 60px);
+    top:0;
+    background: #f3f3f5 !important;
+}
+.alarmEntity .alarmTop span {
+    font-size: 22px;
+    padding-top: 25px;
+    display: inline-block;
+    float: left;
+}
+.alarmEntity .alarmTop span:nth-child(1) {
+    margin-left: 20px;
+    color: #5d5d5d;
+}
+.alarmEntity .alarmTop span:nth-child(2) {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.alarmEntity .alarmTop span:nth-child(3) {
+    color: #1ab394;
+    margin-top: 10px;
+}
+.alarmEntity .alarmTop .search {
+    border: 1px solid #c1c1c1;
+    background: #fff;
+    border-radius: 5px 5px;
+    width: 360px;
+    padding: 0;
+    height: 36px;
+    font-size: 14px;
+    float: right;
+    margin-top: 30px;
+}
+.alarmEntity .alarmTop .search input:nth-child(1) {
+    color: #1AB394;
+    width: 321px;
+    padding-left: 12px;
+    height: 36px;
+    border-radius: 5px 5px;
+}
+.alarmEntity .alarmTop .search i:nth-child(2) {
+    color: #1AB394;
+    line-height: 36px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.alarmEntity hr {
+    width: 100%;
+    height: 4px;
+    background: #e0e0e0;
+    border: 0;
+    display: inline-block;
+    float: left;
+}
+.IContent {
+    position: relative;
+    top:115px;
+}
+.IContent .noConfig {
+    position: absolute;
+    left: 0;
+    width:37%;
+    height: 756px;
+    overflow: auto;
+}
+.IContent .noConfig ul li {
+    background: #fff;
+    float: left;
+    width: 205px;
+    color: #5b5b5c;
+    margin-right: 20px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    padding:0 20px 30px 20px;
+    margin-bottom: 20px;
+}
+.IContent .noConfig ul li P:nth-of-type(1){
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #d8d8d8;
+}
+.IContent .noConfig ul li P:nth-of-type(2) {
+    height: 30px;
+    line-height: 30px;
+    border:1px solid #d8d8d8;
+    width:165px;
+    margin-top:30px;
+    border-radius:2px;
+    padding:0 10px;
+}
+.IContent i.fa-tags{
+    margin-top: 8px;
+    color: #1bb294;
+    float: right;
+}
+.IContent .noConfig ul li P:nth-of-type(2) em{
+    color: #999;
+}
+/*配置*/
+.IContent .config {
+    position: absolute;
+    left: 37%;
+    border-left: 1px solid #d8d8d8;
+    padding-left: 20px;
+    height: 756px;
+    overflow: auto;
+    width: 63%;
+}
+.config h3 {
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #d8d8d8;
+
+}
+.config ol{
+    /*overflow: hidden;*/
+    position: relative;
+}
+.config .collectorData ol{
+	overflow: hidden;
+}
+.config ol>li {
+    width: 250px;
+    float: left;
+    overflow: hidden;
+    margin-right: 20px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    position: relative;
+    margin-bottom:20px;
+    background: #fff;
+}
+i.fa-tags{
+    cursor: pointer;
+}
+.config h5{
+    margin: 10px 0 10px 20px;
+}
+.config dl dt {
+    height: 44px;
+    line-height: 44px;
+    background: #1bb294;
+    padding-left:20px;
+    color:#FFF;
+}
+.config dl dd{
+    padding-left: 15px;
+}
+.config .collectorData dl dd:nth-of-type(1) {
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+    margin-left: -15px;
+    height: 85px;
+    line-height: 85px;
+}
+.config .collectorData dl dd select {
+    width: 190px;
+    margin-left: -10px;
+    border: 1px solid #d8d8d8;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 2px;
+}
+.config .collectorData dl li:nth-of-type(1) {
+    border-bottom: 1px solid #5dc9b2;
+}
+.collectorData dl ul{
+    padding-right:15px;
+    margin-top:10px;
+}
+.config .collectorData dl li {
+    float: left;
+    width:100%;
+    line-height: 39px;
+    padding-left: 5px;
+    height:39px;
+}
+i.fa-plus-circle{
+    color: #1bb294;
+}
+.collectorData dl ul li .dataLeft {
+    float: left;
+}
+.collectorData ul li .dataLeft span {
+    overflow: hidden;
+}
+.collectorData ul li .dataRight {
+    float: right;
+}
+.collectorData ul li .dataRight .fa {
+    cursor: pointer;
+}
+/*下发数据*/
+ /*.deliveryData{
+ 	width: calc(63% - 20px);
+ }*/
+.deliveryData ol{
+	height: 210px;
+	position: relative;
+}
+.deliveryData ol li{
+	width: 250px;
+    position: absolute;
+    background:#f3f3f5 !important;
+}
+.deliveryData li dl{
+    background: #fff;
+}
+.deliveryData li dl dd:nth-of-type(1){
+    margin:20px 0;
+}
+.deliveryData select{
+    width: 190px;
+    margin-left: -10px;
+    border: 1px solid #d8d8d8;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 2px;
+}
+.deliveryData li dl dd table {
+    width: 170px;
+    margin:0 auto;
+}
+.deliveryData li dl dd table th{
+    /*text-align: center;*/
+    padding-left: 10px;
+    color: #666;
+}
+.deliveryData li dl dd i{
+   cursor: pointer;
+}
+.deliveryData li dl dd:nth-of-type(1),.collectorData li dl dd:nth-of-type(2){
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d8d8d8;
+    width: 220px;
+    border-radius: 2px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+.deliveryData li dl dd:nth-of-type(1) {
+    margin: 20px auto;
+}
+i.fa-pencil,i.fa-check{
+    padding-right: 10px;
+    color: #52a3ed;
+}
+i.fa-trash{
+    color: #f17a67;
+}
+.deliveryData li dl dd table tr {
+    height: 30px;
+}
+.deliveryData li dl dd table tbody tr{
+    padding-left:10px;
+}
+.deliveryData li dl dd input{
+    width:30px;
+}
+.config .deliveryData dl dt{
+    background: #46b3cb
+;
+}
+.dropDown {
+    cursor: pointer;
+    width: 36px;
+    display: inline-block;
+    height:18px;
+    text-align: center;
+    margin-left: calc(50% - 14px);
+    background: #fff;
+    color: #1bb294;
+    border-radius:0 0 18px 18px;
+}
+.config .deliveryData .toggleDown{
+    height: 60px;
+    overflow: hidden;
+}
+.transin {
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    transform: rotate(180deg);
+}
+.transout {
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    transform: rotate(0 deg);
+}
+/*弹窗*/
+#searchData{
+    width: 265px;
+    height: 35px;
+    padding-left: 20px;
+    color: #1ab394;
+}
+.confirmInfo i{
+    color: #1AB394;
+    line-height: 35px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.confirmInfo ul{
+    margin-top: 67px;
+}
+.confirmInfo ul li{
+    height: 36px;
+    line-height: 36px;
+    color:#999;
+    cursor: pointer;
+    border-top: 1px solid #eee;
+}
+.confirmInfo ul li span{
+    margin-left: 20px;
+}
+.confirmInfo ul li:hover{
+    background: #eee;
+}
+.confirmInfo .fix{
+    width: 99%;
+    position: fixed;
+    background: #fff;
+}
+.confirmInfo .fix p{
+    /*border-top: 1px solid #eee;*/
+    padding: 5px 0;
+}
+.confirmInfo p span{
+    border-radius: 5px;
+    color: #fff;
+    margin-left: 20px;
+    padding: 2px 10px;
+    background: #009f95;
+    cursor: pointer;
+}
+.confirmInfo{
+    height: 294px;
+    overflow: auto;
+}
+.confirmInfo::-webkit-scrollbar{
+    width:3px;background-color:#ccc;
+}
+.confirmInfo::-webkit-scrollbar-thumb{
+    background-color:#009f95;;
+    -webkit-border-radius:4px;
+}
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #1ab394 !important;
+    background-color: #1ab394 !important;
+    color: #fff;
+}
+.layui-layer-molv .layui-layer-btn .layui-layer-btn1{
+    border-color: #dedede !important;
+    background-color: #dedede !important;
+}
+#dataMin, #dataMax {
+    width: 170px;
+    height: 38px;
+    border: 1px solid #cccccc;
+    padding-left: 14px;
+    color: #a0a0a0;
+}
+.alarmdata .dataLeft {
+    float: left;
+}
+.alarmdata .dataLeft span {
+    overflow: hidden;
+}
+.alarmdata .dataLeft span {
+    overflow: hidden;
+}
+.alarmdata .dataLeft b{
+    font-weight: 600;
+}
+.alarmdata .dataRight {
+    float: right;
+}
+.alarmdata .dataRight .fa {
+    margin: 0 !important;
+    cursor: pointer;
+}
+#noThreshold .active{
+    display: block;
+}

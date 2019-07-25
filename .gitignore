@@ -1,0 +1,11 @@
+/*.launch
+/*.log
+/.metadata
+
+/RemoteSystemsTempFiles
+/target
+/.settings
+/*.classpath
+/bin/
+/bin/
+/.idea

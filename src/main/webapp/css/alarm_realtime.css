@@ -1,0 +1,26 @@
+body,html{
+	margin:0;
+    padding:0;
+}
+.alarmContent{
+	width: 360px;
+    height:75px;
+}
+.fa-warning{
+	padding:20px 0px 0px 20px;
+}
+.alarmcontent{
+   width:360px;
+   height:75px;
+   background-color:#9c2f2a;
+   border-radius:6px;
+   font-family:"Microsoft YaHei" ;
+   color:#ff633b;
+   font-size:16px;
+   line-height: 75px;
+   overflow:hidden;
+   text-align: center;
+}
+.alarmcontent span{
+	float:left;
+}

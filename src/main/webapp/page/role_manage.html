@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+				<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>	
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/layer/skin/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/font-awesome/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/role_manage.css"/>
+	</head>
+	<body>
+		<input type="text" id="customerId" hidden="hidden" value=${customerId} />
+		<input type="text" id="companyCode" hidden="hidden" value=${companyCode} />
+		<input type="text" id="companyId" hidden="hidden" value=${companyId} />
+		<div class="authorizationTop">
+			<span>角色管理 &nbsp;/&nbsp;</span>
+			<span>当前位置：</span>
+			<span>角色管理</span>
+			<span class="search">
+				<input type="text" value="请输入角色名查找" id="searchId"/>
+				<i class="fa fa-search"></i>					
+			</span>
+			<input type="button" value="添加角色" class="btn btn-primary"/>
+		</div>
+		<hr id="line">
+		<div class="authorizationContent">
+		</div>
+		<!--添加页面-->
+		<div class="Mask">
+			<div class="role">
+				<div class="autoBox">
+				<div class="roleTop">
+					<span>添加角色</span>
+					<span class="closeAdd">&times;</span>
+				</div>
+				<div class="roleContent">
+					<div class="roleUsername">						
+						<label for="addText">角色名：</label>
+						<input type="text" placeholder="请输入角色名" id="addText"/>
+						
+					</div>
+				</div>
+				<div class="selectResource">
+					<span>选择资源</span>
+					<span>请选择需要添加的资源</span>
+				</div>
+				<div class="Resource">
+					<ul>	
+					</ul>
+				</div>
+				<button type="submit" class="oBtn">
+					确定
+				</button>
+			</div>
+			</div>
+		</div>
+	</body>
+
+	<script src="../plugins/jQuery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/bootstarp/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/public_resources.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/role_manage.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

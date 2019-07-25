@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" type="text/css" href="../plugins/layer/skin/default/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/daily_report.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/css/bootstrap.css"/>		
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css"/>
+		<link rel="stylesheet" href="../css/daterangepicker-bs3.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/font-awesome/css/font-awesome.css" media="screen"/>
+	</head>
+	<style type="text/css" media="print">
+		.caption{
+			display: block;
+			text-align: center;
+			margin-bottom:10px;
+			
+		}
+		.tcontent{
+			background:#fff !important;		
+			margin-bottom:0;
+			margin-right:0;
+			padding-right:0;
+			margin:0;
+			padding:0;
+		}
+		.tcontent .tTop{
+			height:40px;
+			background:#1c9c83;
+			
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			line-height:40px;
+			font-size:16px;
+			padding-left:15px;
+		}
+		.tcontent .tTop span{
+			color:#fff !important;
+		}
+		.tcontent #dtuList tbody td{
+			text-align:right !important;
+			color:#909090 !important;
+			border:1px solid #e8e8e8 !important;
+		}
+		.tcontent #dtuList tbody td:nth-child(1){
+			text-align:center !important;
+		}
+		.tcontent #dtuList thead td{
+			color:#1c9c83 !important;
+			border:1px solid #e8e8e8 !important;
+			text-align:center;
+		}
+	</style>
+	<body>
+		<div class="tBody">
+		<input type="text" id="companyCode" hidden="hidden" value=${companyCode} />
+		<input type="text" id="companyId" hidden="hidden" value=${companyId} />
+			<div class="theader">
+				<span>选择日期</span>
+				<input type="text" class="date"/>
+				<button>今天</button>
+				<button>昨天</button>
+				<button>前天</button>
+				<div class="excel_o"><a href="" id="excel_o"><i class="fa fa-file-excel-o"></i>导出</a></div>
+				<div class="print"><i class="fa fa-print"></i>打印</div>				
+			</div>
+			<div class="tcontent">
+				<div class="caption" style="display: none;">单站监测</div>
+				<div class="tTop">
+					<button><span></span></span><i class="fa fa-caret-down"></i></button>
+				</div>
+				<table  id="dtuList" >
+					<thead>
+						<tr>
+							<td rowspan="2">时间</td>
+							<td colspan="2" >一次供水</td>
+							<td colspan="2" >一次回水</td>
+							<td colspan="2" >二次供水</td>
+							<td colspan="2" >二次回水</td>
+							<td rowspan="2">瞬时流量(t/h)</td>
+							<td rowspan="2">累计流量(t)</td>
+							<td rowspan="2">瞬时热量(KJ/h)</td>
+							<td rowspan="2">累计热量(KJ)</td>
+						</tr>
+						<tr>			
+							<td>温度(℃)</td>
+							<td>压力(MPa)</td>
+							<td>温度(℃)</td>
+							<td>压力(MPa)</td>
+							<td>温度(℃)</td>
+							<td>压力(MPa)</td>
+							<td>温度(℃)</td>
+							<td>压力(MPa)</td>		
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+			    </table>
+			</div>
+			<!--遮罩--> 
+			<div class="confirmInfo" hidden="hidden">
+				<div class="fix">
+					<input type="text" placeholder="请输入关键字查找换热站" id="searchData"/>
+					<i class="fa fa-search"></i>	
+				</div>
+				<ul class="selectedUl">
+					
+				</ul>	
+			</div>
+		</div>
+		<div class="returnTop"><img src="../img/returnTop.png"/></div>
+	</body>
+	<script src="../js/public_resources.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/jQuery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/printThis-master/printThis.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/bootstarp/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/bootstarp/export/jquery.table2excel.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/moment.js"></script>
+	<script type="text/javascript" src="../js/daterangepicker.js"></script>
+	<script src="../js/daily_report.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/pipe_info.css"/>
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/daterangepicker-bs3.css" />
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=tsNG4E4zQrrMYVH69GGXaAkQ0fSDjpsy" type="text/javascript" ></script>
+	</head>
+	<body>
+		<div class="mapContent">
+			<div class="top">
+				<input type="text" placeholder="请输入内容" id="searchId"/>
+				<button id="searchBtn" data-title="搜索"></button>
+			</div>
+			<div id="allMap"></div>
+			<div id="searchResultPanel"></div>
+		</div>
+		<div class="dataInfo" hidden="hidden" id="demo">
+			<div class="boxContent clearfix">
+				<div class="dataCircle">
+					<label for="road_name">道路名称</label>
+					<input type="text" id="road_name"
+						   v-model="pipeData.road_name" datasrc="pipeData.road_name"
+						   warning="请输入道路名称" placeholder="请输入道路名称"/>
+				</div>
+				<div class="dataCircle">
+					<label for="manhole_code">检查井编号</label>
+					<input id="manhole_code" type="text"
+						   v-model="pipeData.manhole_code" datasrc="pipeData.manhole_code"
+						   v-bind:empty="!pipeData.manhole_code&&!pipeData.manhole_code!==0 ? true : false"
+						   warning="请输入检查井编号" placeholder="请输入检查井编号"/>
+				</div>
+				<div class="dataCircle">
+					<label for="last_manhole_code">上一检查井</label>
+					<input id="last_manhole_code" type="text"
+						   v-model="pipeData.last_manhole_code" datasrc="pipeData.last_manhole_code"
+						   warning="请在地图选择上一检查井" placeholder="请在地图选择上一检查井"/>
+				</div>
+				<div class="dataCircle">
+					<label>地理坐标</label>
+					<div class="coordinates">
+						<input id="manhole_loc" type="text"
+							   v-model="pipeData.manhole_loc" datasrc="pipeData.manhole_loc"
+							   v-bind:empty="!pipeData.manhole_loc&&!pipeData.manhole_loc!==0 ? true : false"
+							   warning="请输入地理坐标" placeholder="请输入地理坐标" />
+					</div>
+				</div>
+				<div class="dataCircle">
+					<label for="create_date">建成时间</label>
+					<input id="create_date" type="text" time-limit="limit"
+						   v-model="pipeData.create_date" datasrc="pipeData.create_date"
+						   warning="请输入建成时间" placeholder="请输入建成时间"/>
+				</div>
+				<div class="dataCircle">
+					<label for="manhole_function">功能</label>
+					<input id="manhole_function" type="text"
+						   v-model="pipeData.manhole_function" datasrc="pipeData.manhole_function"
+						   warning="请输入功能" placeholder="请输入功能"/>
+				</div>
+				<div class="dataCircle">
+					<label for="manhole_size">尺寸(L*B*H/m)</label>
+					<input id="manhole_size" type="text" num-limit="limit"
+						   v-model="pipeData.manhole_size" datasrc="pipeData.manhole_size"
+						   warning="请输入尺寸" placeholder="请输入尺寸"/>
+				</div>
+				<div class="dataCircle">
+					<label for="manhole_depth">管道深度(m)</label>
+					<input id="manhole_depth" type="text" num-limit="limit"
+						   v-model="pipeData.manhole_depth" datasrc="pipeData.manhole_depth"
+						   warning="请输入管道深度" placeholder="请输入管道深度"/>
+				</div>
+				<div class="dataCircle">
+					<label for="back_pipe">回水管径</label>
+					<input id="back_pipe" type="text" num-limit="limit"
+						   v-model="pipeData.back_pipe" datasrc="pipeData.back_pipe"
+						   warning="请输入回水管径" placeholder="请输入回水管径"/>
+				</div>
+				<div class="dataCircle">
+					<label for="for_pipe">供水管径</label>
+					<input id="for_pipe" type="text" num-limit="limit"
+						   v-model="pipeData.for_pipe" datasrc="pipeData.for_pipe"
+						   warning="请输入供水管径" placeholder="请输入供水管径"/>
+				</div>
+				<div class="dataCircle info">
+					<label for="otherInfo">备注</label>
+					<textarea id="otherInfo" v-model="pipeData.remark">请输入备注信息</textarea>
+				</div>
+			</div>
+			<div class="saveSettings">
+				<button id="savePipe">保存</button>
+				<button id="delePipe">删除</button>
+			</div>
+		</div>
+		<!--遮罩-->
+		<div class="confirmInfo" hidden="hidden">
+			<!--<div class="fix">
+				<input type="text" placeholder="请输入关键字查找换热站" id="searchData"/>
+				<i class="fa fa-search"></i>
+			</div>-->
+			<ul class="selectedUl">
+
+			</ul>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/layer/3.0.3/layer.min.js"></script>
+		<script src="https://cdn.bootcss.com/vue/2.0.3/vue.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap-daterangepicker/2.1.25/moment.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js"></script>
+		<script src="https://cdn.bootcss.com/moment.js/2.5.0/lang/zh-cn.js"></script>
+		<script type="text/javascript" src="../js/public_resources.js" ></script>
+		<script type="text/javascript" src="../js/pipe_info.js"></script>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../plugins/bootstarp/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstarp/bootstrap-table/bootstrap-table.min.css"/>
+		<link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="../plugins/layer/skin/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common_style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/branch_manage.css"/>
+	</head>
+	<body>
+		<input type="text" id="companyCode" value=${companyCode} hidden="hidden"/>
+		<input type="text" id="companyId" value=${companyId} hidden="hidden"/>
+		<div class="branchBox">
+			<!--分支top-->
+			<div class="accountTop">
+				<span>支线管理 &nbsp;/&nbsp;</span>
+				<span>当前位置：</span>
+				<span>支线管理</span>	
+				<div class="searchBox">					
+					<input type="text" class="searchInput" placeholder="请输入换热站名称查找"/>
+					<i class="fa fa-search searchBtn" ></i>
+				</div>
+			</div>
+			<hr>
+			<!--分支时间-->
+			<div class="branchContent">
+				<div class="branchCompany">
+					<ul class="companyList">					
+					</ul>
+					<span class="fa fa-angle-double-left left"></span>
+					<span class="fa fa-angle-double-right right"></span>
+				</div>
+				<div class="branchListBox">
+					<!--
+						
+					<div class="branchList">
+						<div><span class="branchName">支线1</span> <span class='fa fa-wrench' data-toggle='tooltip' data-placement='top' title='改名'></span></div>
+						<ul class="dragsort" id="list1">
+							<li><div><span class="index">1</span>我是换热站</div></li>
+							<li><div><span class="index">2</span>我是换热站</div></li>
+						</ul>
+					</div>	
+					<div class="branchList">
+						<dt>支线2</dt>
+						<dd>我是换热站</dd>
+						<dd>我是换热站</dd>
+					</div>
+					
+					-->
+				</div>
+				
+			</div>
+			
+		</div>
+	</body>
+		
+	<script src="../plugins/jQuery/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/jQuery/jquery.dragsort.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/public_resources.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/layer/layer.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../plugins/bootstarp/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/branch_manage.js" type="text/javascript" charset="utf-8"></script>
+</html>
